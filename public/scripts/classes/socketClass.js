@@ -1,6 +1,10 @@
 
 class SocketClass {
+     send=(cmd, value)=>{
+        this.socket.send(JSON.stringify({cmd, value, id:this.id,eventid:this.eventid }))
+    }
     constructor(eventid) {
+         this.eventid=eventid;
         this.socket = new WebSocket("wss://event-24.ru/ws");
         this.socket.onopen =  (e) =>{
             this.socket.send(JSON.stringify({cmd: "ping", eventid}))

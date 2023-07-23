@@ -10,5 +10,6 @@ block content
                 .mainSection
                     .mainSectionTitle Ваши вопросы спикеру
                     .mainSectionText Здесь можно задать свой вопрос спикеру, он будет отображен у него на планшете
+                    .btn(onclick="socket.send('sendQ','test')") Задать вопрос
     script(src="/lib/vue.js")
     script(src="/scripts/eventScript.js" type="module")
