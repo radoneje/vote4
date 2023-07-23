@@ -26,6 +26,7 @@ wss.on('connection', (ws) => {
     ws.on('pong', heartbeat);
     ws.on('message',  (data) =>{
         console.log(ws);
+        ws.id=new Date();
         try{
             data=JSON.parse(data)
             if(data.cmd=="ping" && ws.readyState === WebSocket.OPEN)
