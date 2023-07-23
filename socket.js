@@ -28,7 +28,7 @@ wss.on('connection', (ws) => {
         try{
             data=JSON.parse(data)
             if(data.cmd=="ping")
-                ws.emit(JSON.stringify({cmd:"pong"}))
+                ws.send(JSON.stringify({cmd:"pong"}))
             console.log('received: %s', data);
         }
         catch (e){
