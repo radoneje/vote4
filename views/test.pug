@@ -21,6 +21,13 @@ block content
             console.log(error);
         };
         socket.onmessage =  (data)=> {
+            try{
+                data=JSON.parse(data);
+                console.log("data")
+            }
+            catch (e) {
+                console.warn(e)
+            }
             console.log(data);
         };
 
