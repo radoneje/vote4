@@ -1,5 +1,5 @@
 
-class Socket {
+class SocketClass {
     constructor(eventid) {
         this.socket = new WebSocket("wss://event-24.ru/ws");
         this.socket.onopen =  (e) =>{
@@ -12,11 +12,14 @@ class Socket {
             try {
 
                 const data = JSON.parse(msg.data);
-                console.log(data)
+                if(data.cmd=="pong"){
+                    this.id=data.id;
+                }
+                console.log(data, this.id)
             } catch (e) {
                 console.warn(e)
             }
         };
     };
 }
-export default Socket
+export default SocketClass
