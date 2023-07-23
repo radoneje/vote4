@@ -6,6 +6,10 @@ const url = require('url');
 const server=http.createServer()
 //const wss = new WebSocket({ noServer: true });
 server.listen(7001);
+server.on('upgrade', function upgrade(request, socket, head) {
+console.log('upgrade')
+});
+
 
 /*ws.on('connection', (connection) => {
     console.log("connection")
