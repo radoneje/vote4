@@ -2,10 +2,10 @@
 class Socket {
     constructor(eventid) {
         this.socket = new WebSocket("wss://event-24.ru/ws");
-        this.socket.onopen = function (e) {
+        this.socket.onopen =  (e) =>{
             this.socket.send(JSON.stringify({cmd: "ping", eventid}))
         };
-        this.socket.onerror = function (error) {
+        this.socket.onerror =  (error) =>{
             console.log(error);
         };
         this.socket.onmessage = (msg) => {
