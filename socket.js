@@ -17,6 +17,6 @@ server.on('upgrade', function upgrade(request, socket, head) {
 });
 
 
-/*ws.on('connection', (connection) => {
+wss.on('connection', (connection) => {
     console.log("connection")
-})*/
+})
