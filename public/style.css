@@ -3,7 +3,22 @@
     --textColor:#3D3843;
     --textGray:#939096;
     --borderColor:#F4F3F2;
-    --whiteColor-a88:#FFFFFF;
+    --whiteColor-a88:#FFFFFF 0.88;
+    --whiteColor-100:#FFFFFF;
+    --bgColor:#FAF9F7;
+    --bgElementColor:#F5F2F7;
+    --textColor-100:#3D3843;
+    --textColor-88:#555059;
+    --textColor-56:#939096;
+    --primaryColor:#AA69EB;
+    --primaryHoverColor:#BB87EF;
+    --primaryDisableColor:#DDC3F7;
+    --primaryActivatedColor:#904FD1;
+    --secondaryColor:#677CE9;
+    --secondaryHoverColor:#8596ED;
+    --secondaryDisableColor:#C2CBF6;
+    --secondaryActivatedColor:#5165CD;
+    --errorColor:#F38989
 
 }
 body{
@@ -49,4 +64,21 @@ body{
     letter-spacing: 0.01em;
     text-align: left;
     margin-top:16px;
+}
+.btn{
+    padding: 11px 16px;
+    font-size: 14px;
+    color: var(--textColor);
+    cursor: pointer;
+    background-color: var(--primaryColor);
+    transition: background-color .5s ease;
+}
+.btn:hover{
+    background-color: var(--primaryHoverColor);
+}
+.btn:active{
+    background-color: var(--primaryActivatedColor);
+}
+.btn[disabled]{
+    background-color: var(--primaryDisableColor);
 }

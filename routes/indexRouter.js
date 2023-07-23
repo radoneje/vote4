@@ -7,8 +7,8 @@ res.render("index")
 router.get('/event/:id', (req, res, next)=> {
     res.render("event",{id:req.params.id})
 })
-router.get('/test', (req, res, next)=> {
-    res.render("test",{id:req.params.id})
+router.get('/admin', (req, res, next)=> {
+    res.render("admin",{ownerid:1})
 })
 
 module.exports = router;
