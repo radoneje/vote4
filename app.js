@@ -14,6 +14,19 @@ const knex = require('knex')({
 });
 const session  = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
+const pgStoreConfig = {conObject: config.pgConnection}
+var sess = {
+    secret: (config.sha256Secret),
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 10 * 24 * 60 * 60 * 1000,
+        // secure: true,
+        //httpOnly: true,
+        //sameSite: 'none',
+    }, // 10 days
+    store: new pgSession(pgStoreConfig),
+};
 
 const app = express();
 app.set('views', path.join(__dirname, 'views'));
@@ -25,16 +38,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(
-    session({
-        secret: 'edvefewdvegdvfv',
-        saveUninitialized: true,
-        cookie: {
-            maxAge: 10 * 24 * 60 * 60 * 1000,
-        }, // 10 days
-        store: new pgSession({conObject: config.pgConnection})
-    })
-)
+app.use(session(sess));
 app.use('/',(req, res,next)=>{
     req.knex=knex;
     next();
