@@ -1,7 +1,12 @@
+
+const http=require('http');
 const WebSocket = require('ws');
-const ws = new WebSocket.Server({
-    port: 7001,
-});
+const url = require('url');
+
+const server=http.createServer()
+const wss = new WebSocketServer({ noServer: true });
+server.listen(7001);
+
 ws.on('connection', (connection) => {
     console.log("connection")
 })
