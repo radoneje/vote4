@@ -20,10 +20,10 @@ block content
         socket.onerror = function (error) {
             console.log(error);
         };
-        socket.onmessage =  (data)=> {
+        socket.onmessage =  (msg)=> {
             try{
-                console.log(data)
-                data=JSON.parse(data);
+                //console.log(data)
+                let data=JSON.parse(msg.data);
                 console.log(data)
             }
             catch (e) {
