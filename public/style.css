@@ -45,7 +45,7 @@ body{
 }
 .mainSection{
     border: 1px solid var(--borderColor);
-    background: var(--whiteColor-a88) 88%;
+    background: var(--whiteColor-100) 88%;
     padding: 40px 64px;
     border-radius: 16px;
 }
