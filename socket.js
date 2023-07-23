@@ -2,6 +2,7 @@
 const http=require('http');
 const WebSocket = require('ws');
 const url = require('url');
+const { uuid } = require('uuidv4');
 
 const server=http.createServer()
 const wss =  new WebSocket.Server({ noServer: true });
@@ -25,12 +26,13 @@ wss.on('connection', (ws) => {
     ws.on('error', console.error);
     ws.on('pong', heartbeat);
     ws.on('message',  (data) =>{
-        console.log(ws);
-        ws.id=new Date();
+
         try{
             data=JSON.parse(data)
-            if(data.cmd=="ping" && ws.readyState === WebSocket.OPEN)
-                ws.send(JSON.stringify({cmd:"pong"}))
+            if(data.cmd=="ping" && ws.readyState === WebSocket.OPEN) {
+                ws.id=uuid();
+                ws.send(JSON.stringify({cmd: "pong", id:ws.id}))
+            }
             console.log('received: %s', data);
         }
         catch (e){
