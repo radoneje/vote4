@@ -1,8 +1,23 @@
 extends _layout
 block head
 block content
-    .content#app(eventid=id)
+    .content#app
         .mainTower
             .mainGrid
                 .mainSection
-                    .btn Добавить мероприятие
+                    .btn(@click="addEvent()") Добавить мероприятие
+    script(src="/lib/vue.js")
+    script.
+        let app=new Vue({
+            el:"#app",
+            data:{
+                events:[]
+            },
+            methods:{
+                addEvent:async function(){
+                    let r=await postJson("/api/event",{ownerid:1})
+                    console.log(r)
+                }
+            }
+
+        })

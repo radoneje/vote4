@@ -20,6 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', require('./routes/indexRouter'));
+app.use('/api', require('./routes/apiRouter'));
 
 const server = http.createServer(app);
 server.listen(7000);
