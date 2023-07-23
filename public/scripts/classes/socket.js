@@ -10,7 +10,7 @@ class Socket {
         };
         this.socket.onmessage = (msg) => {
             try {
-                console.log(msg)
+
                 const data = JSON.parse(msg.data);
                 console.log(data)
             } catch (e) {
