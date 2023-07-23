@@ -17,7 +17,7 @@ block content
             methods:{
                 addEvent:async function(){
                     let r=await postJson("/api/event",{ownerid:1})
-                    events.unshift(r)
+                    this.events.unshift(r)
                     console.log(r)
                 }
             }
