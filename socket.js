@@ -33,7 +33,7 @@ wss.on('connection', (ws) => {
                 ws.id=uuid();
                 ws.send(JSON.stringify({cmd: "pong", id:ws.id}))
             }
-            console.log('received: %s', data);
+            console.log('received: %s', data, ws.id);
         }
         catch (e){
             console.warn(e)
