@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', require('./routes/indexRouter'));
 
 const server = http.createServer(app);
-server.listen(4000);
+server.listen(7000);
 server.on('error', (error)=>{
     if (error.syscall !== 'listen') {
         throw error;
