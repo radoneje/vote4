@@ -25,13 +25,21 @@ wss.on('connection', (ws) => {
     ws.on('error', console.error);
     ws.on('pong', heartbeat);
     ws.on('message',  (data) =>{
-        console.log('received: %s', data);
+        try{
+            data=JSON.parse(data)
+            if(data.cmd="ping")
+                ws.emit(JSON.stringify({cmd:"pong"}))
+            console.log('received: %s', data);
+        }
+        catch (e){
+            console.warn(e)
+        }
+
     });
 })
 const interval = setInterval(function ping() {
     wss.clients.forEach(function each(ws) {
         if (ws.isAlive === false) return ws.terminate();
-
         ws.isAlive = false;
         ws.ping();
     });
