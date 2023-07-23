@@ -5,7 +5,15 @@ const logger = require('morgan');
 var cookieParser = require('cookie-parser');
 const path = require('path');
 //const server = http.createServer();
-
+const config= require('./config.json');
+const knex = require('knex')({
+    client: 'pg',
+    version: '7.2',
+    connection: config.pgConnection,
+    pool: {min: 0, max: 40}
+});
+const session  = require('express-session');
+const pgSession = require('connect-pg-simple')(session);
 
 const app = express();
 app.set('views', path.join(__dirname, 'views'));
@@ -17,7 +25,20 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(
+    session({
+        secret: 'edvefewdvegdvfv',
+        saveUninitialized: true,
+        cookie: {
+            maxAge: 10 * 24 * 60 * 60 * 1000,
+        }, // 10 days
+        store: new pgSession({conObject: config.pgConnection})
+    })
+)
+app.use('/',(req, res,next)=>{
+    req.knex=knex;
+    next();
+});
 
 app.use('/', require('./routes/indexRouter'));
 app.use('/api', require('./routes/apiRouter'));
