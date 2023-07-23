@@ -15,6 +15,7 @@ block content
         let socket = new WebSocket("wss://event-24.ru/ws");
         socket.onopen = function (e) {
             console.log("open")
+            socket.send("ping")
         };
         socket.onerror = function (error) {
             console.log(error);
