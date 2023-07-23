@@ -68,7 +68,7 @@ body{
 .btn{
     padding: 11px 16px;
     font-size: 14px;
-    color: var(--textColor);
+    color: var(--whiteColor-100);
     cursor: pointer;
     background-color: var(--primaryColor);
     transition: background-color .5s ease;
