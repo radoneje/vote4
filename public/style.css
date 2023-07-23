@@ -72,6 +72,8 @@ body{
     cursor: pointer;
     background-color: var(--primaryColor);
     transition: background-color .5s ease;
+    width: max-content;
+    border-radius: 12px;
 }
 .btn:hover{
     background-color: var(--primaryHoverColor);
