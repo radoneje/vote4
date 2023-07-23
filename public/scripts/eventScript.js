@@ -9,6 +9,11 @@ let app=new Vue({
     data:{
         eventid:document.getElementById("app").getAttribute("eventid")
     },
+    methods:{
+        socketSend:function (cmd,data){
+            socket.send(cmd, data)
+        }
+    },
     mounted:async function () {
         console.log("ready")
         let chatItem=new chat(11,"text", "Иван Иванов", new Date, "answer")
