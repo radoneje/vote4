@@ -6,7 +6,8 @@ block content
             .mainGrid
                 .mainSection
                     .btn(@click="addEvent()") Добавить мероприятие
-            .mainGrid(v-for="event in events")
+            .mainGrid(v-for="event in events") {{event.id}}
+
     script(src="/lib/vue.js")
     script.
         let app=new Vue({
@@ -18,7 +19,7 @@ block content
                 addEvent:async function(){
                     let r=await postJson("/api/event",{ownerid:1})
                     this.events.unshift(r)
-                    console.log(r)
+                    console.log(this.events)
                 }
             }
 
