@@ -1,7 +1,9 @@
 "use strict";
 
 import chat from './classes/chatClass.js'
+import Socket from './classes/socket.js'
 
+let socket=null;
 let app=new Vue({
     el:"#app",
     data:{
@@ -10,6 +12,7 @@ let app=new Vue({
     mounted:async function () {
         console.log("ready")
         let chatItem=new chat(11,"text", "Иван Иванов", new Date, "answer")
+        socket=new Socket(this.eventid)
     }
 
 })
