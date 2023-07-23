@@ -1,4 +1,3 @@
-import chat from "./chatClass";
 
 class Socket {
     constructor(eventid) {
