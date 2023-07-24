@@ -77,7 +77,5 @@ const interval = setInterval(function ping() {
 wss.on('close', function close() {
     clearInterval(interval);
 });
-app.action('notify', (meta) => {
-    console.log('notify', meta)
-});
+
 app.start();
