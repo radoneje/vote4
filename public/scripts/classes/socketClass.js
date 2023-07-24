@@ -11,7 +11,7 @@ class SocketClass {
             console.log(error);
 
             setTimeout(async()=>{
-                console.log("try recconect");
+                console.log("try reconnect");
                 this.reconnect(eventid)
             },1000)
         };
