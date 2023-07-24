@@ -15,6 +15,7 @@ block content
     script(src="/lib/vue.js")
     script(type="module").
         import SocketClass from './scripts/classes/socketClass.js'
+        let socket;
         let app=new Vue({
             el:"#app",
             data:{
@@ -33,7 +34,7 @@ block content
             },
             mounted:async function(){
                 setTimeout(async ()=>{this.events=await getJson("/api/event");},500)
-
+                socket=new SocketClass(this.eventid)
 
             }
 
