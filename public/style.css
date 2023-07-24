@@ -185,3 +185,10 @@ body{
 .eaMenuLogo{
     cursor: pointer;
 }
+.eaMenuItem{
+    cursor: pointer;
+}
+.eaMenuItems{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
