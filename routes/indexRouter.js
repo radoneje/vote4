@@ -11,7 +11,7 @@ router.get('/event/:id', (req, res, next)=> {
 router.get('/admin', (req, res, next)=> {
     res.render("admin",{ownerid:1})
 })
-router.get("/verifyVK", async (req, res)=>{
+router.get("/verify", async (req, res)=>{
 
     if(req.query.error)
         return res.render("index", {user:req.session.user})
