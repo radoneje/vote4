@@ -161,8 +161,12 @@ body{
     left: 0;
     top: 0;
     width: 100%;
+    color: var(--textColor-100);
 }
 .eaMenu .mainTower{
     padding: 12px 12px;
     box-sizing: border-box;
+}
+.eaMenuWr{
+    align-items: center;
 }
