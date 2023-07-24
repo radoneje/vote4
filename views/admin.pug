@@ -7,7 +7,7 @@ block content
                 .mainSection
                     .btn(@click="addEvent()") Добавить мероприятие
                 .mainSection(v-for="event in events")
-                    input.mainInput(placeholder="Введите название мероприятия")
+                    input.mainInput(placeholder="Введите название мероприятия" v-model="event.title" v-on:change="changeEvent(event)")
                     .flex.between.mt-3
                         .btn(@click="addEvent()") Перейти к мероприятию
                         .btn(@click="addEvent()") Удалить
@@ -20,6 +20,10 @@ block content
                 events:[]
             },
             methods:{
+                changeEvent: async function (event) {
+                    let r = await postJson("/api/event", evemt)
+
+                },
                 addEvent:async function(){
                     let r=await postJson("/api/event",{userid:1})
                     this.events.unshift(r)

@@ -10,6 +10,7 @@ let app=new Vue({
         eventid:document.getElementById("app").getAttribute("eventid")
     },
     methods:{
+
         socketSend:function (cmd,data){
             socket.send(cmd, data)
         }
