@@ -2,6 +2,7 @@
 class SocketClass {
      send=(cmd, value)=>{
          try {
+             console.log(this.socket)
              this.socket.send(JSON.stringify({cmd, value, id: this.id, eventid: this.eventid}))
          }
          catch (e) {
