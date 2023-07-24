@@ -12,7 +12,8 @@ const knex = require('knex')({
     connection: config.pgConnection,
     pool: {min: 0, max: 40}
 });
-
+const amqp = require("amqplib");
+const queue = "vote4";
 
 const session  = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
@@ -74,6 +75,12 @@ server.on('error', (error)=>{
             throw error;
     }
 });
-server.on('listening', ()=> {
+server.on('listening', async ()=> {
     console.log('Listening on ' + server.address().port);
+    const connection = await amqp.connect("amqp://localhost");
+    const channel = await connection.createChannel();
+    process.once("SIGINT", async () => {
+        await channel.close();
+        await connection.close();
+    });
 });
