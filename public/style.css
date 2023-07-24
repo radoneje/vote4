@@ -142,3 +142,8 @@ body{
     border:1px solid var(--borderColor);
     border-radius: 12px;
 }
+.loginRowIcon{
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
