@@ -6,7 +6,7 @@ block content
             .mainGrid
                 .mainSection
                     .btn(@click="addEvent()") Добавить мероприятие
-            .mainGrid(v-for="event in events") {{event.id}}
+                .mainSection(v-for="event in events") {{event.id}}
 
     script(src="/lib/vue.js")
     script.
