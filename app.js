@@ -53,6 +53,9 @@ app.use('/',(req, res,next)=>{
 
 app.use('/', require('./routes/indexRouter'));
 app.use('/api', require('./routes/apiRouter'));
+app.get('*', function(req, res){
+    res.render('404');
+});
 
 const server = http.createServer(app);
 server.listen(7000);
