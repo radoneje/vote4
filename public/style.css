@@ -115,3 +115,6 @@ body{
 .between{
     justify-content: space-between;
 }
+.loginForm{
+    background-color: var(--whiteColor-100);
+}
