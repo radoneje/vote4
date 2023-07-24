@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require('axios');
 
 router.get('/', (req, res, next)=> {
-res.render("index")
+res.render("index",{user: req.session.user})
 })
 router.get('/event/:id', (req, res, next)=> {
     res.render("event",{id:req.params.id})
@@ -29,7 +29,7 @@ router.get("/verify", async (req, res)=>{
     }
 
     if(users.length==0)
-        res.render("index", {user:req.session.user})
+        res.render("index")
 
     req.session.user=users[0];
 
