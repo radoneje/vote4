@@ -22,6 +22,9 @@ block content
                 events:[]
             },
             methods:{
+                onUpdateEvent:async function (event) {
+                console.log("onUpdateEvent")
+                },
                 changeEvent: async function (event) {
                     let r = await postJson("/api/event", event)
 

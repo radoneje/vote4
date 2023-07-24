@@ -22,7 +22,10 @@ class SocketClass {
                 if(data.cmd=="pong"){
                     this.id=data.id;
                 }
-                console.log(data, this.id)
+                console.log(data, this.id, app)
+                if(data.cmd=="updateEvent" && typeof (app)!="undefined" && app.onUpdateEvent){
+                    app.onUpdateEvent(value);
+                }
             } catch (e) {
                 console.warn(e)
             }
