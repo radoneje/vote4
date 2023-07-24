@@ -200,3 +200,11 @@ body{
     color: var(--whiteColor-100);
     border-radius: 12px;
 }
+.eaFooter{
+    background: var(--whiteColor-100);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: var(--textColor-100);
+}
