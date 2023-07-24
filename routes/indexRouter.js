@@ -5,9 +5,15 @@ const axios = require('axios');
 router.get('/', (req, res, next)=> {
 res.render("index",{user: req.session.user})
 })
+router.get('/logout', (req, res, next)=> {
+    req.session.user=null;
+    res.redirect("/")
+})
+
 router.get('/event/:id', (req, res, next)=> {
     res.render("event",{id:req.params.id})
 })
+
 router.get('/admin', (req, res, next)=> {
     res.render("admin",{ownerid:1})
 })

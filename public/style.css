@@ -150,4 +150,5 @@ body{
 .loginExit {
     cursor: pointer;
     color: var(--textColor-56);
+    cursor: pointer;
 }
