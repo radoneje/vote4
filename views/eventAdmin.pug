@@ -2,8 +2,15 @@ extends _layout
 block head
 
 block content
-
     .content#app(eventid=id)
+        .eaMenu
+            .mainTower
+                .flex.between
+                    .eaMenuLogo
+                    .eaMenuItems
+                    .eaMenuUser.flex.right
+                        .eaMenuUserName #{user.f} #{user.i}
+
         .mainTower
             .mainGrid
                 .mainSection

@@ -115,6 +115,9 @@ body{
 .between{
     justify-content: space-between;
 }
+.right{
+    justify-content:right;
+}
 .loginForm{
     background-color: var(--whiteColor-100);
     width: 352px;
