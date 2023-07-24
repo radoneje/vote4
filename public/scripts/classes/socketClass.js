@@ -1,10 +1,14 @@
 
 class SocketClass {
      send=(cmd, value)=>{
-        this.socket.send(JSON.stringify({cmd, value, id:this.id,eventid:this.eventid }))
+         try {
+             this.socket.send(JSON.stringify({cmd, value, id: this.id, eventid: this.eventid}))
+         }
+         catch (e) {
+             console.warn(e)
+         }
     }
-    constructor(eventid) {
-         this.eventid=eventid;
+    reconnect=(eventid)=>{
         this.socket = new WebSocket("wss://event-24.ru/ws");
         this.socket.onopen =  (e) =>{
             this.socket.send(JSON.stringify({cmd: "ping", eventid}))
@@ -24,6 +28,11 @@ class SocketClass {
                 console.warn(e)
             }
         };
+    }
+    constructor(eventid) {
+         this.eventid=eventid;
+         this.reconnect(eventid)
+
     };
 }
 export default SocketClass
