@@ -28,7 +28,8 @@ block content
                         this.events.forEach(e=>{
                             if(e.id==value.id){
                                 for(let key of Object.keys(value)){
-                                console.log(key)
+                                    if(key!="id")
+                                    e[key]=value[key];
                                 }
                             }
                         })
