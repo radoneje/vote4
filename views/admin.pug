@@ -24,7 +24,15 @@ block content
             methods:{
                 onMessage:async function(cmd, value)
                 {
-                    console.log("onUpdateEvent")
+                    if(cmd=="updateEvent"){
+                        this.events.forEach(e=>{
+                            if(e.id==value.id){
+                                for(let key of Object.keys(value)){
+                                console.log(key)
+                                }
+                            }
+                        })
+                    }
                 },
                 changeEvent: async function (event) {
                     let r = await postJson("/api/event", event)
