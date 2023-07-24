@@ -28,14 +28,14 @@ block content
                         </svg>
 
                     .eaMenuItems
-                        .eaMenuItem Внешний вид
-                        .eaMenuItem Ссылки
-                        .eaMenuItem Вопросы
-                        .eaMenuItem.active Голосования
-                        .eaMenuItem Облако тегов
-                        .eaMenuItem Плеер
-                        .eaMenuItem Барометр
-                        .eaMenuItem Раздатка
+                        .eaMenuItem(v-on:click="section='colors'" v-bind:class="{active:section=='colors'}") Внешний вид
+                        .eaMenuItem(v-on:click="section='links'" v-bind:class="{active:section=='links'}") Ссылки
+                        .eaMenuItem(v-on:click="section='quest'" v-bind:class="{active:section=='quest'}") Вопросы
+                        .eaMenuItem(v-on:click="section='votes'" v-bind:class="{active:section=='votes'}") Голосования
+                        .eaMenuItem(v-on:click="section='tags'" v-bind:class="{active:section=='tags'}") Облако тегов
+                        .eaMenuItem(v-on:click="section='player'" v-bind:class="{active:section=='player'}") Плеер
+                        .eaMenuItem(v-on:click="section='baro'" v-bind:class="{active:section=='baro'}") Барометр
+                        .eaMenuItem(v-on:click="section='files'" v-bind:class="{active:section=='files'}") Раздатка
 
 
                     .eaMenuUser.flex.right.vCenter
@@ -49,7 +49,7 @@ block content
 
         .eaBody
             .mainTower
-                .eaBodyBox
+                .eaBodyBox(v-if="section=='links'")
                     .eaBodyItem
                         .mainSectionTitle Для пользователей
                         .mainSectionText Эту ссылку можно отправить всем пользователям.  Qr code можно использовать для быстрого доступа с мобильных устройств.
