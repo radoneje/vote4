@@ -81,7 +81,7 @@ server.on('listening', async ()=> {
     const channel = await connection.createChannel();
     await channel.assertQueue(queue, { durable: false });
     channel.sendToQueue(queue, Buffer.from(JSON.stringify("text")));
-    console.log(" [x] Sent '%s'", text);
+    console.log(" [x] Sent '%s'", "text");
     await channel.close();
 
     process.once("SIGINT", async () => {
