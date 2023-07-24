@@ -1,6 +1,5 @@
 
 class SocketClass {
-
     reconnect=(eventid)=>{
          return new Promise((resp, rej)=>{
         this.socket = new WebSocket("wss://event-24.ru/ws");
@@ -10,6 +9,11 @@ class SocketClass {
         };
         this.socket.onerror =  (error) =>{
             console.log(error);
+
+            setTimeout(async()=>{
+                console.log("try recconect");
+                this.reconnect(eventid)
+            },1000)
         };
         this.socket.onmessage = (msg) => {
             try {
