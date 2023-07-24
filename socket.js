@@ -35,6 +35,7 @@ wss.on('connection',async (ws) => {
             data=JSON.parse(data)
             if(data.cmd=="ping" && ws.readyState === WebSocket.OPEN) {
                 ws.id=uuid();
+                ws.userid=data.userid;
                 ws.send(JSON.stringify({cmd: "pong", id:ws.id}))
             }
             console.log('received: %s', data, ws.id);
@@ -73,7 +74,7 @@ wss.on('close', function close() {
                 let msg=JSON.parse(message.content.toString())
                 console.log(" [x] Received '%s'", msg);
                 wss.clients.forEach(ws=>{
-                    console.log(ws.id)
+                    console.log("clientId:",ws.userid)
                 })
             }
         },

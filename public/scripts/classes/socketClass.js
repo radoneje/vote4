@@ -1,10 +1,10 @@
 
 class SocketClass {
-    reconnect=(eventid)=>{
+    reconnect=(eventid, userid)=>{
          return new Promise((resp, rej)=>{
         this.socket = new WebSocket("wss://event-24.ru/ws");
         this.socket.onopen =  (e) =>{
-            this.socket.send(JSON.stringify({cmd: "ping", eventid}))
+            this.socket.send(JSON.stringify({cmd: "ping", eventid, userid}))
             resp();
         };
         this.socket.onerror =  (error) =>{
@@ -12,7 +12,7 @@ class SocketClass {
 
             setTimeout(async()=>{
                 console.log("try reconnect");
-                this.reconnect(eventid)
+                this.reconnect(eventid, userid)
             },1000)
         };
         this.socket.onmessage = (msg) => {
@@ -29,9 +29,10 @@ class SocketClass {
         };
          })
     }
-     constructor(eventid) {
+     constructor(eventid, userid=null) {
          this.eventid=eventid;
-        this.reconnect(eventid).then(()=>{
+         this.userid=userid
+        this.reconnect(eventid, userid).then(()=>{
             console.log("connected!")
         })
 
@@ -39,7 +40,7 @@ class SocketClass {
     send= async (cmd, value)=>{
         try {
             if(this.socket.readyState>1)
-                await this.reconnect(this.eventid)
+                await this.reconnect(this.eventid, this.userid)
             this.socket.send(JSON.stringify({cmd, value, id: this.id, eventid: this.eventid}))
         }
         catch (e) {
