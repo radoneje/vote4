@@ -33,16 +33,16 @@ router.get('/userEvent', async (req, res, next)=> {
 router.get('/eventAdmin/:short', async (req, res, next)=> {
     try {
         if(!req.session.user)
-            return res.redirect("/404");
+            return res.json(1)//.redirect("/404");
 
         let events=await req.knex("t_events").where({short:req.params.short}).orderBy("id", "desc")
         if(events.length==0)
-           return res.redirect("/404")
+           return res.json(2)//.redirect("/404")
         let event=events[0];
         if(event.userid==req.session.user || req.session.user.isAdmin)
           return  res.render("eventAdmin", {event, user:req.session.user});
 
-        res.redirect("/404")
+        res.json(3)//.redirect("/404")
 
     }
     catch (e) {
