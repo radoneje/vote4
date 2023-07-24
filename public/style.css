@@ -117,4 +117,7 @@ body{
 }
 .loginForm{
     background-color: var(--whiteColor-100);
+    width: 352px;
+    box-sizing: border-box;
+    padding: 48px 24px;
 }
