@@ -10,7 +10,7 @@ block content
                     input.mainInput(placeholder="Введите название мероприятия" v-model="event.title" v-on:change="changeEvent(event)")
                     .flex.between.mt-3
                         .btn(@click="addEvent()") Перейти к мероприятию
-                        .btn(@click="event.isDeleted=true;changeEvent(event)") Удалить
+                        .btn(@click="if(confirm('Удалить мероприятие?')) {event.isDeleted=true;changeEvent(event)}") Удалить
 
     script(src="/lib/vue.js")
     script(type="module").
