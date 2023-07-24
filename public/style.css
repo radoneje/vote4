@@ -227,6 +227,7 @@ body{
     height: calc(100vh - 94px);
     margin-top: 57px;
     overflow-y: scroll;
+
 }
 .eaBody::-webkit-scrollbar {
     width: 10px;
@@ -236,4 +237,14 @@ body{
 }
 .eaBody::-webkit-scrollbar-thumb {
     background-color:var(--primaryColor);
+}
+.eaBodyBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 32px;
+}
+.eaBodyItem{
+    background-color: var(--whiteColor-100);
+    border-radius: 12px;
+    padding: 24px;
 }
