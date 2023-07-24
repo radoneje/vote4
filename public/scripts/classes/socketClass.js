@@ -35,7 +35,7 @@ class SocketClass {
     send= async (cmd, value)=>{
         try {
             if(this.socket.readyState>1)
-                await reconnect(this.eventid)
+                await this.reconnect(this.eventid)
             this.socket.send(JSON.stringify({cmd, value, id: this.id, eventid: this.eventid}))
         }
         catch (e) {
