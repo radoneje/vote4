@@ -9,7 +9,7 @@ block content
                 .mainSection(v-for="event in events" v-if="!event.isDeleted")
                     input.mainInput(placeholder="Введите название мероприятия" v-model="event.title" v-on:change="changeEvent(event)")
                     .flex.between.mt-3
-                        .btn(:onclick="'document.location.href=\"/event/\"'+event.short") Перейти к мероприятию
+                        .btn(:onclick="'document.location.href=\"/event/'"+event.short+"\"") Перейти к мероприятию
                         .btn(@click="event.isDeleted=true;changeEvent(event)") Удалить
 
     script(src="/lib/vue.js")
