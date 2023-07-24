@@ -166,7 +166,16 @@ body{
 .eaMenu .mainTower{
     padding: 12px 12px;
     box-sizing: border-box;
+    margin: 0 auto;
 }
 .eaMenuWr{
     align-items: center;
+}
+.eaMenuUserExit{
+    margin-left: 12px;
+    cursor: pointer;
+}
+.eaMenuUserName{
+    color:var(--textColor-88);
+    font-size: 12px;
 }
