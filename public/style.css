@@ -118,6 +118,9 @@ body{
 .right{
     justify-content:right;
 }
+.vCenter{
+    align-items: center;
+}
 .loginForm{
     background-color: var(--whiteColor-100);
     width: 352px;
