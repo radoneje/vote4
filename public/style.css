@@ -92,6 +92,7 @@ body{
     color: var(--textColor-100);
     border: 1px solid transparent;
     font-size: 14px;
+    background-color: var(--bgElementColor);
 }
 .mainInput:focus, .mainInput:active{
     border: 1px solid var(--primaryHoverColor);
