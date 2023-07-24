@@ -15,6 +15,7 @@ const knex = require('knex')({
 const amqp = require("amqplib");
 const queue = "vote4";
 let connection;
+let channel;
 const session  = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
 const pgStoreConfig = {conObject: config.pgConnection}
@@ -44,6 +45,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
 app.use('/',(req, res,next)=>{
     req.knex=knex;
+    req.notify=(to,eventid,cmd,value)=>{
+        channel.sendToQueue(queue, Buffer.from(JSON.stringify({to,eventid,cmd,value})));
+    }
     next();
 });
 
@@ -78,11 +82,11 @@ server.on('error', (error)=>{
 server.on('listening', async ()=> {
     console.log('Listening on ' + server.address().port);
      connection = await amqp.connect("amqp://localhost");
-    const channel = await connection.createChannel();
+     channel = await connection.createChannel();
     await channel.assertQueue(queue, { durable: false });
-    channel.sendToQueue(queue, Buffer.from(JSON.stringify("text")));
-    console.log(" [x] Sent '%s'", "text");
-    await channel.close();
+
+
+    //await channel.close();
 
    /* process.once("SIGINT", async () => {
         await channel.close();
