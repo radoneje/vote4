@@ -4,7 +4,7 @@ var router = express.Router();
 router.post('/event', async (req, res, next)=> {
 try {
  if (!req.body.id) {
-  return rws.json((await req.knex("t_events").insert(req.body, "*"))[0]);
+  return res.json((await req.knex("t_events").insert(req.body, "*"))[0]);
  }
 
  let id = req.body.id
