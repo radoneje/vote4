@@ -138,5 +138,7 @@ body{
     font-weight: 500;
     line-height: 24px;
     letter-spacing: 0.01em;
-
+    padding: 16px;
+    border:1px solid var(--borderColor);
+    border-radius: 12px;
 }
