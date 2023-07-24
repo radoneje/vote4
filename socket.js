@@ -3,13 +3,10 @@ const http=require('http');
 const WebSocket = require('ws');
 const url = require('url');
 const { uuid } = require('uuidv4');
-const MicroMQ = require('micromq');
-const app = new MicroMQ({
-    name: 'notifications',
-    rabbit: {
-        url: "amqp://guest:guest@localhost:5672"
-    },
-});
+const amqp = require("amqplib");
+const queue = "vote4";
+
+
 
 const server=http.createServer()
 const wss =  new WebSocket.Server({ noServer: true });
@@ -27,8 +24,8 @@ server.on('upgrade', function upgrade(request, socket, head) {
 function heartbeat() {
     this.isAlive = true;
 }
-wss.on('connection', (ws) => {
-    console.log("connection")
+wss.on('connection',async (ws) => {
+
     ws.isAlive = true;
     ws.on('error', console.error);
     ws.on('pong', heartbeat);
@@ -47,6 +44,28 @@ wss.on('connection', (ws) => {
         }
 
     });
+    const connection = await amqp.connect("amqp://localhost");
+    const channel = await connection.createChannel();
+    process.once("SIGINT", async () => {
+        await channel.close();
+        await connection.close();
+    });
+
+    await channel.assertQueue(queue, { durable: false });
+    await channel.consume(
+        queue,
+        (message) => {
+            if (message) {
+                console.log(
+                    " [x] Received '%s'",
+                    JSON.parse(message.content.toString())
+                );
+            }
+        },
+        { noAck: true }
+    );
+
+    console.log(" [*] Waiting for messages. To exit press CTRL+C");
 })
 const interval = setInterval(function ping() {
     wss.clients.forEach(function each(ws) {
