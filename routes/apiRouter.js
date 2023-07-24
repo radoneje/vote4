@@ -5,7 +5,7 @@ router.post('/event', async (req, res, next) => {
     try {
         if (!req.body.id) {
             let dt = (await req.knex("t_events").insert(req.body, "*"))[0]
-            req.notify("admin", null, "newEvent", dt)
+            req.notify("1", null, "newEvent", dt)
             return res.json(dt);
 
 
@@ -13,7 +13,7 @@ router.post('/event', async (req, res, next) => {
         let id = req.body.id
         delete req.body.id;
         let dt=(await req.knex("t_events").update(req.body, "*").where({id}))[0]
-        req.notify("admin", null, "updateEvent", dt)
+        req.notify("1", null, "updateEvent", dt)
         res.json(dt)
     } catch (e) {
         console.warn(e);
