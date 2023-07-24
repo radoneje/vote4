@@ -70,16 +70,16 @@ wss.on('close', function close() {
         queue,
         (message) => {
             if (message) {
-                console.log(
-                    " [x] Received '%s'",
-                    JSON.parse(message.content.toString())
-                );
+                let msg=JSON.parse(message.content.toString())
+                console.log(" [x] Received '%s'", msg);
+                wss.clients.forEach(ws=>{
+                    console.log(ws.id)
+                })
             }
         },
         { noAck: true }
     );
-
-    console.log(" [*] Waiting for messages. To exit press CTRL+C");
+    console.log(" [*] Waiting for messages.");
 })();
 
 
