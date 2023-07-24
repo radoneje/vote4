@@ -30,6 +30,8 @@ body{
     color:var(--textColor);
     font-size: 16px;
     line-height: 20px;
+    margin: 0;
+    padding: 0;
 }
 .mainTower{
     width:min(1440px, calc(100% - 12px));
@@ -222,5 +224,16 @@ body{
 .eaBody{
     background-color: var(--bgColor);
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 94px);
+    margin-top: 57px;
+    overflow-y: scroll;
+}
+.eaBody::-webkit-scrollbar {
+    width: 10px;
+}
+.eaBody::-webkit-scrollbar-track {
+    background-color:var(--bgElementColor);
+}
+.eaBody::-webkit-scrollbar-thumb {
+    background-color:var(--primaryColor);
 }
