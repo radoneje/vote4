@@ -78,4 +78,4 @@ wss.on('close', function close() {
     clearInterval(interval);
 });
 
-app.start();
+
