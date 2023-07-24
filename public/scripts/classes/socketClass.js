@@ -36,7 +36,9 @@ class SocketClass {
     }
     async constructor(eventid) {
          this.eventid=eventid;
-         await this.reconnect(eventid)
+        this.reconnect(eventid).then(()=>{
+            console.log("connected!")
+        })
 
     };
 }
