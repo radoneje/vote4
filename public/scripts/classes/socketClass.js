@@ -23,18 +23,18 @@ class SocketClass {
                     this.id=data.id;
                 }
                 console.log(data, this.id, app)
-                if(data.cmd=="updateEvent" && typeof (app)!="undefined" && app.onUpdateEvent){
-                    app.onUpdateEvent(value);
-                }
+                if( this.onMessage)
+                    this.onMessage(data.cmd, data.value)
             } catch (e) {
                 console.warn(e)
             }
         };
          })
     }
-     constructor(eventid, userid=null) {
+     constructor(eventid, userid=null, onMessage=null) {
          this.eventid=eventid;
-         this.userid=userid
+         this.userid=userid;
+         this.onMessage=onMessage
         this.reconnect(eventid, userid).then(()=>{
             console.log("connected!")
         })
