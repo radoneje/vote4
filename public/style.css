@@ -187,8 +187,10 @@ body{
 }
 .eaMenuItem{
     cursor: pointer;
+    text-align: center;
 }
 .eaMenuItems{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 12px;
 }
