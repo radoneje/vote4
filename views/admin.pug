@@ -34,7 +34,7 @@ block content
             },
             mounted:async function(){
                 setTimeout(async ()=>{this.events=await getJson("/api/event");},500)
-                socket=new SocketClass(this.eventid)
+                socket=new SocketClass(this.eventid, document.getElementById("app").getAttribute("userid"))
 
             }
 
