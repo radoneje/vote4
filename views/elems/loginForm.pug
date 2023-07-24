@@ -15,6 +15,9 @@
     if user
         .mt-3.flex.center
             .btn Перейти к мероприятию
+        if user.isAdmin
+            .mt-3.flex.center
+                .btn(onclick="document.location.href='/admin'") Перейти к администрированию
         .mt-3.flex.center
             .loginExit(onclick="document.location.href='/logout'") Выйти
     else
