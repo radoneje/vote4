@@ -75,9 +75,14 @@ wss.on('close', function close() {
             if (message) {
                 let msg=JSON.parse(message.content.toString())
                 console.log(" [x] Received '%s'", msg);
-                wss.clients.forEach(ws=>{
-                    console.log("clientId:",ws.userid)
-                })
+                if(msg.to=='admin') {
+                    wss.clients.forEach(ws => {
+                        if(ws.userid=="1")
+                        {
+                            ws.send(JSON.stringify({eventid: msg.eventid, cmd: msg.cmd, value:msg.value}))
+                        }
+                    })
+                }
             }
         },
         { noAck: true }
