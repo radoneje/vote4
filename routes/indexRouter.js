@@ -10,8 +10,45 @@ router.get('/logout', (req, res, next)=> {
     res.redirect("/")
 })
 router.get('/error', (req, res, next)=> {
-
     res.render("error")
+})
+router.get('/404', (req, res, next)=> {
+    res.render("404")
+})
+
+router.get('/userEvent', async (req, res, next)=> {
+    try {
+    if(!req.session.user)
+        return res.redirect("/404");
+    let events=await req.knex("t_events").where({userid:req.session.user.id}).orderBy("id", "desc")
+        if(events.length==0)
+            events=await req.knex("t_events").insert({userid:req.session.user.id}, "*");
+        res.redirect('/eventAdmin/'+events[0].short);
+    }
+    catch (e) {
+        console.warn(e)
+        res.render("error")
+    }
+})
+router.get('/eventAdmin/:short', async (req, res, next)=> {
+    try {
+        if(!req.session.user)
+            return res.redirect("/404");
+
+        let events=await req.knex("t_events").where({short:req.params.short}).orderBy("id", "desc")
+        if(events.length==0)
+           return res.redirect("/404")
+        let event=events[0];
+        if(event.userid==req.session.user || req.session.user.isAdmin)
+          return  res.render("eventAdmin", {event, user:req.session.user});
+
+        res.redirect("/404")
+
+    }
+    catch (e) {
+        console.warn(e)
+        res.render("error")
+    }
 })
 
 router.get('/event/:id', (req, res, next)=> {

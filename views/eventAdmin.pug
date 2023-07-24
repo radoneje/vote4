@@ -1,0 +1,15 @@
+extends _layout
+block head
+
+block content
+
+    .content#app(eventid=id)
+        .mainTower
+            .mainGrid
+                .mainSection
+                .mainSection
+                    .mainSectionTitle Ваши вопросы спикеру
+                    .mainSectionText Здесь можно задать свой вопрос спикеру, он будет отображен у него на планшете
+                    .btn(@click="socketSend('sendQ','test')") Задать вопрос
+    script(src="/lib/vue.js")
+    script(src="/scripts/eventAdminScript.js" type="module")

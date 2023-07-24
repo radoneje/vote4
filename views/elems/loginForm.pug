@@ -15,7 +15,7 @@
     if user
         .loginHead.mt-3.mb-3 Вы зарегистрированы
         .mt-3.flex.center
-            .btn Перейти к мероприятию
+            .btn(onclick="document.location.href='/userEvent'") Перейти к мероприятию
         if user.isAdmin
             .mt-3.flex.center
                 .btn(onclick="document.location.href='/admin'") Перейти к администрированию
