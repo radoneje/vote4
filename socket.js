@@ -44,6 +44,20 @@ wss.on('connection',async (ws) => {
         }
 
     });
+
+})
+const interval = setInterval(function ping() {
+    wss.clients.forEach(function each(ws) {
+        if (ws.isAlive === false) return ws.terminate();
+        ws.isAlive = false;
+        ws.ping();
+    });
+}, 30000);
+wss.on('close', function close() {
+    clearInterval(interval);
+});
+
+(async ()=>{
     const connection = await amqp.connect("amqp://localhost");
     const channel = await connection.createChannel();
     process.once("SIGINT", async () => {
@@ -66,16 +80,6 @@ wss.on('connection',async (ws) => {
     );
 
     console.log(" [*] Waiting for messages. To exit press CTRL+C");
-})
-const interval = setInterval(function ping() {
-    wss.clients.forEach(function each(ws) {
-        if (ws.isAlive === false) return ws.terminate();
-        ws.isAlive = false;
-        ws.ping();
-    });
-}, 30000);
-wss.on('close', function close() {
-    clearInterval(interval);
-});
+})();
 
 
