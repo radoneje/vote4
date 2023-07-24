@@ -21,6 +21,9 @@ block content
                     this.events.unshift(r)
                     console.log(this.events)
                 }
+            },
+            mounted:async function(){
+                this. events=await getJson("/api/event");
             }
 
         })

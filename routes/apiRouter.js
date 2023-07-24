@@ -17,5 +17,15 @@ catch (e) {
 }
 })
 
+router.get('/event', async (req, res, next)=> {
+ try {
+  return res.json(await req.knex("t_events").orderBy("id"));
+ }
+ catch (e) {
+  console.warn(e);
+  res.json(null)
+ }
+})
+
 
 module.exports = router;
