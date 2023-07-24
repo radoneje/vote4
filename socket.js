@@ -3,6 +3,13 @@ const http=require('http');
 const WebSocket = require('ws');
 const url = require('url');
 const { uuid } = require('uuidv4');
+const MicroMQ = require('micromq');
+const app = new MicroMQ({
+    name: 'notifications',
+    rabbit: {
+        url: "amqp://guest:guest@localhost:5672"
+    },
+});
 
 const server=http.createServer()
 const wss =  new WebSocket.Server({ noServer: true });
@@ -51,3 +58,7 @@ const interval = setInterval(function ping() {
 wss.on('close', function close() {
     clearInterval(interval);
 });
+app.action('notify', (meta) => {
+    console.log('notify', meta)
+});
+app.start();

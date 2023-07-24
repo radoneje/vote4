@@ -12,6 +12,8 @@ const knex = require('knex')({
     connection: config.pgConnection,
     pool: {min: 0, max: 40}
 });
+
+
 const session  = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
 const pgStoreConfig = {conObject: config.pgConnection}
