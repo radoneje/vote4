@@ -31,7 +31,8 @@ block content
                 }
             },
             mounted:async function(){
-                this.events=await getJson("/api/event");
+                setTimeout(async ()=>{this.events=await getJson("/api/event");},500)
+
             }
 
         })
