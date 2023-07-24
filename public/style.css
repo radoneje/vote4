@@ -188,6 +188,7 @@ body{
 .eaMenuItem{
     cursor: pointer;
     text-align: center;
+    padding: 6px 12px;
 }
 .eaMenuItems{
     display: grid;
