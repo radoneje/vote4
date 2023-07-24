@@ -219,3 +219,8 @@ body{
     text-decoration: none;
     color: var(--primaryColor);
 }
+.eaBody{
+    background-color: var(--bgColor);
+    width: 100%;
+    height: 100vh;
+}
