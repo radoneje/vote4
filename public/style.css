@@ -120,4 +120,5 @@ body{
     width: 352px;
     box-sizing: border-box;
     padding: 48px 24px;
+    border-radius: 16px;
 }
