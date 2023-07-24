@@ -7,6 +7,7 @@ block content
                 .mainSection
                     .btn(@click="addEvent()") Добавить мероприятие
                 .mainSection(v-for="event in events") {{event.id}}
+                    input.mainInput
 
     script(src="/lib/vue.js")
     script.

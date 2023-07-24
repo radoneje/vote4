@@ -84,3 +84,18 @@ body{
 .btn[disabled]{
     background-color: var(--primaryDisableColor);
 }
+.mainInput{
+    box-sizing: border-box;
+    width: 320px;
+    padding: 11px 16px;
+    border-radius: 12px;
+    color: var(--textColor-100);
+    border: 1px solid transparent;
+    font-size: 14px;
+}
+.mainInput:focus, .mainInput:active{
+    border: 1px solid var(--primaryHoverColor);
+}
+.mainInput::placeholder{
+    color: var(--textColor-56);
+}
