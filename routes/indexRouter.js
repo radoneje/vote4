@@ -9,6 +9,10 @@ router.get('/logout', (req, res, next)=> {
     req.session.user=null;
     res.redirect("/")
 })
+router.get('/error', (req, res, next)=> {
+
+    res.render("error")
+})
 
 router.get('/event/:id', (req, res, next)=> {
     res.render("event",{id:req.params.id})
