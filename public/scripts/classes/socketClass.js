@@ -1,8 +1,9 @@
 
 class SocketClass {
-     send=(cmd, value)=>{
+      send= async (cmd, value)=>{
          try {
-             console.log(this.socket)
+             if(this.socket.readyState>1)
+                 await reconnect(this.eventid)
              this.socket.send(JSON.stringify({cmd, value, id: this.id, eventid: this.eventid}))
          }
          catch (e) {
@@ -10,9 +11,11 @@ class SocketClass {
          }
     }
     reconnect=(eventid)=>{
+         return new Promise((resp, rej)=>{
         this.socket = new WebSocket("wss://event-24.ru/ws");
         this.socket.onopen =  (e) =>{
             this.socket.send(JSON.stringify({cmd: "ping", eventid}))
+            resp();
         };
         this.socket.onerror =  (error) =>{
             console.log(error);
@@ -29,10 +32,11 @@ class SocketClass {
                 console.warn(e)
             }
         };
+         })
     }
-    constructor(eventid) {
+    async constructor(eventid) {
          this.eventid=eventid;
-         this.reconnect(eventid)
+         await this.reconnect(eventid)
 
     };
 }
