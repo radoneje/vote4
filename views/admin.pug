@@ -34,6 +34,10 @@ block content
                             }
                         })
                     }
+                    if(cmd=="addEvent"){
+                        this.events.unshift(value);
+                    }
+
                 },
                 changeEvent: async function (event) {
                     let r = await postJson("/api/event", event)
