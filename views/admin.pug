@@ -7,7 +7,7 @@ block content
                 .mainSection
                     .btn(@click="addEvent()") Добавить мероприятие
                 .mainSection(v-for="event in events") {{event.id}}
-                    input.mainInput
+                    input.mainInput(placeholder="Введите название мероприятия")
 
     script(src="/lib/vue.js")
     script.
@@ -24,7 +24,7 @@ block content
                 }
             },
             mounted:async function(){
-                this. events=await getJson("/api/event");
+                this.events=await getJson("/api/event");
             }
 
         })
