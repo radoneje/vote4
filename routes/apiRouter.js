@@ -23,7 +23,7 @@ router.post('/event', async (req, res, next) => {
 
 router.get('/event', async (req, res, next) => {
     try {
-        return res.json(await req.knex("t_events").orderBy("id", 'desc'));
+        return res.json(await req.knex("t_events").where({idDeleted:false}).orderBy("id", 'desc'));
     } catch (e) {
         console.warn(e);
         res.json(null)
