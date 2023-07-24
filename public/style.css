@@ -182,3 +182,6 @@ body{
     color:var(--textColor-88);
     font-size: 12px;
 }
+.eaMenuLogo{
+    cursor: pointer;
+}
