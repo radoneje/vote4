@@ -24,7 +24,7 @@ block content
             methods:{
                 onMessage:async function(cmd, value)
                 {
-                console.log("onUpdateEvent")
+                    console.log("onUpdateEvent")
                 },
                 changeEvent: async function (event) {
                     let r = await postJson("/api/event", event)
@@ -38,7 +38,7 @@ block content
             },
             mounted:async function(){
                 setTimeout(async ()=>{this.events=await getJson("/api/event");},500)
-                socket=new SocketClass(this.eventid, document.getElementById("app").getAttribute("userid"), this.onMessage(cmd, value))
+                socket=new SocketClass(this.eventid, document.getElementById("app").getAttribute("userid"), this.onMessage)
 
             }
 
