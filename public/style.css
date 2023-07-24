@@ -194,3 +194,8 @@ body{
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 12px;
 }
+.eaMenuItem.active{
+    background-color: var(--primaryColor);
+    color: var(--whiteColor-100);
+    border-radius: 12px;
+}
