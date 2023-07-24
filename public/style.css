@@ -193,7 +193,7 @@ body{
 .eaMenuItems{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 12px;
+    grid-gap: 6px;
 }
 .eaMenuItem.active{
     background-color: var(--primaryColor);
