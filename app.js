@@ -84,8 +84,8 @@ server.on('listening', async ()=> {
     console.log(" [x] Sent '%s'", "text");
     await channel.close();
 
-    process.once("SIGINT", async () => {
+   /* process.once("SIGINT", async () => {
         await channel.close();
         await connection.close();
-    });
+    });*/
 });
