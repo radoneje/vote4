@@ -8,7 +8,7 @@ block content
                     .btn(@click="addEvent()") Добавить мероприятие
                 .mainSection(v-for="event in events")
                     input.mainInput(placeholder="Введите название мероприятия")
-                    .flex.between
+                    .flex.between.mt-3
                         .btn(@click="addEvent()") Перейти к мероприятию
                         .btn(@click="addEvent()") Удалить
 
