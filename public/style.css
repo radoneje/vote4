@@ -434,6 +434,7 @@ textarea.mainInput{
     width: 4px;
     height: 4px;
     border-radius: 50%;
+    background-color: var(--bgElementColor);
 }
 .radio .radioSect.Off .radioDot{
     background-color: var(--primaryColor);
