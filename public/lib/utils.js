@@ -24,3 +24,6 @@ window.postJson=async (url, data)=>{
         return null;
     return await r.json();
 }
+window.copyElement=async (elem)=>{
+    console.log(elem)
+}
