@@ -20,7 +20,7 @@ router.get('/userEvent', async (req, res, next)=> {
     try {
     if(!req.session.user)
         return res.redirect("/404");
-    let events=await req.knex("t_events").where({userid:req.session.user.id}).orderBy("id", "desc")
+    let events=await req.knex("t_events").where({userid:req.session.user.id, isDeleted:false}).orderBy("id", "desc")
         if(events.length==0)
             events=await req.knex("t_events").insert({userid:req.session.user.id}, "*");
         res.redirect('/eventAdmin/'+events[0].short);
