@@ -96,6 +96,10 @@ body{
     font-size: 14px;
     background-color: var(--bgElementColor);
 }
+textarea.mainInput{
+    height: 6em;
+    resize: vertical;
+}
 .mainInput:focus, .mainInput:active{
     border: 1px solid var(--primaryHoverColor);
 }
