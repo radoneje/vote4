@@ -324,6 +324,7 @@ body{
     cursor: pointer;
     display: flex;
     width: max-content;
+    align-items: center;
 }
 .swith .Off{ display: block}
 .swith .On{ display: none}

@@ -10,7 +10,9 @@ let app=new Vue({
         eventid:document.getElementById("app").getAttribute("eventid")
     },
     methods:{
-
+        changeEvent: async function (event) {
+            let r = await postJson("/api/event", event)
+        },
         socketSend:function (cmd,data){
             socket.send(cmd, data)
         }

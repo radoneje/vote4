@@ -2,7 +2,7 @@ extends _layout
 block head
 
 block content
-    .content#app(eventid=id)
+    .content#app(eventid=id userid=user.id)
         .eaMenu
             .mainTower
                 .eaMenuWr.flex.between.vCenter
@@ -60,4 +60,5 @@ block content
                     a(href="http://t.me/event_24_bot" target="_blank") Telegram bot @event_24_bot
 
     script(src="/lib/vue.js")
+    script let event=!{JSON.stringify(event)}
     script(src="/scripts/eventAdminScript.js" type="module")

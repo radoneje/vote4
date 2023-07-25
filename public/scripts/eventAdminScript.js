@@ -7,10 +7,22 @@ let socket=null;
 let app=new Vue({
     el:"#app",
     data:{
-        section:"links"
+        section:"design",
+        event,
     },
     methods:{
-
+        onMessage:async function(cmd, value)
+        {
+            if(cmd=="updateEvent" && this.event.id==value.id){
+                        for(let key of Object.keys(value)){
+                            if(key!="id")
+                                e[key]=value[key];
+                        }
+            }
+        },
+        changeEvent: async function (event) {
+            let r = await postJson("/api/event", event)
+        },
         socketSend:function (cmd,data){
             socket.send(cmd, data)
         }
@@ -18,7 +30,7 @@ let app=new Vue({
     mounted:async function () {
         console.log("ready")
         let chatItem=new chat(11,"text", "Иван Иванов", new Date, "answer")
-        socket=new SocketClass(this.eventid)
+        socket=new SocketClass(this.eventid, document.getElementById("app").getAttribute("userid"), this.onMessage)
     }
 
 })
