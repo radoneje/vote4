@@ -395,14 +395,15 @@ textarea.mainInput{
     color:var(--primaryColor)
 }
 .aeSubRow{
-    padding: 12px 24px;
-    margin-top: 12px;
-    border-top:1px solid var(--borderColor)
+    padding: 12px 0px;
+    margin-top: 24px;
+    border-top: 1px solid var(--borderColor)
 
 }
 .aeSubRow .swith{
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 .aeSubRow .mainSectionSwithText {
  color:var(--textColor)
