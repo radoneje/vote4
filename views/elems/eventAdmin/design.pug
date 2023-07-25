@@ -104,12 +104,12 @@
         .eaTitleGroup.flex.between.vCenter
             .mainSectionTitle Цветовая тема
     .mt-3
-        .radio
-            .radioSect.Off
+        .radio(v-bind:class="{active:event.isColorBlack}")
+            .radioSect.Off(@click="event.isColorBlack=false;changeEvent(event, 'isColorBlack')")
                 .radioDot
                     .radioDotPoint
                 .radioText Светлая тема
-            .radioSect.On
+            .radioSect.On(@click="event.isColorBlack=true;changeEvent(event, 'isColorBlack')")
                 .radioDot
                     .radioDotPoint
                 .radioText Темная тема
