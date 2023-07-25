@@ -38,7 +38,7 @@ wss.on('connection',async (ws) => {
 
                 ws.userid=data.userid;
                 ws.eventid=data.eventid;
-                ws.send(JSON.stringify({cmd: "pong", id:ws.id}))
+                ws.send(JSON.stringify({cmd: "pong", id:ws.id, eventid:ws.eventid}))
                 console.log("data", data)
             }
             console.log('received: %s', data, ws.id);
