@@ -39,7 +39,7 @@ let app=new Vue({
                 });
                 xhr.onload = xhr.onerror = function() {
                     if (this.status == 200) {
-                        resVariable[sect]="/file/"+xhr.response
+                        resVariable[sect]="/file/"+JSON.parse( xhr.response)
                     } else {
 
                     }
