@@ -254,6 +254,9 @@ body{
     background-color: var(--bgElementColor);
     border-radius: 12px;
 }
+.eaLinkText.copied{
+    background-color: var(--primaryDisableColor);
+}
 .eaLinkText.span{
     cursor: pointer;
     font-weight: 300;
