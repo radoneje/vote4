@@ -33,6 +33,18 @@ body{
     margin: 0;
     padding: 0;
 }
+textarea{
+    font-family: 'Rubik', sans-serif;
+    color:var(--textColor);
+    font-size: 16px;
+    line-height: 20px;
+}
+textarea::placeholder{
+    font-family: 'Rubik', sans-serif;
+    color:var(--textColor);
+    font-size: 16px;
+    line-height: 20px;
+}
 .mainTower{
     width:min(1440px, calc(100% - 12px));
     margin:40px auto;
