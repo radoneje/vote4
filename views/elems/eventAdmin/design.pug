@@ -129,3 +129,10 @@
             input.mainInput.w100(placeholder="Введите URL фонового изображение" v-model="event.bgImageUrl" v-on:change="changeEvent(event, 'bgImageUrl')")
             .btn(@click="uploadFile(event, 'bgImageUrl', $event, ()=>{changeEvent(event, 'bgImageUrl')})") Загрузить
             .progress
+    .aeSubRow
+        .swith(@click="event.bgImageBlur=!event.bgImageBlur;changeEvent(event, 'bgImageBlur')" v-bind:class="{active:event.bgImageBlur}")
+            .mainSectionSwithText.On Фильтр размытия включен
+            .mainSectionSwithText.Off Фильтр размытия выключен
+            .swithElem
+                .swithElemDot
+                    .swithElemDotCenter
