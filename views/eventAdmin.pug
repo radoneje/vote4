@@ -56,7 +56,7 @@ block content
                         .mt-3.eaLinkGroup
                             .eaLinkText
                                 span.copyElement(onclick="window.open('https://event-24.ru/u/"+event.short+"')") https://event-24.ru/u/#{event.short}
-                                .eaLinkButton(onclick="copyElement") Копировать
+                                .eaLinkButton(onclick="copyElement(this.parentNode.querySelector('.copyElement')") Копировать
                     .eaBodyItem
                         .mainSectionTitle Для спикера
                         .mainSectionText Эту ссылку можно открыть на планшете спикера для чтения вопросов и результатов голосований
