@@ -11,7 +11,7 @@ let app=new Vue({
         event,
     },
     methods:{
-        uploadFile:async function(resVariable, sect, evnt)
+        uploadFile:async function(resVariable, sect, evnt, clbk)
         {
             let inp = document.createElement("input")
             inp.type = "file"
@@ -40,6 +40,8 @@ let app=new Vue({
                 xhr.onload = xhr.onerror = function() {
                     if (this.status == 200) {
                         resVariable[sect]="/file/"+JSON.parse( xhr.response)
+                        if(clbk)
+                            clbk()
                     } else {
 
                     }
