@@ -260,6 +260,9 @@ body{
     width: max-content;
     color: var(--whiteColor-100);
     background-color: var(--primaryColor);
+    top:0;
+    height: 100%;
+    right: 0;
 }
 .eaLinkButton:hover{
     background-color: var(--primaryHoverColor);
