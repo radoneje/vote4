@@ -22,7 +22,7 @@ let app=new Vue({
             inp.onchange = async () => {
                 document.body.removeChild(inp)
                 resVariable=inp.files[0].name
-                console.log(inp.files)
+                console.log(inp.files[0].name)
             }
             console.log(resVariable, evnt)
         },
