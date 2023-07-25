@@ -11,7 +11,7 @@ let app=new Vue({
         event,
     },
     methods:{
-        uploadFile:async function(resVariable, ctrl)
+        uploadFile:async function(resVariable, evnt)
         {
             console.log(resVariable, ctrl)
         },
