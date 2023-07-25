@@ -26,6 +26,6 @@ window.postJson=async (url, data)=>{
 }
 window.copyElement=async (elem)=>{
     await navigator.clipboard.writeText(elem.innerText)
-    elem.parentNode.classList.add(".copied");
-    setTimeout(()=>{elem.parentNode.classList.remove(".copied");},1000)
+    elem.parentNode.classList.add("copied");
+    setTimeout(()=>{elem.parentNode.classList.remove("copied");},1000)
 }
