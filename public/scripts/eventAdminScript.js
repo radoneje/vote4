@@ -32,7 +32,7 @@ let app = new Vue({
                         setTimeout(() => {
 
                             progress.style.width = 0;
-                        }, 200)
+                        }, 2000)
                 });
                 xhr.upload.addEventListener("progress", function (event) {
                     if (event.lengthComputable && progress) {
