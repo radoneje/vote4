@@ -302,6 +302,10 @@ body{
 }
 .eaSection{
     width: min(1120px, calc(100% - 12px));
+    margin: 0px auto;
+}
+.eaRow{
+
     margin: 16px auto;
     background-color: var(--whiteColor-100);
     box-sizing: border-box;

@@ -49,9 +49,9 @@ block content
 
         .eaBody
             .mainTower
-                .eaBodyBox(v-if="section=='links'")
+                .eaBodyBox.eaSection(v-if="section=='links'")
                     include elems/eventAdmin/links
-                .eaBodyBox(v-if="section=='design'")
+                .eaSection(v-if="section=='design'")
                     include elems/eventAdmin/design
 
         .eaFooter
