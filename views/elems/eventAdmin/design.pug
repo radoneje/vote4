@@ -26,7 +26,7 @@
     .flex.beetwen.vCenter
         .eaTitleGroup.flex.between.vCenter
             .mainSectionTitle Описание мероприятия
-            .swith(@click="event.isDescr=!event.isLid;changeEvent(event, 'isDescr')" v-bind:class="{active:event.isDescr}")
+            .swith(@click="event.isDescr=!event.isDescr;changeEvent(event, 'isDescr')" v-bind:class="{active:event.isDescr}")
                 .mainSectionSwithText.On Включено, пользователи видят описание
                 .mainSectionSwithText.Off Выключено, пользователи не видят описание
                 .swithElem
