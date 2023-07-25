@@ -64,7 +64,7 @@
                 .swithElemDot
                     .swithElemDotCenter
     .aeSubRow.mt-3
-        .swith.active(@click="event.isRegF=!event.isRegF;changeEvent(event, 'isRegF')" v-bind:class="{active:event.isRegF}")
+        .swith(@click="event.isRegF=!event.isRegF;changeEvent(event, 'isRegF')" v-bind:class="{active:event.isRegF}")
             .mainSectionSwithText.On Cпрашивать Фамилию пользователя, включено
             .mainSectionSwithText.Off Cпрашивать Фамилию пользователя, выключено
             .swithElem
