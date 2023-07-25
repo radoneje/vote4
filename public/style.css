@@ -357,3 +357,12 @@ body{
     height: 4px;
     background-color: var(--bgElementColor);
 }
+.swith.active .swithElem{
+
+    background-color: var(--primaryColor);
+    border:1px solid var(--primaryColor);
+
+}
+.swith.active .swithElemDotCenter{
+    background-color: var(--primaryColor);
+}
