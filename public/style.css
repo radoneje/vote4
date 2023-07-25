@@ -300,3 +300,11 @@ body{
 .eaBodyItem .mainSectionText{
     min-height: 2em;
 }
+.eaSection{
+    width: min(1120px, calc(100% - 12px));
+    margin: 16px auto;
+    background-color: var(--whiteColor-100);
+    box-sizing: border-box;
+    border-radius: 12px;
+    padding: 24px;
+}
