@@ -21,7 +21,7 @@ let app=new Vue({
             inp.click()
             inp.onchange = async () => {
                 document.body.removeChild(inp)
-                //resVariable[sect]=inp.files[0].name
+                let file=inp.files[0]
                 let formData = new FormData()
                 formData.append('file', file, file.name);
                 let xhr = new XMLHttpRequest();
