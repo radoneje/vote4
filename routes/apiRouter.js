@@ -27,7 +27,7 @@ router.post('/changeEvent', async (req, res, next) => {
         let id = req.body.id
         delete req.body.id;
         let dt=(await req.knex("t_events").update(req.body, "*").where({id}))[0]
-        req.notify("1", null, "updateEvent", dt) // обновляем все
+      //  req.notify("1", null, "updateEvent", dt) // обновляем все
         req.body.id=id;
         req.notify(null, id, "changeEvent", req.body) // изменяем только одно поле
         res.json(dt)
