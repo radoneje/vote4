@@ -13,6 +13,16 @@ let app=new Vue({
     methods:{
         uploadFile:async function(resVariable, evnt)
         {
+            let inp = document.createElement("input")
+            inp.type = "file"
+            inp.accept = "image/png, image/jpeg"
+            inp.style.display="none"
+            document.body.appendChild(inp)
+            inp.click()
+            inp.onchange = async () => {
+                document.body.removeChild(inp)
+                resVariable=inp.files[0].name
+            }
             console.log(resVariable, evnt)
         },
         onMessage:async function(cmd, value)
