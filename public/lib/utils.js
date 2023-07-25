@@ -29,3 +29,14 @@ window.copyElement=async (elem)=>{
     elem.parentNode.classList.add("copied");
     setTimeout(()=>{elem.parentNode.classList.remove("copied");},1000)
 }
+window.download=(href, filename)=>{
+    let a=document.createElement("a")
+    a.style.display="node"
+    a.download=filename;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(()=>{
+        document.body.removeChild(a)
+    },1000)
+
+}

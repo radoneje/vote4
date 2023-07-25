@@ -296,3 +296,6 @@ body{
 .aqQr:hover svg path{
     fill:var(--whiteColor-100)
 }
+.eaBodyItem .mainSectionText{
+    min-height: 2em;
+}

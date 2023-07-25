@@ -56,7 +56,7 @@ block content
                         .flex.left.vCenter.mt-3
                             .eaLinkGroup#eaLinkGroupQr
                                 .eaLinkText
-                                    span.copyElement(onclick="window.open('https://event-24.ru/u/"+event.short+"')") https://event-24.ru/u/#{event.short}
+                                    span.copyElement(onclick="window.open(this.innerText)") https://event-24.ru/u/#{event.short}
                                     .eaLinkButton(onclick="copyElement(this.parentNode.querySelector('.copyElement'))") Копировать
                             .aqQr(onclick="window.open('https://chart.apis.google.com/chart?cht=qr&chs=500x500&chl=https://event-24.ru/u/"+event.short+"')")
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,12 +73,24 @@ block content
                     .eaBodyItem
                         .mainSectionTitle Для помощника
                         .mainSectionText Эту ссылку можно открыть на планшете помощника для модерации вопросов
+                        .eaLinkGroup.mt-3
+                            .eaLinkText
+                                span.copyElement(onclick="window.open(this.innerText)") https://event-24.ru/moderator/#{event.short}
+                                .eaLinkButton(onclick="copyElement(this.parentNode.querySelector('.copyElement'))") Копировать
                     .eaBodyItem
                         .mainSectionTitle Для экранов
                         .mainSectionText Эту ссылку можно показать на экране в полноэкранном режиме для вывода голосований
+                        .eaLinkGroup.mt-3
+                            .eaLinkText
+                                span.copyElement(onclick="window.open(this.innerText)") https://event-24.ru/screen/#{event.short}
+                                .eaLinkButton(onclick="copyElement(this.parentNode.querySelector('.copyElement'))") Копировать
                     .eaBodyItem
                         .mainSectionTitle Статистика
                         .mainSectionText Здесь можно загрузить файл Excel со всеми заданными вопросами и проведенными голосованиями
+                        .eaLinkGroup.mt-3
+                            .eaLinkText
+                                span.copyElement(onclick="window.open(this.innerText)") https://event-24.ru/stat/#{event.short}
+                                .eaLinkButton(onclick="download(this.parentNode.querySelector('.copyElement').innerText, 'stat.xlsx')") Загрузить
         .eaFooter
             .mainTower
                 .eaFooterText © Event-24, ООО "Фабрика новостей" ИНН 5042092838. Поддержка и больше возможностей:
