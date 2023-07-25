@@ -30,7 +30,7 @@ router.post('/changeEvent', async (req, res, next) => {
       //  req.notify("1", null, "updateEvent", dt) // обновляем все
         req.body.id=id;
         req.notify(null, dt.short, "changeEvent", req.body) // изменяем только одно поле
-        res.json(dt)
+        res.json(true)
     } catch (e) {
         console.warn(e);
         res.json(null)
