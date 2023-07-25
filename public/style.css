@@ -254,7 +254,7 @@ body{
     background-color: var(--bgElementColor);
     border-radius: 12px;
 }
-.eaLinkText.copied{
+.eaLinkText.copied, .aqQr.copied{
     background-color: var(--primaryDisableColor);
 }
 .eaLinkText.span{
@@ -289,4 +289,7 @@ body{
 }
 #eaLinkGroupQr{
     width: calc(100% - 40px - 24px);
+}
+.aqQr:hover{
+    background-color: var(--primaryHoverColor);
 }
