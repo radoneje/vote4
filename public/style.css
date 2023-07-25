@@ -427,4 +427,13 @@ textarea.mainInput{
     margin-right: 24px;
     cursor: pointer;
 }
+.radio .radioSect.Off .radioDot{
+    background-color: var(--primaryColor);
+}
+.radio.active .radioSect.Off .radioDot{
+    background-color: var(--bgElementColor);
+}
+.radio.active .radioSect.On .radioDot{
+    background-color: var(--primaryColor);
+}
 
