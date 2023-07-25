@@ -16,7 +16,7 @@ let app=new Vue({
             if(cmd=="updateEvent" && this.event.id==value.id){
                         for(let key of Object.keys(value)){
                             if(key!="id")
-                                e[key]=value[key];
+                                this.event[key]=value[key];
                         }
             }
         },
