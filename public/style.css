@@ -420,7 +420,7 @@ textarea.mainInput{
     border-radius: 50%;
     margin-right: 12px;
 }
-.radioOff{
+.radioSect{
     display: flex;
     justify-content: left;
     align-items: center;
