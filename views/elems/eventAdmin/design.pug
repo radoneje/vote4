@@ -51,3 +51,9 @@
     .flex.beetwen.vCenter
         .eaTitleGroup.flex.between.vCenter
             .mainSectionTitle Регистрация
+            .swith(@click="event.isFooter=!event.isReg;changeEvent(event, 'isReg')" v-bind:class="{active:event.isReg}")
+                .mainSectionSwithText.On Включено, пользователи регистрируются
+                .mainSectionSwithText.Off Выключено, пользователи регистрируются, только когда задают вопросы
+                .swithElem
+                    .swithElemDot
+                        .swithElemDotCenter
