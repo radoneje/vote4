@@ -32,7 +32,7 @@ let app=new Vue({
     },
     mounted:async function () {
         console.log("ready")
-        socket=new SocketClass(this.eventid, document.getElementById("app").getAttribute("userid"), this.onMessage)
+        socket=new SocketClass(this.event.id, document.getElementById("app").getAttribute("userid"), this.onMessage)
     }
 
 })
