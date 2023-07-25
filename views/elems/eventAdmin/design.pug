@@ -113,3 +113,14 @@
                 .radioDot
                     .radioDotPoint
                 .radioText Темная тема
+.eaRow
+    .eaRowAlert Изменения вступят в силу после обновления страницы пользователя
+    .flex.beetwen.vCenter
+        .eaTitleGroup.flex.between.vCenter
+            .mainSectionTitle Фоновое изображение
+            .swith(@click="event.isBgImg=!event.isBgImg;changeEvent(event, 'isBgImg')" v-bind:class="{active:event.isBgImg}")
+                .mainSectionSwithText.On Включено, картинка фона ваша
+                .mainSectionSwithText.Off Выключено, картика фона стандартная
+                .swithElem
+                    .swithElemDot
+                        .swithElemDotCenter
