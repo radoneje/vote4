@@ -250,9 +250,11 @@ body{
 }
 .eaLinkText{
     position: relative;
+    padding: 12px 16px;
 }
 .eaLinkText.span{
     cursor: pointer;
+    font-weight: 300;
 }
 .eaLinkButton{
     cursor: pointer;
@@ -263,6 +265,8 @@ body{
     top:0;
     height: 100%;
     right: 0;
+    border-radius: 12px;
+    padding: 12px 16px;
 }
 .eaLinkButton:hover{
     background-color: var(--primaryHoverColor);
