@@ -346,4 +346,8 @@ body{
     background-color: var(--whiteColor-100);
     top:4px;
     left: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
