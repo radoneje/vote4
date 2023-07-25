@@ -2,7 +2,7 @@
         .flex.beetwen.vCenter
             .eaTitleGroup.flex.between.vCenter
                 .mainSectionTitle Название мероприятия
-                .swith(onclick="event.isTitle=!event.isTitle;changeEvent(event)" v-bind:class="{active:event.isTitle}")
+                .swith(@click="event.isTitle=!event.isTitle;changeEvent(event)" v-bind:class="{active:event.isTitle}")
                     .mainSectionSwithText.On Включено, пользователи видят название
                     .mainSectionSwithText.Off Выключено, пользователи не видят название
                     .swithElem
