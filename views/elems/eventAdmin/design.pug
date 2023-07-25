@@ -10,3 +10,15 @@
                             .swithElemDotCenter
         .mt-3
             input.mainInput.w100(placeholder="Введите название мероприятия" v-model="event.title" v-on:change="changeEvent(event)")
+.eaRow
+    .flex.beetwen.vCenter
+        .eaTitleGroup.flex.between.vCenter
+            .mainSectionTitle Лид мероприятия
+            .swith(@click="event.isLid=!event.isLid;changeEvent(event)" v-bind:class="{active:event.isLid}")
+                .mainSectionSwithText.On Включено, пользователи видят лид
+                .mainSectionSwithText.Off Выключено, пользователи не видят лид
+                .swithElem
+                    .swithElemDot
+                        .swithElemDotCenter
+    .mt-3
+        input.mainInput.w100(placeholder="Введите лид мероприятия" v-model="event.lid" v-on:change="changeEvent(event)")
