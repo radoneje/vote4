@@ -337,4 +337,13 @@ body{
     border:1px solid var(--primaryDisableColor);
     margin-left: 12px;
     border-radius: 12px;
+    position: relative;
+}
+.swithElemDot{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--whiteColor-100);
+    top:4px;
+    left: 4px;
 }
