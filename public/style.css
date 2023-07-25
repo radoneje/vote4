@@ -249,7 +249,7 @@ body{
     padding: 24px;
 }
 .eaLinkText{
-
+    position: relative;
 }
 .eaLinkText.span{
     cursor: pointer;
