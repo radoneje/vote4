@@ -287,3 +287,6 @@ body{
     background-color: var(--bgElementColor);
     margin-left: 24px;
 }
+#eaLinkGroupQr{
+    width: calc(100% - 40px - 24px);
+}

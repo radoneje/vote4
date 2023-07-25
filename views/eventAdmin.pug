@@ -54,7 +54,7 @@ block content
                         .mainSectionTitle Для пользователей
                         .mainSectionText Эту ссылку можно отправить всем пользователям.  Qr code можно использовать для быстрого доступа с мобильных устройств.
                         .flex.left.vCenter.mt-3
-                            .eaLinkGroup
+                            .eaLinkGroup#eaLinkGroupQr
                                 .eaLinkText
                                     span.copyElement(onclick="window.open('https://event-24.ru/u/"+event.short+"')") https://event-24.ru/u/#{event.short}
                                     .eaLinkButton(onclick="copyElement(this.parentNode.querySelector('.copyElement'))") Копировать
