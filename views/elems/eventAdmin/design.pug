@@ -22,3 +22,15 @@
                         .swithElemDotCenter
     .mt-3
         input.mainInput.w100(placeholder="Введите лид мероприятия" v-model="event.lid" v-on:change="changeEvent(event, 'lid')")
+.eaRow
+    .flex.beetwen.vCenter
+        .eaTitleGroup.flex.between.vCenter
+            .mainSectionTitle Описание мероприятия
+            .swith(@click="event.isDescr=!event.isLid;changeEvent(event, 'isDescr')" v-bind:class="{active:event.isDescr}")
+                .mainSectionSwithText.On Включено, пользователи видят описание
+                .mainSectionSwithText.Off Выключено, пользователи не видят описание
+                .swithElem
+                    .swithElemDot
+                        .swithElemDotCenter
+    .mt-3
+        textarea.mainInput.w100(placeholder="Введите лид мероприятия" v-model="event.descr" v-on:change="changeEvent(event, 'descr')")
