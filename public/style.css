@@ -321,8 +321,18 @@ body{
     font-weight: 300;
 }
 .swith{
-    cursor: pointer;}
+    cursor: pointer;
+    display: flex;
+    width: max-content;
+}
 .swith .Off{ display: block}
 .swith .On{ display: none}
 .swith.active .Off{ display: none}
 .swith.active .On{ display: block}
+.swithElem{
+    width: 56px;
+    height: 24px;
+    box-sizing: border-box;
+    background-color: var(--bgElementColor);
+    border:1px solid var(--borderColor);
+}
