@@ -419,6 +419,9 @@ textarea.mainInput{
     border:1px solid var(--primaryColor);
     border-radius: 50%;
     margin-right: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .radioSect{
     display: flex;
@@ -426,6 +429,11 @@ textarea.mainInput{
     align-items: center;
     margin-right: 24px;
     cursor: pointer;
+}
+.radioDotPoint{
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
 }
 .radio .radioSect.Off .radioDot{
     background-color: var(--primaryColor);
