@@ -24,7 +24,7 @@ let app=new Vue({
         changeEvent: async function (event, sect) {
             let dt={id:event.id};
             dt[sect]=event[sect]
-            let r = await postJson("/api/changeEvent", event)
+            let r = await postJson("/api/changeEvent", dt)
         },
         socketSend:function (cmd,data){
             socket.send(cmd, data)
