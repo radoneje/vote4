@@ -141,7 +141,7 @@ router.get("/verifyYandex", async (req, res)=> {
 router.get("/file/:guid", async (req, res)=> {
 //?code=6171931
     try{
-        let r=await req.knex("t_files").where({guid:req.oarams.guid})
+        let r=await req.knex("t_files").where({guid:req.params.guid})
         if(r.length==0)
             return res.render(404)
         if( req.query.download)
