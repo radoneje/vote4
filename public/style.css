@@ -216,6 +216,7 @@ body{
 .eaFooterText{
     font-size: 12px;
     color: var(--textColor-56);
+    text-align: center;
 }
 .eaFooterText a{
     text-decoration: none;
