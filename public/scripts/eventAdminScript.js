@@ -11,7 +11,7 @@ let app=new Vue({
         event,
     },
     methods:{
-        uploadFile:async function(resVariable, evnt)
+        uploadFile:async function(resVariable, sect, evnt)
         {
             let inp = document.createElement("input")
             inp.type = "file"
@@ -21,7 +21,7 @@ let app=new Vue({
             inp.click()
             inp.onchange = async () => {
                 document.body.removeChild(inp)
-                resVariable=inp.files[0].name
+                resVariable[sect]=inp.files[0].name
                 console.log(inp.files[0].name, event.bgImageUrl)
             }
             console.log(resVariable, evnt)
