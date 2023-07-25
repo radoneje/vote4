@@ -103,11 +103,7 @@
     .flex.beetwen.vCenter
         .eaTitleGroup.flex.between.vCenter
             .mainSectionTitle Цветовая тема
-            .swith(@click="event.isLid=!event.isLid;changeEvent(event, 'isLid')" v-bind:class="{active:event.isLid}")
-                .mainSectionSwithText.On Включено, пользователи видят лид
-                .mainSectionSwithText.Off Выключено, пользователи не видят лид
-                .swithElem
-                    .swithElemDot
-                        .swithElemDotCenter
     .mt-3
-        input.mainInput.w100(placeholder="Введите лид мероприятия" v-model="event.lid" v-on:change="changeEvent(event, 'lid')")
+        .radio
+            .radioDot.Off
+                .radioText.Off
