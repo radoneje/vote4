@@ -251,6 +251,16 @@ body{
 .eaLinkText{
 
 }
+.eaLinkText.span{
+    cursor: pointer;
+}
 .eaLinkButton{
-
+    cursor: pointer;
+    position: absolute;
+    width: max-content;
+    color: var(--whiteColor-100);
+    background-color: var(--primaryColor);
+}
+.eaLinkButton:hover{
+    background-color: var(--primaryHoverColor);
 }
