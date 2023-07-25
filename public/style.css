@@ -390,4 +390,8 @@ textarea.mainInput{
     box-sizing: border-box;
     width: 100%;
 }
+.eaRowAlert{
+    font-size: 14px;
+    color:var(--primaryColor)
+}
 
