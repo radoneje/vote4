@@ -20,6 +20,22 @@ router.post('/event', async (req, res, next) => {
         res.json(null)
     }
 })
+router.post('/changeEvent', async (req, res, next) => {
+    try {
+        if (!req.body.id)
+            return res.json(null);
+        let id = req.body.id
+        delete req.body.id;
+        let dt=(await req.knex("t_events").update(req.body, "*").where({id}))[0]
+        req.notify("1", null, "updateEvent", dt) // обновляем все
+        req.body.id=id;
+        req.notify(null, id, "changeEvent", req.body) // изменяем только одно поле
+        res.json(dt)
+    } catch (e) {
+        console.warn(e);
+        res.json(null)
+    }
+})
 
 router.get('/event', async (req, res, next) => {
     try {

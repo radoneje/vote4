@@ -2,23 +2,23 @@
         .flex.beetwen.vCenter
             .eaTitleGroup.flex.between.vCenter
                 .mainSectionTitle Название мероприятия
-                .swith(@click="event.isTitle=!event.isTitle;changeEvent(event)" v-bind:class="{active:event.isTitle}")
+                .swith(@click="event.isTitle=!event.isTitle;changeEvent(event, 'isTitle')" v-bind:class="{active:event.isTitle}")
                     .mainSectionSwithText.On Включено, пользователи видят название
                     .mainSectionSwithText.Off Выключено, пользователи не видят название
                     .swithElem
                         .swithElemDot
                             .swithElemDotCenter
         .mt-3
-            input.mainInput.w100(placeholder="Введите название мероприятия" v-model="event.title" v-on:change="changeEvent(event)")
+            input.mainInput.w100(placeholder="Введите название мероприятия" v-model="event.title" v-on:change="changeEvent(event,'title')")
 .eaRow
     .flex.beetwen.vCenter
         .eaTitleGroup.flex.between.vCenter
             .mainSectionTitle Лид мероприятия
-            .swith(@click="event.isLid=!event.isLid;changeEvent(event)" v-bind:class="{active:event.isLid}")
+            .swith(@click="event.isLid=!event.isLid;changeEvent(event, 'isLid')" v-bind:class="{active:event.isLid}")
                 .mainSectionSwithText.On Включено, пользователи видят лид
                 .mainSectionSwithText.Off Выключено, пользователи не видят лид
                 .swithElem
                     .swithElemDot
                         .swithElemDotCenter
     .mt-3
-        input.mainInput.w100(placeholder="Введите лид мероприятия" v-model="event.lid" v-on:change="changeEvent(event)")
+        input.mainInput.w100(placeholder="Введите лид мероприятия" v-model="event.lid" v-on:change="changeEvent(event, 'lid')")

@@ -83,6 +83,14 @@ wss.on('close', function close() {
                         }
                     })
                 }
+                if(msg.eventid && !msg.to){
+                    wss.clients.forEach(ws => {
+                        if(ws.eventid==msg.eventid)
+                        {
+                            ws.send(JSON.stringify({eventid: msg.eventid, cmd: msg.cmd, value:msg.value}))
+                        }
+                    })
+                }
             }
         },
         { noAck: true }
