@@ -28,7 +28,7 @@ block content
                         </svg>
 
                     .eaMenuItems
-                        .eaMenuItem(v-on:click="section='colors'" v-bind:class="{active:section=='colors'}") Внешний вид
+                        .eaMenuItem(v-on:click="section='design'" v-bind:class="{active:section=='colors'}") Внешний вид
                         .eaMenuItem(v-on:click="section='links'" v-bind:class="{active:section=='links'}") Ссылки
                         .eaMenuItem(v-on:click="section='quest'" v-bind:class="{active:section=='quest'}") Вопросы
                         .eaMenuItem(v-on:click="section='votes'" v-bind:class="{active:section=='votes'}") Голосования
@@ -51,6 +51,8 @@ block content
             .mainTower
                 .eaBodyBox(v-if="section=='links'")
                     include elems/eventAdmin/links
+                .eaBodyBox(v-if="section=='design'")
+                    include elems/eventAdmin/design
 
         .eaFooter
             .mainTower
