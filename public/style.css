@@ -400,4 +400,11 @@ textarea.mainInput{
     border-top:1px solid var(--borderColor)
 
 }
+.aeSubRow .swith{
+    justify-content: space-between;
+    align-items: center;
+}
+.aeSubRow .mainSectionSwithText {
+ color:var(--textColor)
+}
 
