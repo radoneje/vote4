@@ -445,4 +445,12 @@ textarea.mainInput{
 .radio.active .radioSect.On .radioDot{
     background-color: var(--primaryColor);
 }
+.uploadBox{
+    position: relative;
+}
+.uploadBox .btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
 

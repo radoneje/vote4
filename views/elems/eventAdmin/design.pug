@@ -125,4 +125,6 @@
                     .swithElemDot
                         .swithElemDotCenter
     .mt-3
-        input.mainInput.w100(placeholder="Введите URL фонового изображение" v-model="event.bgImageUrl" v-on:change="changeEvent(event, 'bgImageUrl')")
+        .uploadBox
+            input.mainInput.w100(placeholder="Введите URL фонового изображение" v-model="event.bgImageUrl" v-on:change="changeEvent(event, 'bgImageUrl')")
+            .btn Загрузить
