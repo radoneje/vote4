@@ -66,6 +66,10 @@ block content
                     .eaBodyItem
                         .mainSectionTitle Для спикера
                         .mainSectionText Эту ссылку можно открыть на планшете спикера для чтения вопросов и результатов голосований
+                        eaLinkGroup#eaLinkGroupQr
+                            .eaLinkText
+                                span.copyElement(onclick="window.open(this.innerText)") https://event-24.ru/s/#{event.short}
+                                .eaLinkButton(onclick="copyElement(this.parentNode.querySelector('.copyElement'))") Копировать
                     .eaBodyItem
                         .mainSectionTitle Для помощника
                         .mainSectionText Эту ссылку можно открыть на планшете помощника для модерации вопросов
