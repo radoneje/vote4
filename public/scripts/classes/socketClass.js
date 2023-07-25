@@ -36,7 +36,7 @@ class SocketClass {
          this.userid=userid;
          this.onMessage=onMessage
         this.reconnect(eventid, userid).then(()=>{
-            console.log("connected!")
+            console.log("connected!",eventid )
         })
 
     };
