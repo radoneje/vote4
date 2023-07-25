@@ -11,6 +11,10 @@ let app=new Vue({
         event,
     },
     methods:{
+        uploadFile:async function(resVariable, ctrl)
+        {
+            console.log(resVariable, ctrl)
+        },
         onMessage:async function(cmd, value)
         {
             if(cmd=="changeEvent" && this.event.id==value.id){
