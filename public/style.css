@@ -370,3 +370,8 @@ body{
 .swith.active .swithElemDotCenter{
     background-color: var(--primaryColor);
 }
+.w100{
+    box-sizing: border-box;
+    width: 100%;
+}
+
