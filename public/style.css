@@ -424,6 +424,7 @@ textarea.mainInput{
     display: flex;
     justify-content: left;
     align-items: center;
-    margin-right: 12px;
+    margin-right: 24px;
+    cursor: pointer;
 }
 
