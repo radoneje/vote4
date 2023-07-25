@@ -13,7 +13,7 @@ let app=new Vue({
     methods:{
         uploadFile:async function(resVariable, evnt)
         {
-            console.log(resVariable, ctrl)
+            console.log(resVariable, evnt)
         },
         onMessage:async function(cmd, value)
         {
