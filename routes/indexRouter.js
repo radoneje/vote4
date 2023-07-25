@@ -34,7 +34,7 @@ router.get('/eventAdmin/:short', async (req, res, next)=> {
     try {
         if(!req.session.user)
             return res.redirect("/404");
-        let events=await req.knex("t_events").where({short:req.params.short}).orderBy("id", "desc")
+        let events=await req.knex("t_events").where({short:req.params.short, isDeleted:false}).orderBy("id", "desc")
         if(events.length==0)
            return res.redirect("/404")
         let event=events[0];
