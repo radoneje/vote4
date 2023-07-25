@@ -29,7 +29,6 @@ let app=new Vue({
     },
     mounted:async function () {
         console.log("ready")
-        let chatItem=new chat(11,"text", "Иван Иванов", new Date, "answer")
         socket=new SocketClass(this.eventid, document.getElementById("app").getAttribute("userid"), this.onMessage)
     }
 
