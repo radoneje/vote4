@@ -453,4 +453,11 @@ textarea.mainInput{
     right: 0;
     top: 0;
 }
+.uploadBox .progress{
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primaryColor);
+}
 
