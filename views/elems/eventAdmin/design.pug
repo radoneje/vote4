@@ -127,4 +127,4 @@
     .mt-3
         .uploadBox
             input.mainInput.w100(placeholder="Введите URL фонового изображение" v-model="event.bgImageUrl" v-on:change="changeEvent(event, 'bgImageUrl')")
-            .btn(@click="uploadFile(event.bgImageUrl, $event)") Загрузить
+            .btn(@click="uploadFile(event.bgImageUrl)") Загрузить
