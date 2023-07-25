@@ -1,5 +1,10 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const config= require('../config.json');
+const multer =require( 'multer')
+const upload = multer({dest: config.uloadPath});
+const path =require( 'path')
+const fs =require( 'fs')
 
 router.post('/event', async (req, res, next) => {
     try {
@@ -45,6 +50,17 @@ router.get('/event', async (req, res, next) => {
         res.json(null)
     }
 })
+router.post('/uploadFile', upload.single('file'),  async function (req, res, next) {
+
+    let ext = path.extname(req.file.originalname)
+    let newPath = req.file.path + ext
+    await fs.promises.rename(req.file.path, newPath)
+    req.file.path = newPath;
+    req.file.filename = req.file.filename + ext;
+    req.file.originalname = Buffer.from(req.file.originalname, 'latin1').toString('utf8')
+    let r = await req.knex("t_files").insert(req.file, "*")
+    res.json(r[0].guid)
+});
 
 
 module.exports = router;

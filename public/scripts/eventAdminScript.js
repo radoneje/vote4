@@ -21,8 +21,22 @@ let app=new Vue({
             inp.click()
             inp.onchange = async () => {
                 document.body.removeChild(inp)
-                resVariable[sect]=inp.files[0].name
-                console.log(inp.files[0].name, event.bgImageUrl)
+                //resVariable[sect]=inp.files[0].name
+                let formData = new FormData()
+                formData.append('file', file, file.name);
+                let xhr = new XMLHttpRequest();
+                xhr.open('POST', '/api/uploadFile');
+                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                xhr.upload.addEventListener("load", function () {
+                   // $(".meter").addClass("done");
+                });
+                xhr.upload.addEventListener("progress", function (event) {
+                    /*if (event.lengthComputable) {
+                        var complete = (event.loaded / event.total * 100 | 0);
+                        $('.meter').css('width', complete + '%');
+                    }*/
+                });
+                xhr.send(formData);
             }
             console.log(resVariable, evnt)
         },
