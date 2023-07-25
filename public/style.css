@@ -293,3 +293,6 @@ body{
 .aqQr:hover{
     background-color: var(--primaryHoverColor);
 }
+.aqQr:hover svg path{
+    fill:var(--whiteColor-100)
+}
