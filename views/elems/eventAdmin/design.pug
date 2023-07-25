@@ -34,3 +34,15 @@
                         .swithElemDotCenter
     .mt-3
         textarea.mainInput.w100(placeholder="Введите описание мероприятия" v-model="event.descr" v-on:change="changeEvent(event, 'descr')")
+.eaRow
+    .flex.beetwen.vCenter
+        .eaTitleGroup.flex.between.vCenter
+            .mainSectionTitle Футер мероприятия
+            .swith(@click="event.isFooter=!event.isFooter;changeEvent(event, 'isFooter')" v-bind:class="{active:event.isFooter}")
+                .mainSectionSwithText.On Включено, пользователи видят футер
+                .mainSectionSwithText.Off Выключено, пользователи не видят футер
+                .swithElem
+                    .swithElemDot
+                        .swithElemDotCenter
+    .mt-3
+        textarea.mainInput.w100(placeholder="Введите текст футера мероприятия" v-model="event.footer" v-on:change="changeEvent(event, 'footer')")
