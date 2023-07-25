@@ -138,5 +138,22 @@ router.get("/verifyYandex", async (req, res)=> {
     }
 
 });
+router.get("/file/:guid", async (req, res)=> {
+//?code=6171931
+    try{
+        let r=await req.knex("t_files").where({guid:req.oarams.guid})
+        if(r.length==0)
+            return res.render(404)
+        if( req.query.download)
+            return res.download(r[0].path, r[0].originalname)
+        res.sendFile(r[0].path)
+
+    }
+    catch (e) {
+        console.warn(e)
+        res.render("error")
+    }
+
+});
 
 module.exports = router;

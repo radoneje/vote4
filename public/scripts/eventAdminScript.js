@@ -29,6 +29,7 @@ let app=new Vue({
                 xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
                 xhr.upload.addEventListener("load", function () {
                    // $(".meter").addClass("done");
+                    file
                 });
                 xhr.upload.addEventListener("progress", function (event) {
                     /*if (event.lengthComputable) {
@@ -36,6 +37,14 @@ let app=new Vue({
                         $('.meter').css('width', complete + '%');
                     }*/
                 });
+                xhr.onload = xhr.onerror = function() {
+                    if (this.status == 200) {
+                        //resVariable[sect]=
+                        console.log(xhr.response);
+                    } else {
+
+                    }
+                };
                 xhr.send(formData);
             }
             console.log(resVariable, evnt)
