@@ -312,3 +312,11 @@ body{
     border-radius: 12px;
     padding: 24px;
 }
+.eaTitleGroup{
+    width: 100%;
+}
+.mainSectionSwithText{
+    color: var(--textColor-100);
+    font-size: 14px;
+    font-weight: 300;
+}
