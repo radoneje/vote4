@@ -358,7 +358,8 @@ body{
     background-color: var(--bgElementColor);
 }
 .swith.active .swithElem{
-
+    left: inherit;
+    right: 1px;
     background-color: var(--primaryColor);
     border:1px solid var(--primaryColor);
 
