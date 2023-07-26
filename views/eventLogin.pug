@@ -16,6 +16,12 @@ block content
                             .reqBoxTitle #{event.title}
                     .reqRow
                         .reqBoxTitle Пожалуйста, зарегистрируйтесь
+                    .reqRow
+                        input.mainInput.w100(placeholder="Ваше имя")
+                    if(event.isRegF)
+                        .reqRow
+                            input.mainInput.w100(placeholder="Фамилия")
+
 
 
     script(src="/lib/vue.js")
