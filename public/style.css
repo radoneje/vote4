@@ -531,7 +531,7 @@ textarea.mainInput{
     display: none;
 }
 eventRow{margin-bottn:24px}
-.eventLogoWr{height: 40px; background-color: #FFFFFF88; text-align: center}
+.eventLogoWr{height: 100px; background-color: #FFFFFF88; text-align: center}
 .eventLogo{
     height: 100%;
 
