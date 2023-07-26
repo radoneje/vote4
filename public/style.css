@@ -574,4 +574,13 @@ textarea.mainInput{
 .mainSectionSettingsBtn:hover svg path{
     stroke:var(--whiteColor-100)
 }
+.mainSectionSettingsDialog{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: var(--whiteColor-100);
+    border: 1px solid var(--borderColor);
+   border-radius: 12px;
+
+}
 
