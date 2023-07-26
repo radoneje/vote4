@@ -252,7 +252,7 @@ textarea.mainInput{
 }
 .eventBody{
     width: 100%;
-    height: calc(100vh - 94px);
+    height: calc(100vh - 36px);
     /*margin-top: 57px;*/
     overflow-y: scroll;
 }
@@ -546,6 +546,7 @@ textarea.mainInput{
     color: var(--textColor-88);
     font-size: 16px;
     line-height: 20px;
+    white-space: break-spaces;
 }
 .mainImg img{
     width: 100%;;
