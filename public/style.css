@@ -337,6 +337,7 @@ textarea.mainInput{
     box-sizing: border-box;
     border-radius: 12px;
     padding: 24px;
+    position: relative;
 }
 .eaTitleGroup{
     width: 100%;
@@ -555,7 +556,7 @@ textarea.mainInput{
     object-position: center;
 }
 .mainSectionSettingsWr{
-    position: relative;
+
 }
 .iconBtn{
     margin-left: 24px;
