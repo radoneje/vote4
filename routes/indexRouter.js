@@ -162,6 +162,7 @@ router.get("/u/:guid", async (req, res)=> {
         if(events.length==0)
             return res.render("404")
         let event=events[0]
+        console.log(req.session[r[0].short])
        if(!req.session[event.short] && event.isReg)
            return res.render("eventLogin", {event})
         return res.render("event", {event, user:req.session[event.short]})
@@ -178,6 +179,7 @@ router.post("/eventLogin", async (req, res)=> {
     try {
         let r=await req.knex("t_eventUsers").insert(req.body, "*")
         req.session[r[0].short]=r[0];
+        console.log(req.session[r[0].short])
         res.json(r[0].eventshort)
     }
     catch (e) {
