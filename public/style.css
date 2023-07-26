@@ -536,7 +536,7 @@ eventRow{margin-bottn:24px}
     height: 100%;
 
 }
-.eventLogo image{
+.eventLogo img{
     width: auto;
     height: 100%;
     object-fit: contain;
