@@ -492,4 +492,14 @@ textarea.mainInput{
     object-fit: contain;
     object-position: center;
 }
+.reqRow{
+    margin-bottom: 16px;
+}
+.reqBoxTitle{
+    text-align: center;
+    color:var(--textColor);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+}
 
