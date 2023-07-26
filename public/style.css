@@ -250,6 +250,12 @@ textarea.mainInput{
     overflow-y: scroll;
 
 }
+.eventBody{
+    width: 100%;
+    height: calc(100vh - 94px);
+    margin-top: 57px;
+    overflow-y: scroll;
+}
 .eaBody::-webkit-scrollbar {
     width: 10px;
 }
