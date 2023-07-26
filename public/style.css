@@ -108,7 +108,7 @@ textarea::placeholder{
     font-size: 14px;
     background-color: var(--bgElementColor);
 }
-.mainInput.err{
+.mainInput.error{
     background-color: var(--errorColor);
 }
 textarea.mainInput{
