@@ -155,5 +155,24 @@ router.get("/file/:guid", async (req, res)=> {
     }
 
 });
+router.get("/u/:guid", async (req, res)=> {
+//?code=6171931
+    try{
+        let events=await req.knex("t_events").where({short:req.params.guid})
+        if(events.length==0)
+            return res.render("404")
+        let event=events[0]
+       if(!req.session[event.short] && event.isReq)
+           return res.render("eventLogin", {event})
+        return res.render("event", {event, user:req.session[event.short]})
+
+
+    }
+    catch (e) {
+        console.warn(e)
+        res.render("error")
+    }
+
+});
 
 module.exports = router;
