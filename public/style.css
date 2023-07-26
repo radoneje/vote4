@@ -557,7 +557,7 @@ textarea.mainInput{
 .mainSectionSettingsWr{
     position: relative;
 }
-.mainSectionSettingsBtn{
+.iconBtn{
     margin-left: 24px;
     width: 40px;
     height: 40px;
@@ -568,11 +568,12 @@ textarea.mainInput{
     border-radius: 50%;
     cursor: pointer;
 }
-.mainSectionSettingsBtn:hover{
+.iconBtn:hover{
     background-color: var(--primaryColor);
 }
-.mainSectionSettingsBtn:hover svg path{
-    stroke:var(--whiteColor-100)
+.iconBtn:hover svg path{
+    stroke:var(--whiteColor-100);
+    fill:var(--whiteColor-100)
 }
 .mainSectionSettingsDialog{
     position: absolute;
