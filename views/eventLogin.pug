@@ -4,55 +4,68 @@ block head
 block content
 
     .content#app(eventid=id)
-            .req.scroll
-                .reqWr
-                    .reqBox
+        .req.scroll
+            .reqWr
+                .reqBox
 
-                        if(event.isLogo)
-                            .reqRow
-                                .reqBoxLogo
-                                    img(src=event.logoUrl)
-                        if(event.isTitle)
-                            .reqRow
-                                .reqBoxTitle #{event.title}
+                    if(event.isLogo)
                         .reqRow
-                            .reqBoxTitle Пожалуйста, зарегистрируйтесь
+                            .reqBoxLogo
+                                img(src=event.logoUrl)
+                    if(event.isTitle)
                         .reqRow
-                            input.mainInput.w100(placeholder="Ваше имя" name="i")
-                        if(event.isRegF)
-                            .reqRow
-                                input.mainInput.w100(placeholder="Фамилия" name="f")
-                        if(event.isRegEmail)
-                            .reqRow
-                                input.mainInput.w100(placeholder="Email" name="email")
-                        if(event.isRegPhone)
-                            .reqRow
-                                input.mainInput.w100(placeholder="Телефон" name="phone")
-                        if(event.isRegCompany)
-                            .reqRow
-                                input.mainInput.w100(placeholder="Компания" name="company")
-                        if(event.isRegPosition)
-                            .reqRow
-                                input.mainInput.w100(placeholder="Должность" name="position")
+                            .reqBoxTitle #{event.title}
+                    .reqRow
+                        .reqBoxTitle Пожалуйста, зарегистрируйтесь
+                    .reqRow
+                        input.mainInput.w100(placeholder="Ваше имя" name="i")
+                    if(event.isRegF)
                         .reqRow
-                            .btn.w100(style="text-align: center;" onclick="login()") Войти
+                            input.mainInput.w100(placeholder="Фамилия" name="f")
+                    if(event.isRegEmail)
                         .reqRow
-                            .eaRowAlert#formError Все поля должны быть корректно заполнены
+                            input.mainInput.w100(placeholder="Email" name="email")
+                    if(event.isRegPhone)
+                        .reqRow
+                            input.mainInput.w100(placeholder="Телефон" name="phone")
+                    if(event.isRegCompany)
+                        .reqRow
+                            input.mainInput.w100(placeholder="Компания" name="company")
+                    if(event.isRegPosition)
+                        .reqRow
+                            input.mainInput.w100(placeholder="Должность" name="position")
+                    .reqRow
+                        .btn.w100(style="text-align: center;" onclick="login()") Войти
+                    .reqRow
+                        .eaRowAlert#formError Все поля должны быть корректно заполнены
 
 
 
     script(src="/lib/vue.js")
     script.
         document.querySelector("input[name='i']").focus();
-        function login(){
-            formError.style.display="none"
-            document.querySelectorAll("input[name]").forEach(e=>{
+        function login() {
+            formError.style.display = "none"
+            document.querySelectorAll("input[name]").forEach(e => {
                 e.classList.remove("error")
-                if(!e.value)
+                if (!e.value || e.value.length < 2) {
                     e.classList.add("error")
+                    return;
+                }
+                let name=e.getAttribute("name")
+                if(name=="email"){
+                    if(!validateEmail(e.value))
+                        e.classList.add("error");
+                }
+                if (name == "phone") {
+                    if (e.value.length<8)
+                        e.classList.add("error");
+                }
+
             })
-            let err=document.querySelector(".error")
-            if(err){
-                formError.style.display="block"
-                return err.focus();}
+            let err = document.querySelector(".error")
+            if (err) {
+                formError.style.display = "block"
+                return err.focus();
+            }
         }
