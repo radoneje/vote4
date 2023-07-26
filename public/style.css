@@ -573,7 +573,7 @@ textarea.mainInput{
 }
 .iconBtn:hover svg path{
     stroke:var(--whiteColor-100);
-    fill:var(--whiteColor-100)
+    /*fill:var(--whiteColor-100)*/
 }
 .mainSectionSettingsDialog{
     position: absolute;
