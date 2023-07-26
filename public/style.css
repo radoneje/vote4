@@ -530,7 +530,7 @@ textarea.mainInput{
 #formError{
     display: none;
 }
-eventRow{margin-bottn:24px}
+.eventRow{margin-bottom:24px}
 .eventLogoWr{height: 100px; background-color: #FFFFFF88; text-align: center}
 .eventLogo{
     height: 100%;
