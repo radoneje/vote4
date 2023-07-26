@@ -7,7 +7,7 @@ let socket = null;
 let app = new Vue({
     el: "#app",
     data: {
-        section: "design",
+        section: "quest",
         event,
     },
     methods: {

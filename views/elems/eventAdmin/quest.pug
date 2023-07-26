@@ -1,0 +1,13 @@
+.eaRow
+        .flex.beetwen.vCenter
+            .eaTitleGroup.flex.between.vCenter
+                .mainSectionTitle Вопросы
+                .swith(@click="event.isQ=!event.isQ;changeEvent(event, 'isQ')" v-bind:class="{active:event.isQ}")
+                    .mainSectionSwithText.On Включено, пользователи могут задавать вопросы
+                    .mainSectionSwithText.Off Выключено, пользователи не могут задавать вопросы
+                    .swithElem
+                        .swithElemDot
+                            .swithElemDotCenter
+        .mt-3
+            input.mainInput.w100(placeholder="Введите название мероприятия" v-model="event.title" v-on:change="changeEvent(event,'title')")
+
