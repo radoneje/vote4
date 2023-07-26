@@ -188,6 +188,18 @@ router.post("/eventLogin", async (req, res)=> {
     }
 
 });
+router.get("/eventLogout/:guid", async (req, res)=> {
+//?code=6171931
+    try{
+        req.session[req.params.guid]=null;
+        res.redirect("/u/"+req.params.guid)
+    }
+    catch (e) {
+        console.warn(e)
+        res.render("error")
+    }
+
+});
 
 
 module.exports = router;
