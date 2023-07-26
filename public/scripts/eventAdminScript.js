@@ -11,7 +11,7 @@ let app = new Vue({
         event,
     },
     methods: {
-        uploadFile: async function (resVariable, sect, evnt, clbk) {
+        uploadFile: async function (evnt, clbk) {
             let inp = document.createElement("input")
             inp.type = "file"
             inp.accept = "image/png, image/jpeg"
