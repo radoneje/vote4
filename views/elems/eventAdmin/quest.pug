@@ -36,6 +36,13 @@
                                     .swithElem
                                         .swithElemDot
                                             .swithElemDotCenter
+                            .aeSubRow
+                                .swith(@click="event.isQpreMod=!event.isQpreMod;changeEvent(event, 'isQpreMod')" v-bind:class="{active:event.isQpreMod}")
+                                    .mainSectionSwithText.On Премодерация включена
+                                    .mainSectionSwithText.Off Премодерация выключена
+                                    .swithElem
+                                        .swithElemDot
+                                            .swithElemDotCenter
 
 
 
