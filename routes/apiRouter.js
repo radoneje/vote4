@@ -52,10 +52,10 @@ router.get('/event', async (req, res, next) => {
 })
 router.get('/event/:short', async (req, res, next) => {
     try {
-        let r = res.json(await req.knex("t_events").where({
+        let r = await req.knex("t_events").where({
             isDeleted: false,
             short: req.params.short
-        }).orderBy("id", 'desc'));
+        }).orderBy("id", 'desc');
         if (r.length == 0)
             return res.sendStatus(404)
         res.json(r[0])
