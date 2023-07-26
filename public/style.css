@@ -482,4 +482,14 @@ textarea.mainInput{
     box-sizing: border-box;
     width: min(416px, calc(100% - 16px));
 }
+.reqBoxLogo{
+    height: 40px;
+    width: 100%;
+}
+.reqBoxLogo image{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
 
