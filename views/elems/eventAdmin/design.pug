@@ -13,6 +13,28 @@
 .eaRow
     .flex.beetwen.vCenter
         .eaTitleGroup.flex.between.vCenter
+            .mainSectionTitle Логотип
+            .swith(@click="event.isLogo=!event.isLogo;changeEvent(event, 'isLogo')" v-bind:class="{active:event.isLogo}")
+                .mainSectionSwithText.On Включено, пользователи видят лого
+                .mainSectionSwithText.Off Выключено, пользователи не видят лого
+                .swithElem
+                    .swithElemDot
+                        .swithElemDotCenter
+    .mt-3
+        .uploadBox
+            input.mainInput.w100(placeholder="Введите URL логотипа" v-model="event.logoUrl" v-on:change="changeEvent(event, 'logoUrl')")
+            .btn(@click="uploadFile( $event, (r)=>{event.logoUrl=r;changeEvent(event, 'logoUrl')})") Загрузить
+            .progress
+    .aeSubRow
+        .swith(@click="event.bgImageBlur=!event.bgImageBlur;changeEvent(event, 'bgImageBlur')" v-bind:class="{active:event.bgImageBlur}")
+            .mainSectionSwithText.On Фильтр размытия включен
+            .mainSectionSwithText.Off Фильтр размытия выключен
+            .swithElem
+                .swithElemDot
+                    .swithElemDotCenter
+.eaRow
+    .flex.beetwen.vCenter
+        .eaTitleGroup.flex.between.vCenter
             .mainSectionTitle Лид мероприятия
             .swith(@click="event.isLid=!event.isLid;changeEvent(event, 'isLid')" v-bind:class="{active:event.isLid}")
                 .mainSectionSwithText.On Включено, пользователи видят лид
@@ -127,7 +149,7 @@
     .mt-3
         .uploadBox
             input.mainInput.w100(placeholder="Введите URL фонового изображение" v-model="event.bgImageUrl" v-on:change="changeEvent(event, 'bgImageUrl')")
-            .btn(@click="uploadFile(event, 'bgImageUrl', $event, ()=>{changeEvent(event, 'bgImageUrl')})") Загрузить
+            .btn(@click="uploadFile( $event, (r)=>{event.bgImageUrl=r;changeEvent(event, 'bgImageUrl')})") Загрузить
             .progress
     .aeSubRow
         .swith(@click="event.bgImageBlur=!event.bgImageBlur;changeEvent(event, 'bgImageBlur')" v-bind:class="{active:event.bgImageBlur}")
