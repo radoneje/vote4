@@ -56,6 +56,10 @@ block content
                         .eaRow
                             .mainSectionText {{event.descr}}
 
+                    .eaSection(v-if="event.isFooter")
+                        .eaRow
+                            .mainSectionText {{event.footer}}
+
             .eaFooter
                 .mainTower
                     .eaFooterText © Event-24, ООО "Фабрика новостей" ИНН 5042092838. Поддержка и больше возможностей:
