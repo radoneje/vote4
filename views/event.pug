@@ -52,6 +52,9 @@ block content
                         .eaRow
                             .mainImg
                                 img(:src="event.mainImg" loading="lazy")
+                    .eaSection(v-if="event.isDescr")
+                        .eaRow
+                            .mainSectionText {{event.descr}}
 
             .eaFooter
                 .mainTower
