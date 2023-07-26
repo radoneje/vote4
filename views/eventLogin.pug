@@ -3,7 +3,7 @@ block head
 
 block content
 
-    .content#app(evenshort=event.short)
+    .content#app(eventshort=event.short)
         .req.scroll
             .reqWr
                 .reqBox
@@ -45,9 +45,9 @@ block content
     script.
         document.querySelector("input[name='i']").focus();
         async function login() {
-            let eventid=app.getAttribute("eventid")
+            let eventshort=app.getAttribute("eventshort")
             formError.style.display = "none";
-            let dt={eventshort:eventid};
+            let dt={eventshort};
             document.querySelectorAll("input[name]").forEach(e => {
                 e.classList.remove("error")
                 if (!e.value || e.value.length < 2) {
