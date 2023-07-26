@@ -581,6 +581,7 @@ textarea.mainInput{
     background-color: var(--whiteColor-100);
     border: 1px solid var(--borderColor);
    border-radius: 12px;
+    padding: 24px;
 
 }
 
