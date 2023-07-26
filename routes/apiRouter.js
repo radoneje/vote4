@@ -58,7 +58,7 @@ router.get('/event/:short', async (req, res, next) => {
         }).orderBy("id", 'desc'));
         if (r.length == 0)
             return res.sendStatus(404)
-        r.json(r[0])
+        res.json(r[0])
     } catch (e) {
         console.warn(e);
         res.json(null)
