@@ -554,7 +554,10 @@ textarea.mainInput{
     object-fit: contain;
     object-position: center;
 }
-.mainSectionSettings{
+.mainSectionSettingsWr{
+    position: relative;
+}
+.mainSectionSettingsWr{
     margin-left: 24px;
     width: 40px;
     height: 40px;
@@ -565,10 +568,10 @@ textarea.mainInput{
     border-radius: 50%;
     cursor: pointer;
 }
-.mainSectionSettings:hover{
+.mainSectionSettingsWr:hover{
     background-color: var(--primaryColor);
 }
-.mainSectionSettings:hover svg path{
+.mainSectionSettingsWr:hover svg path{
     stroke:var(--whiteColor-100)
 }
 
