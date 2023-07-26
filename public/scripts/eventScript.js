@@ -7,7 +7,9 @@ let socket=null;
 let app=new Vue({
     el:"#app",
     data:{
-        eventid:document.getElementById("app").getAttribute("eventid")
+        user,
+        event,
+
     },
     methods:{
         changeEvent: async function (event) {
