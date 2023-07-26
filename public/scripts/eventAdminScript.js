@@ -51,7 +51,6 @@ let app = new Vue({
                 };
                 xhr.send(formData);
             }
-            console.log(resVariable, evnt)
         },
         onMessage: async function (cmd, value) {
             if (cmd == "changeEvent" && this.event.id == value.id) {
