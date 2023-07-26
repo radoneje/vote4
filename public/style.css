@@ -582,6 +582,8 @@ textarea.mainInput{
     border: 1px solid var(--borderColor);
    border-radius: 12px;
     padding: 24px;
+    box-sizing: border-box;
+    width:432px;
 
 }
 
