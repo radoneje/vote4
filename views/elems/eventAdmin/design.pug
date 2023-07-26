@@ -168,3 +168,15 @@
             .swithElem
                 .swithElemDot
                     .swithElemDotCenter
+.eaRow
+    .flex.beetwen.vCenter
+        .eaTitleGroup.flex.between.vCenter
+            .mainSectionTitle Ваши стили css
+            .swith(@click="event.isCss=!event.isCss;changeEvent(event, 'isCss')" v-bind:class="{active:event.isCss}")
+                .mainSectionSwithText.On Включено, стили применены
+                .mainSectionSwithText.Off Выключено
+                .swithElem
+                    .swithElemDot
+                        .swithElemDotCenter
+    .mt-3
+        textarea.mainInput.w100(placeholder="Введите описание мероприятия" v-model="event.css" v-on:change="changeEvent(event, 'css')")
