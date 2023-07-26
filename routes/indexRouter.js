@@ -177,7 +177,8 @@ router.get("/u/:guid", async (req, res)=> {
 router.post("/eventLogin", async (req, res)=> {
     try {
         let r=await req.knex("t_eventUsers").insert(req.body, "*")
-
+        req.session[r[0].short]=r[0]
+        res.json(r[0].eventshort)
     }
     catch (e) {
         console.warn(e)
