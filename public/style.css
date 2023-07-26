@@ -472,7 +472,7 @@ textarea.mainInput{
     top: 0;
     left: 0;
     display: flex;
-    align-items: center;
+
     justify-content: center;
     box-sizing: border-box;
     padding: 24px;
@@ -486,6 +486,9 @@ textarea.mainInput{
 }
 .scroll::-webkit-scrollbar-thumb {
     background-color:var(--primaryColor);
+}
+.reqWr{
+    width: min(416px, calc(100% - 16px));
 }
 .reqBox{
     background-color: var(--whiteColor-100);
