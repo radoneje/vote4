@@ -25,13 +25,7 @@
             input.mainInput.w100(placeholder="Введите URL логотипа" v-model="event.logoUrl" v-on:change="changeEvent(event, 'logoUrl')")
             .btn(@click="uploadFile( $event, (r)=>{event.logoUrl=r;changeEvent(event, 'logoUrl')})") Загрузить
             .progress
-    .aeSubRow
-        .swith(@click="event.bgImageBlur=!event.bgImageBlur;changeEvent(event, 'bgImageBlur')" v-bind:class="{active:event.bgImageBlur}")
-            .mainSectionSwithText.On Фильтр размытия включен
-            .mainSectionSwithText.Off Фильтр размытия выключен
-            .swithElem
-                .swithElemDot
-                    .swithElemDotCenter
+
 .eaRow
     .flex.beetwen.vCenter
         .eaTitleGroup.flex.between.vCenter
@@ -44,6 +38,22 @@
                         .swithElemDotCenter
     .mt-3
         input.mainInput.w100(placeholder="Введите лид мероприятия" v-model="event.lid" v-on:change="changeEvent(event, 'lid')")
+.eaRow
+    .flex.beetwen.vCenter
+        .eaTitleGroup.flex.between.vCenter
+            .mainSectionTitle Главная картинка
+            .swith(@click="event.isMainImg=!event.isMainImg;changeEvent(event, 'isMainImg')" v-bind:class="{active:event.isMainImg}")
+                .mainSectionSwithText.On Включено, пользователи видят главную картинка
+                .mainSectionSwithText.Off Выключено, пользователи не видят главную картинку
+                .swithElem
+                    .swithElemDot
+                        .swithElemDotCenter
+    .mt-3
+        .uploadBox
+            input.mainInput.w100(placeholder="Введите URL главной картинки" v-model="event.mainImg" v-on:change="changeEvent(event, 'mainImg')")
+            .btn(@click="uploadFile( $event, (r)=>{event.mainImg=r;changeEvent(event, 'mainImg')})") Загрузить
+            .progress
+
 .eaRow
     .flex.beetwen.vCenter
         .eaTitleGroup.flex.between.vCenter
