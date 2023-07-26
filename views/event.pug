@@ -38,11 +38,16 @@ block content
                                 </svg>
             .eventBody.scroll
 
+
                 .eventRow(v-if="event.isLogo")
                     .eventLogoWr
                         .eventLogo
                             img(:src="event.logoUrl")
                 .mainTower(style="margin: 0px auto;")
+                    .eaSection(v-if="event.isTitle || event.isLid")
+                        .eaRow
+                            .mainSectionTitle(v-if="event.isTitle") {{event.title}}
+                            .mainSectionText.mt-3(v-if="event.isLid") {{event.lid}}
 
             .eaFooter
                 .mainTower
