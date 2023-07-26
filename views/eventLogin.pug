@@ -6,5 +6,8 @@ block content
     .content#app(eventid=id)
             .req
                 .reqBox
+                    if(event.isLogo)
+                        .reqBoxLogo
+                            img(src=event.logoUrl)
     script(src="/lib/vue.js")
     script(src="/scripts/eventScript.js" type="module")

@@ -480,6 +480,6 @@ textarea.mainInput{
     border-radius: 12px;
     padding: 24px;
     box-sizing: border-box;
-    width: max(416px, calc(100% - 16px));
+    width: min(416px, calc(100% - 16px));
 }
 
