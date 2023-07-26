@@ -48,6 +48,10 @@ block content
                         .eaRow
                             .mainSectionTitle(v-if="event.isTitle") {{event.title}}
                             .mainSectionText.mt-3(v-if="event.isLid") {{event.lid}}
+                    .eaSection(v-if="event.isMainImg")
+                        .eaRow
+                            .mainImg
+                                img(:src="event.mainImg" loading="lazy")
 
             .eaFooter
                 .mainTower
