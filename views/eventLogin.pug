@@ -3,7 +3,7 @@ block head
 
 block content
 
-    .content#app(eventid=id)
+    .content#app(evenshort=event.short)
         .req.scroll
             .reqWr
                 .reqBox
@@ -44,8 +44,10 @@ block content
     script(src="/lib/vue.js")
     script.
         document.querySelector("input[name='i']").focus();
-        function login() {
-            formError.style.display = "none"
+        async function login() {
+            let eventid=app.getAttribute("eventid")
+            formError.style.display = "none";
+            let dt={eventshort:eventid};
             document.querySelectorAll("input[name]").forEach(e => {
                 e.classList.remove("error")
                 if (!e.value || e.value.length < 2) {
@@ -61,6 +63,7 @@ block content
                     if (e.value.length<8)
                         e.classList.add("error");
                 }
+                dt[name]=e.value;
 
             })
             let err = document.querySelector(".error")
@@ -68,4 +71,7 @@ block content
                 formError.style.display = "block"
                 return err.focus();
             }
+            let res=await postJson("/eventLogin/", dt)
+            if(res)
+                document.location.reload();
         }

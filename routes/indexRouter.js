@@ -174,5 +174,17 @@ router.get("/u/:guid", async (req, res)=> {
     }
 
 });
+router.post("/eventLogin", async (req, res)=> {
+    try {
+        let r=await req.knex("t_eventUsers").insert(req.body, "*")
+
+    }
+    catch (e) {
+        console.warn(e)
+        res.render("error")
+    }
+
+});
+
 
 module.exports = router;
