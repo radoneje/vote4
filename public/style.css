@@ -587,6 +587,7 @@ textarea.mainInput{
     box-sizing: border-box;
     width:432px;
     display:none;
+    z-index: 100;
 }
 .mainSectionSettingsWr.active .mainSectionSettingsDialog{
     display:block;
