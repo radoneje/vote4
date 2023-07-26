@@ -64,9 +64,7 @@ server.on('error', (error)=>{
         throw error;
     }
 
-    var bind = typeof port === 'string'
-        ? 'Pipe ' + port
-        : 'Port ' + port;
+    var bind = 7000;
 
     // handle specific listen errors with friendly messages
     switch (error.code) {
