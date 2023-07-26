@@ -17,12 +17,14 @@ let app=new Vue({
         },
         socketSend:function (cmd,data){
             socket.send(cmd, data)
+        },
+        update:async function (cmd,data){
+            this.event=await getJson("/api/event/"+event.short)
         }
     },
     mounted:async function () {
-        console.log("ready")
-        let chatItem=new chat(11,"text", "Иван Иванов", new Date, "answer")
-        socket=new SocketClass(this.eventid)
+        await this.update();
+        socket=new SocketClass(this.event.id)
     }
 
 })
