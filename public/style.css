@@ -554,4 +554,19 @@ textarea.mainInput{
     object-fit: contain;
     object-position: center;
 }
+.mainSectionSettings{
+    margin-left: 24px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--bgElementColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainSectionSettings:hover{
+    background-color: var(--primaryColor);
+}
+.mainSectionSettings:hover svg path{
+    fill:var(--whiteColor-100)
+}
 
