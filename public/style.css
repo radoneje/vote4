@@ -18,7 +18,8 @@
     --secondaryHoverColor:#8596ED;
     --secondaryDisableColor:#C2CBF6;
     --secondaryActivatedColor:#5165CD;
-    --errorColor:#F38989
+    --errorColor:#F38989;
+    --errorColorBg:#f3898933
 
 }
 body{
@@ -109,7 +110,7 @@ textarea::placeholder{
     background-color: var(--bgElementColor);
 }
 .mainInput.error{
-    background-color: var(--errorColor);
+    background-color: var(--errorColorBg);
 }
 textarea.mainInput{
     height: 6em;
