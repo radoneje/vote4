@@ -5,36 +5,37 @@ block content
 
     .content#app(eventid=id)
             .req.scroll
-                .reqBox
+                .reqWr
+                    .reqBox
 
-                    if(event.isLogo)
+                        if(event.isLogo)
+                            .reqRow
+                                .reqBoxLogo
+                                    img(src=event.logoUrl)
+                        if(event.isTitle)
+                            .reqRow
+                                .reqBoxTitle #{event.title}
                         .reqRow
-                            .reqBoxLogo
-                                img(src=event.logoUrl)
-                    if(event.isTitle)
+                            .reqBoxTitle Пожалуйста, зарегистрируйтесь
                         .reqRow
-                            .reqBoxTitle #{event.title}
-                    .reqRow
-                        .reqBoxTitle Пожалуйста, зарегистрируйтесь
-                    .reqRow
-                        input.mainInput.w100(placeholder="Ваше имя" name="i")
-                    if(event.isRegF)
+                            input.mainInput.w100(placeholder="Ваше имя" name="i")
+                        if(event.isRegF)
+                            .reqRow
+                                input.mainInput.w100(placeholder="Фамилия" name="f")
+                        if(event.isRegEmail)
+                            .reqRow
+                                input.mainInput.w100(placeholder="Email" name="email")
+                        if(event.isRegPhone)
+                            .reqRow
+                                input.mainInput.w100(placeholder="Телефон" name="phone")
+                        if(event.isRegCompany)
+                            .reqRow
+                                input.mainInput.w100(placeholder="Компания" name="company")
+                        if(event.isRegPosition)
+                            .reqRow
+                                input.mainInput.w100(placeholder="Должность" name="position")
                         .reqRow
-                            input.mainInput.w100(placeholder="Фамилия" name="f")
-                    if(event.isRegEmail)
-                        .reqRow
-                            input.mainInput.w100(placeholder="Email" name="email")
-                    if(event.isRegPhone)
-                        .reqRow
-                            input.mainInput.w100(placeholder="Телефон" name="phone")
-                    if(event.isRegCompany)
-                        .reqRow
-                            input.mainInput.w100(placeholder="Компания" name="company")
-                    if(event.isRegPosition)
-                        .reqRow
-                            input.mainInput.w100(placeholder="Должность" name="position")
-                    .reqRow
-                        .btn.w100(style="text-align: center;") Войти
+                            .btn.w100(style="text-align: center;") Войти
 
 
 
