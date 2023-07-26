@@ -162,7 +162,7 @@ router.get("/u/:guid", async (req, res)=> {
         if(events.length==0)
             return res.render("404")
         let event=events[0]
-        console.log(req.session[r[0].short])
+        console.log(req.session[event.short])
        if(!req.session[event.short] && event.isReg)
            return res.render("eventLogin", {event})
         return res.render("event", {event, user:req.session[event.short]})
