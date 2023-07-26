@@ -12,6 +12,15 @@ let app=new Vue({
 
     },
     methods:{
+        onMessage: async function (cmd, value) {
+            if (cmd == "changeEvent" && this.event.id == value.id) {
+                console.log("ChanngeEvent!", value)
+                for (let key of Object.keys(value)) {
+                    if (key != "id")
+                        this.event[key] = value[key];
+                }
+            }
+        },
         changeEvent: async function (event) {
             let r = await postJson("/api/event", event)
         },
@@ -24,7 +33,7 @@ let app=new Vue({
     },
     mounted:async function () {
         await this.update();
-        socket=new SocketClass(this.event.id)
+        socket = new SocketClass(this.event.short, null, this.onMessage)
     }
 
 })
