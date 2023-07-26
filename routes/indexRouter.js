@@ -178,8 +178,8 @@ router.get("/u/:guid", async (req, res)=> {
 router.post("/eventLogin", async (req, res)=> {
     try {
         let r=await req.knex("t_eventUsers").insert(req.body, "*")
-        req.session[r[0].short]=r[0];
-        console.log("eventLogin->"+r[0].short, req.session[r[0].short])
+        req.session[r[0].eventshort]=r[0];
+        console.log("eventLogin->"+r[0].eventshort, req.session[r[0].eventshort])
         res.json(r[0].eventshort)
     }
     catch (e) {
