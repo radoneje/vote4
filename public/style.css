@@ -562,11 +562,13 @@ textarea.mainInput{
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
 }
 .mainSectionSettings:hover{
     background-color: var(--primaryColor);
 }
 .mainSectionSettings:hover svg path{
-    fill:var(--whiteColor-100)
+    stroke:var(--whiteColor-100)
 }
 
