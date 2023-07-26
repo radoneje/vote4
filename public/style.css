@@ -587,4 +587,9 @@ textarea.mainInput{
     width:432px;
 
 }
-
+.mainSectionSettingsDialogTitleBox{
+    margin-bottom: 8px;
+}
+.mainSectionSettingsDialogTitle{
+    font-size: 18px;
+}
