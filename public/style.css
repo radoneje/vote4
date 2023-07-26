@@ -521,4 +521,7 @@ textarea.mainInput{
     font-size: 18px;
     line-height: 24px;
 }
+#formError{
+    display: none;
+}
 
