@@ -486,7 +486,7 @@ textarea.mainInput{
     height: 40px;
     width: 100%;
 }
-.reqBoxLogo image{
+.reqBoxLogo img{
     width: 100%;
     height: 100%;
     object-fit: contain;
