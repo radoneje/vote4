@@ -1,0 +1,21 @@
+.reqRow
+    input.mainInput.w100(placeholder="Ваше имя" name="i")
+if(event.isRegF)
+    .reqRow
+        input.mainInput.w100(placeholder="Фамилия" name="f")
+if(event.isRegEmail)
+    .reqRow
+        input.mainInput.w100(placeholder="Email" name="email")
+if(event.isRegPhone)
+    .reqRow
+        input.mainInput.w100(placeholder="Телефон" name="phone")
+if(event.isRegCompany)
+    .reqRow
+        input.mainInput.w100(placeholder="Компания" name="company")
+if(event.isRegPosition)
+    .reqRow
+        input.mainInput.w100(placeholder="Должность" name="position")
+.reqRow
+    .btn.w100(style="text-align: center;" onclick="login()") Войти
+.reqRow
+    .eaRowAlert#formError Все поля должны быть корректно заполнены

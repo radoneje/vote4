@@ -13,8 +13,15 @@ let app=new Vue({
     },
     methods:{
         ReqUser:async function (clbk){
-            await createPopUp('/popups/reguser/'+event.short, ()=>{
-                document.querySelector(".fullScreenBoxTitle").innerHTML="Пожалуйста, зарегистрируйтесь"
+            await createPopUp('/popups/reguser/'+event.short, async ()=>{
+                document.querySelector(".fullScreenBoxTitle").innerHTML="Пожалуйста, зарегистрируйтесь";
+                let r=await fetch('/popups/reqForm/'+event.short);
+                if(!r.ok)
+                {
+                    console.warn("error fetch")
+                    return
+                }
+                document.querySelector(".fullScreenBoxBody").innerHTML!=(await r.text())
             })
         },
         sendQ:async function (evnt) {
