@@ -9,6 +9,7 @@ let app = new Vue({
     data: {
         section: "quest",
         event,
+         q:[]
     },
     methods: {
         uploadFile: async function (evnt, clbk) {
@@ -54,7 +55,7 @@ let app = new Vue({
         },
         onMessage: async function (cmd, value) {
             if (cmd == "changeEvent" && this.event.id == value.id) {
-                console.log("ChanngeEvent!", value)
+                console.log("ChangeEvent!", value)
                 for (let key of Object.keys(value)) {
                     if (key != "id")
                         this.event[key] = value[key];
@@ -68,10 +69,13 @@ let app = new Vue({
         },
         socketSend: function (cmd, data) {
             socket.send(cmd, data)
-        }
+        },
+        update:async function(){
+            this.q=await getJson("/api/q/"+this.event.short)
+        },
     },
     mounted: async function () {
-        console.log("ready")
+        this.update()
         socket = new SocketClass(this.event.short, document.getElementById("app").getAttribute("userid"), this.onMessage)
     }
 

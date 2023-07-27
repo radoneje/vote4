@@ -64,17 +64,23 @@ router.get('/event/:short', async (req, res, next) => {
         res.json(null)
     }
 })
-router.post('/uploadFile', upload.single('file'), async function (req, res, next) {
+router.post('/q/:short',  async function (req, res, next) {
 
-    let ext = path.extname(req.file.originalname)
-    let newPath = req.file.path + ext
-    await fs.promises.rename(req.file.path, newPath)
-    req.file.path = newPath;
-    req.file.filename = req.file.filename + ext;
-    req.file.originalname = Buffer.from(req.file.originalname, 'latin1').toString('utf8')
-    let r = await req.knex("t_files").insert(req.file, "*")
-    res.json(r[0].guid)
+    try {
+        return res.json(await req.knex("v_q").where({isDeleted: false, eventshort:req.params.short}));
+    } catch (e) {
+        console.warn(e);
+        res.json(null)
+    }
 });
+router.get('/event', async (req, res, next) => {
+    try {
+        return res.json(await req.knex("t_events").where({isDeleted: false}).orderBy("id", 'desc'));
+    } catch (e) {
+        console.warn(e);
+        res.json(null)
+    }
+})
 
 
 module.exports = router;
