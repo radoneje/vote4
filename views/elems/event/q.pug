@@ -24,5 +24,5 @@ h3 Вопросы спикеру
             .text.mt-3 Пока вопросов не задано
     .qItem(v-for="item in q")
 .qSendBox.mt-3
-    textarea.mainInput.w100.mt-3(placeholder="Текст вопроса")
+    textarea.mainInput.w100.mt-3#qText(placeholder="Текст вопроса")
     .btn.mt-3( v-on:click="sendQ($event)") Задать вопрос

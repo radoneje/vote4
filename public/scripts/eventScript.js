@@ -13,8 +13,7 @@ let app=new Vue({
     },
     methods:{
         sendQ:async function (evnt) {
-            console.log(evnt);
-            let ctrl=evnt.target;
+            let ctrl=qText;
             let text=ctrl.value;
             if(!text)
                 return;
