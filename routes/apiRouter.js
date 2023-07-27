@@ -64,7 +64,7 @@ router.get('/event/:short', async (req, res, next) => {
         res.json(null)
     }
 })
-router.post('/q/:short',  async function (req, res, next) {
+router.get('/q/:short',  async function (req, res, next) {
 
     try {
         return res.json(await req.knex("v_q").where({isDeleted: false, eventshort:req.params.short}));
