@@ -204,7 +204,7 @@ router.get("/popups/index", async (req, res)=> {
 //?code=6171931
     try{
 
-        res.render("/popups/index")
+        res.render("popups/index")
     }
     catch (e) {
         console.warn(e)
