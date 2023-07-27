@@ -595,8 +595,9 @@ textarea.mainInput{
 .mainSectionSettingsDialogTitleBox{
     margin-bottom: 8px;
 }
-.h3{
+h3{
     font-size: 18px;
+    margin: 0;
 }
 .text{
     font-size: 14px;
