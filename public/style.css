@@ -615,4 +615,13 @@ h3{
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     background-color: #00000088;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fullScreenBox{
+    border-radius: 12px;
+    background-color: var(--bgColor);
+    padding: 24px;
+    width: min(100%, 600px);
 }
