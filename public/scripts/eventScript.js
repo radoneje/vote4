@@ -12,13 +12,28 @@ let app=new Vue({
         q:[]
     },
     methods:{
+        ReqUser:async function (clbk){
+            await createPopUp=('/popups/reguser/'+event.short, ()=>{
+
+            })
+        },
         sendQ:async function (evnt) {
+            const postQ=(text)=>{
+
+            }
             let ctrl=qText;
             let text=ctrl.value;
-            if(!text)
+            if(!text) {
+                ctrl.focus();
                 return;
-            console.log(text, user);
+            }
+            if(!user) {
+                await this.ReqUser( ()=>{postQ(text)})
+            }
+            else
+                postQ(text)
         },
+        postQ:async function(text){},
         onMessage: async function (cmd, value) {
             if (cmd == "changeEvent" && this.event.id == value.id) {
                 console.log("ChanngeEvent!", value)

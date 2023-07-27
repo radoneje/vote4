@@ -47,3 +47,11 @@ window.validateEmail = (email) => {
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         );
 };
+window.createPopUp = async (url,clbk) => {
+    let r=await fetch("/popups/index")
+    if(!r.ok){
+        console.warn("fetch error", '"/popups/index"');
+    }
+    document.body.appendChild(await r.text())
+}
+

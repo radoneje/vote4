@@ -200,6 +200,19 @@ router.get("/eventLogout/:guid", async (req, res)=> {
     }
 
 });
+router.get("/popups/index", async (req, res)=> {
+//?code=6171931
+    try{
+
+        res.render("/popups/index")
+    }
+    catch (e) {
+        console.warn(e)
+        res.render("error")
+    }
+
+});
+
 
 
 module.exports = router;
