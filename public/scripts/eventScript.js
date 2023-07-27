@@ -9,7 +9,7 @@ let app=new Vue({
     data:{
         user,
         event,
-
+        q:[]
     },
     methods:{
         onMessage: async function (cmd, value) {
@@ -29,6 +29,7 @@ let app=new Vue({
         },
         update:async function (cmd,data){
             this.event=await getJson("/api/event/"+event.short)
+            this.q=await getJson("/api/q/"+this.event.short)
         }
     },
     mounted:async function () {
