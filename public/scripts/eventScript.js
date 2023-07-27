@@ -15,9 +15,9 @@ let app=new Vue({
         sendQ:async function (evnt) {
             let ctrl=evnt.target;
             let text=ctrl.value;
-            if(!txt)
+            if(!text)
                 return;
-            console.log(txt, user);
+            console.log(text, user);
         },
         onMessage: async function (cmd, value) {
             if (cmd == "changeEvent" && this.event.id == value.id) {
