@@ -48,10 +48,23 @@ window.validateEmail = (email) => {
         );
 };
 window.createPopUp = async (url,clbk) => {
+    document.querySelectorAll(".closePopUp").forEach(e=>{
+        e.onclick=()=>{closePopUp()}
+    })
     let r=await fetch("/popups/index")
     if(!r.ok){
         console.warn("fetch error", '"/popups/index"');
     }
     document.body.innerHTML+=(await r.text())
+    document.body.style.overflow="hidden";
+    document.querySelectorAll(".closePopUp").forEach(e=>{
+        e.onclick=()=>{closePopUp()}
+    })
+}
+window.closePopUp=()=>{
+    document.querySelectorAll(".fullScreenWr").forEach(e=>{
+        document.body.removeChild(e)
+    })
+    document.body.style.overflow=null;
 }
 

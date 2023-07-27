@@ -618,10 +618,12 @@ h3{
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1000;
 }
 .fullScreenBox{
     border-radius: 12px;
     background-color: var(--bgColor);
     padding: 24px;
     width: min(100%, 600px);
+
 }
