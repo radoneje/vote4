@@ -13,7 +13,7 @@ let app=new Vue({
     },
     methods:{
         ReqUser:async function (clbk){
-            await createPopUp=('/popups/reguser/'+event.short, ()=>{
+            await createPopUp('/popups/reguser/'+event.short, ()=>{
 
             })
         },
