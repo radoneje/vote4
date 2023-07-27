@@ -21,7 +21,7 @@ let app=new Vue({
                     console.warn("error fetch")
                     return
                 }
-                document.querySelector(".fullScreenBoxBody").innerHTML!=(await r.text())
+                document.querySelector(".fullScreenBoxBody").innerHTML=(await r.text())
             })
         },
         sendQ:async function (evnt) {
