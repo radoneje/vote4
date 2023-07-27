@@ -12,6 +12,13 @@ let app=new Vue({
         q:[]
     },
     methods:{
+        sendQ:async function (evnt) {
+            let ctrl=evnt.target;
+            let text=ctrl.value;
+            if(!txt)
+                return;
+            console.log(txt, user);
+        },
         onMessage: async function (cmd, value) {
             if (cmd == "changeEvent" && this.event.id == value.id) {
                 console.log("ChanngeEvent!", value)
@@ -31,6 +38,7 @@ let app=new Vue({
             this.event=await getJson("/api/event/"+event.short)
             this.q=await getJson("/api/q/"+this.event.short)
         }
+
     },
     mounted:async function () {
         await this.update();
