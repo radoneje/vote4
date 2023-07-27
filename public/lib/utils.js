@@ -52,6 +52,6 @@ window.createPopUp = async (url,clbk) => {
     if(!r.ok){
         console.warn("fetch error", '"/popups/index"');
     }
-    document.body.appendChild(await r.text())
+    document.body.innerHTML+=(await r.text())
 }
 
