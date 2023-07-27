@@ -70,5 +70,9 @@
     .rowBody(v-else)
         .rowHeader
             h3 Всего вопросов: {{q.length}}
-
+        .qBox.scroll
+            .qItem(v-for="item in q")
+        .qSendBox
+            input.eaLinkText.w100(placeholder="Ваше имя")
+            textarea.eaLinkText.w100(placeholder="Текст вопроса")
 
