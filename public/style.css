@@ -598,9 +598,11 @@ textarea.mainInput{
 h3{
     font-size: 18px;
     margin: 0;
+    font-weight: 300;
 }
 .text{
     font-size: 14px;
     color: var(--textColor-56);
     font-weight: 300;
+
 }
