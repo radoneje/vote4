@@ -55,6 +55,9 @@ block content
                     .eaSection(v-if="event.isDescr")
                         .eaRow
                             .mainSectionText {{event.descr}}
+                    .eaSection(v-if="event.isQ")
+                        .eaRow
+                            include elems/event/q
 
                     .eaSection(v-if="event.isFooter")
                         .eaRow
