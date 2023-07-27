@@ -215,7 +215,7 @@ router.get("/popups/index", async (req, res)=> {
 router.get("/popups/reqForm/:short", async (req, res)=> {
 
     try{
-        let events=await req.knex("t_events").where({short:req.params.guid})
+        let events=await req.knex("t_events").where({short:req.params.short})
         if(events.length==0)
             return res.render("404")
         let event=events[0]
