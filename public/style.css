@@ -636,6 +636,7 @@ h3{
 .qItem{
     background: var(--whiteColor-100);
     padding: 24px;
+    word-break: break-word;
 
 }
 .qItemUser{

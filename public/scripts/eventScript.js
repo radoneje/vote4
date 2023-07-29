@@ -12,6 +12,7 @@ let app=new Vue({
         q:[]
     },
     methods:{
+        urlify,
         ReqUser:async function (clbk){
             await createPopUp('/popups/reguser/'+event.short, async ()=>{
                 document.querySelector(".fullScreenBoxTitle").innerHTML="Пожалуйста, зарегистрируйтесь";

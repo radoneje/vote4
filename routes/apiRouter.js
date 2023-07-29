@@ -91,6 +91,7 @@ router.post('/q/',  async function (req, res, next) {
         if(events.length==0)
             return res.sendStatus(404)
         req.body.eventshort=events[0].short;
+        req.body.text=req.body.text.replace(/(<([^>]+)>)/gi, "")
         let r=await req.knex("t_q").insert(req.body, "*")
         console.log(r)
         return res.json((await req.knex("v_q").where({isDeleted: false, id:r[0].id}))[0]);

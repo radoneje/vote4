@@ -22,10 +22,10 @@ h3 Вопросы спикеру
             </defs>
             </svg>
             .text.mt-3 Пока вопросов не задано
-    .qItem.mb-3(v-for="item in q")
+    .qItem.mt-3(v-for="item in q")
         .qItemUser.mb-2 {{item.i}} {{item.f}}
-        .qItemText {{item.text}}
-        .qItemAnswer.mt-2(v-if="item.answer") {{item.answer}}
+        .qItemText(v-html="urlify(item.text"))
+        .qItemAnswer.mt-2(v-if="item.answer" v-html="urlify(item.answer"))
 .qSendBox.mt-3
     textarea.mainInput.w100.mt-3#qText(placeholder="Текст вопроса")
     .btn.mt-3( v-on:click="sendQ($event)") Задать вопрос
