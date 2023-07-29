@@ -79,16 +79,16 @@ let app=new Vue({
                         this.event[key] = value[key];
                 }
             }
-            if (cmd == "addQ" && this.event.short == value.id) {
+            if (cmd == "addQ" && this.event.short == value.eventshort) {
                 console.log("addQ!", value)
                 this.q.push(value);
-                /*this.q=this.q.filter(qq=>{
+                this.q=this.q.filter(qq=>{
                     if(qq.isDeleted)
                         return false
                     if(this.event.isQpreMod && q.userid!=this.user.id)
                         return false
                     return true;
-                })*/
+                })
             }
         },
         changeEvent: async function (event) {
