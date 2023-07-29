@@ -94,7 +94,7 @@ let app=new Vue({
                     let elem=document.getElementById("q"+value.id)
                     if(elem)
                         elem.scrollIntoView({behavior: "smooth" });
-                })
+                },500)
             }
         },
         changeEvent: async function (event) {
