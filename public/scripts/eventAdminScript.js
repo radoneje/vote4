@@ -62,6 +62,9 @@ let app = new Vue({
                         this.event[key] = value[key];
                 }
             }
+            if (cmd == "addQ" && this.event.short == value.eventshort) {
+                this.q.push(value);
+            }
         },
         changeEvent: async function (event, sect) {
             let dt = {id: event.id};

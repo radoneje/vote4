@@ -73,14 +73,12 @@ let app=new Vue({
         onMessage: async function (cmd, value) {
             console.log("onMessage", cmd)
             if (cmd == "changeEvent" && this.event.id == value.id) {
-                console.log("ChanngeEvent!", value)
                 for (let key of Object.keys(value)) {
                     if (key != "id")
                         this.event[key] = value[key];
                 }
             }
             if (cmd == "addQ" && this.event.short == value.eventshort) {
-                console.log("addQ!", value)
                 this.q.push(value);
                 this.q=this.filterQ(q);
 
