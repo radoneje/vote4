@@ -113,7 +113,8 @@ let app=new Vue({
                     return false
                 if((!qq.userid && !qq.isMod))
                     return false
-                if((qq.userid!=this.user.id && !qq.isMod))
+
+                if(qq.userid && (qq.userid!=this.user.id && !qq.isMod))
                         return false
                 return true;
             })
