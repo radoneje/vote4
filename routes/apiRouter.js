@@ -81,6 +81,23 @@ router.get('/event', async (req, res, next) => {
         res.json(null)
     }
 })
+router.post('/q/',  async function (req, res, next) {
+
+    try {
+        let user=req.session[req.body.eventshort]
+        if(!user)
+            return res.sendStatus(401);
+        let events = await req.knex("t_events").where({isDeleted:false, short:req.body.eventshort})
+        if(events.length==0)
+            return res.sendStatus(404)
+        req.body.eventid=events[0].id;
+        let r=await req.knex("t_q").insert(req.body, "*")
+        return res.json((await req.knex("v_q").where({isDeleted: false, id:r[0].id}))[0]);
+    } catch (e) {
+        console.warn(e);
+        res.json(null)
+    }
+});
 
 
 module.exports = router;

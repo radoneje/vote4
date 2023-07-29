@@ -37,7 +37,7 @@ let app=new Vue({
         sendQ:async function (evnt) {
 
             const postQ=async (text)=>{
-                console.log("post", text);
+                let q=await postJson("/api/q", {eventshort:this.event.short, text});
             }
             evnt.target.classList.add("sending");
             try {
