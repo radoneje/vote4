@@ -180,7 +180,7 @@ router.post("/eventLogin", async (req, res)=> {
         let r=await req.knex("t_eventUsers").insert(req.body, "*")
         req.session[r[0].eventshort]=r[0];
         console.log("eventLogin->"+r[0].eventshort, req.session[r[0].eventshort])
-        res.json(r[0].eventshort)
+        res.json(r[0])
     }
     catch (e) {
         console.warn(e)

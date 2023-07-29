@@ -26,8 +26,11 @@ let app=new Vue({
                     name.focus();
                 window.login=async ()=>{
                     let res=await eventLogin(this.event.short)
-                    if(res)
-                        console.log(res)
+                    if(res) {
+                        this.event=res;
+                        closePopUp()
+                        clbk();
+                    }
                 }
             })
         },
