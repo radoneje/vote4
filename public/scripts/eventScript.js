@@ -88,6 +88,17 @@ let app=new Vue({
                         elem.scrollIntoView({behavior: "smooth" });
                 },500)
             }
+            if (cmd == "changeQ" ) {
+                this.q.forEach(item=>{
+                    if(item.id==value.id)
+                        for (let key of Object.keys(value)) {
+                            if (key != "id")
+                                item[key] = value[key];
+                        }
+                })
+                this.q=this.filterQ(q);
+            }
+
         },
         changeEvent: async function (event) {
             let r = await postJson("/api/event", event)

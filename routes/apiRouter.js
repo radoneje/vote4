@@ -104,6 +104,23 @@ router.post('/q/',  async function (req, res, next) {
         res.json(null)
     }
 });
+router.post('/changeQ',  async function (req, res, next) {
+
+    try {
+
+        if(!req.session.user)
+            return res.sendStatus(401);
+        let id=req.body.id;
+        delete req.body.id;
+        let r=await req.knex("t_q").update(req.body,"*").where({id})
+        req.body.id=id;
+        req.notify(null, events[0].short, "changeQ", q[0])
+    } catch (e) {
+        console.warn(e);
+        res.json(null)
+    }
+});
+
 
 
 module.exports = router;

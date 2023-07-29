@@ -77,8 +77,8 @@
                 textarea.mainInput.w100.mb-2(placeholder="Ведите текст ответа" v-model="item.answer" v-on:change="changeQ(item, 'answer')")
                 .qBtnGroup.flex.center.between
                     .qBtnGroupItem
-                        .btn(v-if="item.isMod") Принят
-                        .btn(v-else) Скрыт
+                        .btn(v-if="item.isMod" v-on:change="item.isMod=!item.isMod;changeQ(item, 'isMod')") Принят
+                        .btn(v-else v-on:change="item.isMod=!item.isMod;changeQ(item, 'isMod')") Скрыт
 
 
 
