@@ -90,7 +90,7 @@ router.post('/q/',  async function (req, res, next) {
         let events = await req.knex("t_events").where({isDeleted:false, short:req.body.eventshort})
         if(events.length==0)
             return res.sendStatus(404)
-        req.body.eventid=events[0].id;
+        req.body.eventshort=events[0].short;
         let r=await req.knex("t_q").insert(req.body, "*")
         console.log(r)
         return res.json((await req.knex("v_q").where({isDeleted: false, id:r[0].id}))[0]);
