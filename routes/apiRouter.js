@@ -95,7 +95,7 @@ router.post('/q/',  async function (req, res, next) {
         req.body.isMod=! events[0].isQpreMod;
         let r=await req.knex("t_q").insert(req.body, "*")
         let q=await req.knex("v_q").where({isDeleted: false, id:r[0].id})
-        req.notify(null, dt.short, "addQ", q[0]) // изменяем только одно поле
+        req.notify(null, events[0].short, "addQ", q[0]) // изменяем только одно поле
         return res.json(q[0]);
     } catch (e) {
         console.warn(e);
