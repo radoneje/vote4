@@ -94,6 +94,7 @@ let app=new Vue({
                         for (let key of Object.keys(value)) {
                             if (key != "id")
                                 item[key] = value[key];
+
                         }
                 })
                 this.q=this.filterQ(this.q);
