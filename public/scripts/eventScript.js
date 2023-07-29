@@ -51,10 +51,12 @@ let app=new Vue({
                     await this.ReqUser(async () => {
                         await postQ(text)
                         evnt.target.classList.remove("sending");
+                        ctrl.value="";
                     })
                 } else {
                     await postQ(text)
                     evnt.target.classList.remove("sending");
+                    ctrl.value="";
                 }
             }
             catch (e) {
