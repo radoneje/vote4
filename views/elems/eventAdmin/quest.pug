@@ -71,7 +71,8 @@
         .rowHeader
             h3 Всего вопросов: {{q.length}}
         .qBox.scroll
-            .qItemUser.mb-2 {{item.i}} {{item.f}}
+            .qItem.mb-3(v-for="item in q" :id="'q'+item.id")
+                .qItemUser.mb-2 {{item.i}} {{item.f}}
                 .qItemText(v-html="urlify(item.text)")
                 .qItemAnswer.mt-2(v-if="item.answer" v-html="urlify(item.answer)")
                 .qItemError.mt-2(v-if=" !q.isMod") Вопрос на модерации
