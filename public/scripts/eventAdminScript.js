@@ -74,7 +74,7 @@ let app = new Vue({
         changeQ:async function(item, sect){
             let dt={id:item.id};
             dt[sect]=item[sect];
-            await getJson("/api/changeQ/", dt);
+            await postJson("/api/changeQ/", dt);
         },
         socketSend: function (cmd, data) {
             socket.send(cmd, data)
