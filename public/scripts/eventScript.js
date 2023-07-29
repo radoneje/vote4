@@ -86,7 +86,7 @@ let app=new Vue({
                     if(qq.isDeleted)
                         return false
                     if(this.event.isQpreMod)
-                        if(qq.userid!=this.user.id || !qq.isMod)
+                        if(!(qq.userid==this.user.id || qq.isMod))
                         return false
                     return true;
                 })
