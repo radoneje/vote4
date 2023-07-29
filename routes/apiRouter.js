@@ -114,6 +114,7 @@ router.post('/changeQ',  async function (req, res, next) {
         let r=await req.knex("t_q").update(req.body,"*").where({id})
         req.body.id=id;
         req.notify(null, r[0].eventshort, "changeQ", req.body)
+        res.json(id)
     } catch (e) {
         console.warn(e);
         res.json(null)
