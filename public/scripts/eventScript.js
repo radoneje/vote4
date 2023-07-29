@@ -27,7 +27,7 @@ let app=new Vue({
                 window.login=async ()=>{
                     let res=await eventLogin(this.event.short)
                     if(res) {
-                        this.event=res;
+                        this.user=res;
                         closePopUp()
                         clbk();
                     }
@@ -36,7 +36,7 @@ let app=new Vue({
         },
         sendQ:async function (evnt) {
             const postQ=(text)=>{
-                console.log("post");
+                console.log("post", text);
             }
             let ctrl=qText;
             let text=ctrl.value;
