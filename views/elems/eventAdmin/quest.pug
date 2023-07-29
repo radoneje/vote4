@@ -75,6 +75,10 @@
                 .qItemUser.mb-2 {{item.i}} {{item.f}}
                 .qItemText.mb-2(v-html="urlify(item.text)")
                 textarea.mainInput.w100.mb-2(placeholder="Ведите текст ответа" v-model="item.answer" v-on:change="changeQ(item, 'answer')")
+                .qBtnGroup.flex.center.between
+                    .qBtnGroupItem
+                        .btn Принят
+                        .btn Скрыт
 
 
 
