@@ -91,6 +91,7 @@ router.post('/q/',  async function (req, res, next) {
         if(events.length==0)
             return res.sendStatus(404)
         req.body.eventshort=events[0].short;
+        req.body.userid=user.id;
         req.body.text=req.body.text.replace(/(<([^>]+)>)/gi, "")
         req.body.isMod=! events[0].isQpreMod;
         let r=await req.knex("t_q").insert(req.body, "*")
