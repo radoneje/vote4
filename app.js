@@ -84,13 +84,5 @@ server.on('listening', async ()=> {
     console.log('Listening on ' + server.address().port);
      connection = await amqp.connect("amqp://localhost");
      channel = await connection.createChannel();
-    await channel.assertQueue(queue, { durable: false });
-
-
-    //await channel.close();
-
-   /* process.once("SIGINT", async () => {
-        await channel.close();
-        await connection.close();
-    });*/
+     await channel.assertQueue(queue, { durable: false });
 });

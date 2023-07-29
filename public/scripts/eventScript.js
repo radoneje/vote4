@@ -22,6 +22,11 @@ let app=new Vue({
                     return
                 }
                 document.querySelector(".fullScreenBoxBody").innerHTML=(await r.text())
+                let name=document.getElementById("name")
+                    name.focus();
+                window.login=()=>{
+                    alert("login");
+                }
             })
         },
         sendQ:async function (evnt) {
