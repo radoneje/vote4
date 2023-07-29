@@ -74,7 +74,7 @@
             .qItem.mb-3(v-for="item in q" :id="'q'+item.id")
                 .qItemUser.mb-2 {{item.i}} {{item.f}}
                 .qItemText.mb-2(v-html="urlify(item.text)")
-                 textarea.mainInput.w100(v-model="item.answer" v-on:change="changeQ(item, 'answer')")
+                 textarea.mainInput.w100.mb-2(placeholder="Ведите текст ответа" v-model="item.answer" v-on:change="changeQ(item, 'answer')")
 
 
 
