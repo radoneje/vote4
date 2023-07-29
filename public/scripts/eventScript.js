@@ -111,8 +111,9 @@ let app=new Vue({
             q=q.filter(qq=>{
                 if(qq.isDeleted)
                     return false
-
-                if(!(qq.userid==this.user.id || qq.isMod))
+                if((!qq.userid && !qq.isMod))
+                    return false
+                if((qq.userid!=this.user.id && !qq.isMod))
                         return false
                 return true;
             })
