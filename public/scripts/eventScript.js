@@ -79,7 +79,7 @@ let app=new Vue({
                         this.event[key] = value[key];
                 }
             }
-            if (cmd == "addQ" && this.event.id == value.id) {
+            if (cmd == "addQ" && this.event.short == value.id) {
                 console.log("addQ!", value)
                 this.q.push(value);
                 /*this.q=this.q.filter(qq=>{
