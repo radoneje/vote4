@@ -81,13 +81,13 @@ let app=new Vue({
             if (cmd == "addQ" && this.event.id == value.id) {
                 console.log("addQ!", value)
                 this.q.push(value);
-                this.q=this.q.filter(qq=>{
+                /*this.q=this.q.filter(qq=>{
                     if(qq.isDeleted)
                         return false
                     if(this.event.isQpreMod && q.userid!=this.user.id)
                         return false
                     return true;
-                })
+                })*/
             }
         },
         changeEvent: async function (event) {
