@@ -70,7 +70,7 @@
     .rowBody(v-else)
         .rowHeader
             h3 Всего вопросов: {{q.length}}
-        .qBox.scroll
+        .qBox.scroll 000
             .qItem.mb-3(v-for="item in q" :id="'q'+item.id")
                 .qItemUser.mb-2 {{item.i}} {{item.f}}
                 .qItemText.mb-2(v-html="urlify(item.text)")
