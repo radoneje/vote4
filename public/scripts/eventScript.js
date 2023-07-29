@@ -91,7 +91,7 @@ let app=new Vue({
                     return true;
                 })
                 setTimeout(()=>{
-                    let elem=getElementById("q"+value.id)
+                    let elem=document.getElementById("q"+value.id)
                     if(elem)
                         elem.parentNode.scrollIntoView({behavior: "smooth", block: "end" });
                 })
