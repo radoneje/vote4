@@ -55,7 +55,10 @@ window.createPopUp = async (url,clbk=null) => {
     if(!r.ok){
         console.warn("fetch error", '"/popups/index"');
     }
-    document.body.innerHTML+=(await r.text())
+    let div=document.createElement("div");
+    div.innerHTML=(await r.text())
+    div.classList.add("fullScreen")
+    document.body.appendChild(div)
     document.body.style.overflow="hidden";
     document.querySelectorAll(".closePopUp").forEach(e=>{
         e.onclick=()=>{closePopUp()}
@@ -64,7 +67,7 @@ window.createPopUp = async (url,clbk=null) => {
         clbk();
 }
 window.closePopUp=()=>{
-    document.querySelectorAll(".fullScreenWr").forEach(e=>{
+    document.querySelectorAll(".fullScreen").forEach(e=>{
         document.body.removeChild(e)
     })
     document.body.style.overflow=null;
