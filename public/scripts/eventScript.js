@@ -24,8 +24,8 @@ let app=new Vue({
                 document.querySelector(".fullScreenBoxBody").innerHTML=(await r.text())
                 let name=document.getElementById("name")
                     name.focus();
-                window.login=()=>{
-                    let res=await eventLogin(eventshort)
+                window.login=async ()=>{
+                    let res=await eventLogin(this.event.short)
                     if(res)
                         console.log(res)
                 }
