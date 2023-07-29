@@ -12,6 +12,7 @@ let app = new Vue({
          q:[]
     },
     methods: {
+        urlify,
         uploadFile: async function (evnt, clbk) {
             let inp = document.createElement("input")
             inp.type = "file"
