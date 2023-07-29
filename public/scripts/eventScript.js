@@ -82,14 +82,8 @@ let app=new Vue({
             if (cmd == "addQ" && this.event.short == value.eventshort) {
                 console.log("addQ!", value)
                 this.q.push(value);
-                this.q=this.q.filter(qq=>{
-                    if(qq.isDeleted)
-                        return false
-                    if(this.event.isQpreMod)
-                        if(!(qq.userid==this.user.id || qq.isMod))
-                        return false
-                    return true;
-                })
+                this.q=this.filterQ(q);
+
                 setTimeout(()=>{
                     let elem=document.getElementById("q"+value.id)
                     if(elem)
@@ -103,9 +97,21 @@ let app=new Vue({
         socketSend:function (cmd,data){
             socket.send(cmd, data)
         },
+        filterQ:function(q){
+            q=q.filter(qq=>{
+                if(qq.isDeleted)
+                    return false
+
+                if(!(qq.userid==this.user.id || qq.isMod))
+                        return false
+                return true;
+            })
+            return q;
+        },
         update:async function (cmd,data){
             this.event=await getJson("/api/event/"+event.short)
-            this.q=await getJson("/api/q/"+this.event.short)
+            this.q=this.filterQ( await getJson("/api/q/"+this.event.short))
+
         }
 
     },
