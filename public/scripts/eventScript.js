@@ -90,6 +90,11 @@ let app=new Vue({
                         return false
                     return true;
                 })
+                setTimeout(()=>{
+                    let elem=document.getElementById("q"+value.id)
+                    if(elem)
+                        elem.parentNode.scrollIntoView({behavior: "smooth", block: "end" });
+                })
             }
         },
         changeEvent: async function (event) {
