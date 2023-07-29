@@ -44,7 +44,7 @@ let app=new Vue({
                 ctrl.focus();
                 return;
             }
-            if(!user) {
+            if(!this.user) {
                 await this.ReqUser( ()=>{postQ(text)})
             }
             else
