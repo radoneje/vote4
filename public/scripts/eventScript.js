@@ -36,7 +36,7 @@ let app=new Vue({
         },
         sendQ:async function (evnt) {
             const postQ=(text)=>{
-
+                console.log("post");
             }
             let ctrl=qText;
             let text=ctrl.value;
