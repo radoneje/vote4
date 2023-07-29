@@ -107,7 +107,6 @@ router.post('/q/',  async function (req, res, next) {
 router.post('/changeQ',  async function (req, res, next) {
 
     try {
-
         if(!req.session.user)
             return res.sendStatus(401);
         let id=req.body.id;
