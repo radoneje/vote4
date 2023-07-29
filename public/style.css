@@ -651,3 +651,11 @@ h3{
     color:var(--errorColor);
     font-size:14px;
 }
+.btn.disabled{
+    background-color: var(--primaryDisableColor);
+    border:1px solid var(--primaryDisableColor);
+}
+.btn.white{
+    background-color: var(--whiteColor-100);
+    border:1px solid var(--primaryDisableColor);
+}
