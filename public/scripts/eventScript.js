@@ -96,7 +96,7 @@ let app=new Vue({
                                 item[key] = value[key];
                         }
                 })
-                this.q=this.filterQ(q);
+                this.q=this.filterQ(this.q);
             }
 
         },

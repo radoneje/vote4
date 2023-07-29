@@ -65,6 +65,15 @@ let app = new Vue({
             if (cmd == "addQ" && this.event.short == value.eventshort) {
                 this.q.push(value);
             }
+            if (cmd == "changeQ" ) {
+                this.q.forEach(item=>{
+                    if(item.id==value.id)
+                        for (let key of Object.keys(value)) {
+                            if (key != "id")
+                                item[key] = value[key];
+                        }
+                })
+            }
         },
         changeEvent: async function (event, sect) {
             let dt = {id: event.id};
