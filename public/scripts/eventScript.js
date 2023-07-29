@@ -85,8 +85,9 @@ let app=new Vue({
                 this.q=this.q.filter(qq=>{
                     if(qq.isDeleted)
                         return false
-                   /* if(this.event.isQpreMod && q.userid!=this.user.id)
-                        return false*/
+                    if(this.event.isQpreMod)
+                        if(q.userid!=this.user.id || !q.isMod)
+                        return false
                     return true;
                 })
             }
