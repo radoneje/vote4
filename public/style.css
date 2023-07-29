@@ -90,6 +90,16 @@ textarea::placeholder{
     width: max-content;
     border-radius: 12px;
 }
+.btn.disabled{
+    background-color: var(--primaryDisableColor);
+    border:1px solid var(--primaryDisableColor);
+    color: var(--textColor);
+}
+.btn.white{
+    background-color: var(--whiteColor-100);
+    border:1px solid var(--primaryDisableColor);
+    color: var(--textColor);
+}
 .btn:hover{
     background-color: var(--primaryHoverColor);
 }
@@ -651,13 +661,4 @@ h3{
     color:var(--errorColor);
     font-size:14px;
 }
-.btn.disabled{
-    background-color: var(--primaryDisableColor);
-    border:1px solid var(--primaryDisableColor);
-    color: var(--textColor);
-}
-.btn.white{
-    background-color: var(--whiteColor-100);
-    border:1px solid var(--primaryDisableColor);
-    color: var(--textColor);
-}
+
