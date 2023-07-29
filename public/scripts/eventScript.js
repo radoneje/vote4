@@ -25,7 +25,9 @@ let app=new Vue({
                 let name=document.getElementById("name")
                     name.focus();
                 window.login=()=>{
-                    alert("login");
+                    let res=await eventLogin(eventshort)
+                    if(res)
+                        console.log(res)
                 }
             })
         },

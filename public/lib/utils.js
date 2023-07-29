@@ -72,4 +72,34 @@ window.closePopUp=()=>{
     })
     document.body.style.overflow=null;
 }
+window.eventLogin=async(eventshort)=>{
+        formError.style.display = "none";
+        let dt={eventshort};
+        document.querySelectorAll("input[name]").forEach(e => {
+            e.classList.remove("error")
+            if (!e.value || e.value.length < 2) {
+                e.classList.add("error")
+                return;
+            }
+            let name=e.getAttribute("name")
+            if(name=="email"){
+                if(!validateEmail(e.value))
+                    e.classList.add("error");
+            }
+            if (name == "phone") {
+                if (e.value.length<8)
+                    e.classList.add("error");
+            }
+            dt[name]=e.value;
+
+        })
+        let err = document.querySelector(".error")
+        if (err) {
+            formError.style.display = "block"
+            return err.focus();
+        }
+        let res=await postJson("/eventLogin/", dt)
+        return res;
+
+}
 
