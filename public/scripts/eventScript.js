@@ -35,20 +35,36 @@ let app=new Vue({
             })
         },
         sendQ:async function (evnt) {
-            const postQ=(text)=>{
+
+            const postQ=async (text)=>{
                 console.log("post", text);
             }
-            let ctrl=qText;
-            let text=ctrl.value;
-            if(!text) {
-                ctrl.focus();
-                return;
+            evnt.target.classList.add("sending");
+            try {
+                let ctrl = qText;
+                let text = ctrl.value;
+                if (!text) {
+                    ctrl.focus();
+                    return;
+                }
+                if (!this.user) {
+                    await this.ReqUser(async () => {
+                        await postQ(text)
+                        evnt.target.classList.remove("sending");
+                    })
+                } else {
+                    await postQ(text)
+                    evnt.target.classList.remove("sending");
+                }
             }
-            if(!this.user) {
-                await this.ReqUser( ()=>{postQ(text)})
+            catch (e) {
+                console.warn(e)
+                evnt.target.classList.remove("sending");
+
             }
-            else
-                postQ(text)
+
+
+
         },
         postQ:async function(text){},
         onMessage: async function (cmd, value) {
