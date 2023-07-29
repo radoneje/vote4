@@ -339,7 +339,7 @@ textarea.mainInput{
 .eaRow{
 
     margin: 16px auto;
-    background-color: var(--whiteColor-100);
+    background-color: var(--whiteColor-88);
     box-sizing: border-box;
     border-radius: 12px;
     padding: 24px;
@@ -632,4 +632,13 @@ h3{
     padding: 24px;
     width: min(100%, 600px);
 
+}
+.qItem{
+    background: var(--whiteColor-100);
+    padding: 24px;
+
+}
+.qItemUser{
+    color:var(--primaryColor);
+    font-size:16px
 }
