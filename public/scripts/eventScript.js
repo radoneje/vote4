@@ -93,7 +93,7 @@ let app=new Vue({
                 setTimeout(()=>{
                     let elem=document.getElementById("q"+value.id)
                     if(elem)
-                        elem.parentNode.scrollIntoView({behavior: "smooth", block: "end" });
+                        elem.parentNode.scrollIntoView()//{behavior: "smooth", block: "end" });
                 })
             }
         },
