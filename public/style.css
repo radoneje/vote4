@@ -647,3 +647,7 @@ h3{
     max-height: calc(100vh - 100px);
     overflow-y: scroll;
 }
+.qItemError{
+    color:var(--errorColor);
+    font-size:14px;
+}
