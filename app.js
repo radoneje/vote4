@@ -32,6 +32,7 @@ var sess = {
     store: new pgSession(pgStoreConfig),
 };
 
+
 const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
