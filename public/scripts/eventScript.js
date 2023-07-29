@@ -71,7 +71,7 @@ let app=new Vue({
         },
         postQ:async function(text){},
         onMessage: async function (cmd, value) {
-            console.log("onMessage")
+            console.log("onMessage", cmd)
             if (cmd == "changeEvent" && this.event.id == value.id) {
                 console.log("ChanngeEvent!", value)
                 for (let key of Object.keys(value)) {
