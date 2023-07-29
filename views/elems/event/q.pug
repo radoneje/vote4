@@ -23,6 +23,9 @@ h3 Вопросы спикеру
             </svg>
             .text.mt-3 Пока вопросов не задано
     .qItem(v-for="item in q")
+        .qItemUser {{item.i}} {{item.f}}
+        .qItemText {{item.text}}
+        .qItemAnswer {{item.answer}}
 .qSendBox.mt-3
     textarea.mainInput.w100.mt-3#qText(placeholder="Текст вопроса")
     .btn.mt-3( v-on:click="sendQ($event)") Задать вопрос
