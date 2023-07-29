@@ -1,4 +1,4 @@
-h3 Вопросы спикеру
+h3.mb-3 Вопросы спикеру
 .qBox.scroll
     .emptyPlaceholder.flex.center.vCenter.mt-3(v-if="q.length==0")
         .mt-3(style="text-align: center;")
@@ -22,7 +22,7 @@ h3 Вопросы спикеру
             </defs>
             </svg>
             .text.mt-3 Пока вопросов не задано
-    .qItem.mt-3(v-for="item in q")
+    .qItem.mb-3(v-for="item in q")
         .qItemUser.mb-2 {{item.i}} {{item.f}}
         .qItemText(v-html="urlify(item.text)")
         .qItemAnswer.mt-2(v-if="item.answer" v-html="urlify(item.answer)")
