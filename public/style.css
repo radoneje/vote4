@@ -128,6 +128,12 @@ textarea.mainInput{
 .mb-3{
     margin-bottom:16px
 }
+.mt-2{
+    margin-top:12px
+}
+.mb-2{
+    margin-bottom:12px
+}
 .flex{
     display: flex;
 }
