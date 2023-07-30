@@ -33,7 +33,7 @@ h3.mb-3 Вопросы спикеру
             .qItemLikeBox.flex.left.vCenter
                 .qItemLikeIco
                     include ../dislike.svg
-                .qItemLikeCount .qItemLikeCount {{item.unlikes}}
+                .qItemLikeCount  {{item.unlikes}}
 
         .mainSectionText.mt-2(v-if="item.answer") Ответ:
         .qItemAnswer.mt-2(v-if="item.answer" v-html="urlify(item.answer)")

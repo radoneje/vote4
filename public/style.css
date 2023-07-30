@@ -671,4 +671,10 @@ h3{
     width: 20px;
     height: auto;
 }
+.qItemLikeBox{
+    margin-right: 12px;
+}
+.qItemLikeCount{
+    margin-left: 4px;
+}
 
