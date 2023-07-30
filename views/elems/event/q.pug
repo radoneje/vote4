@@ -25,7 +25,7 @@ h3.mb-3 Вопросы спикеру
     .qItem.mb-3(v-for="item in q" :id="'q'+item.id")
         .qItemUser.mb-2 {{item.i}} {{item.f}}
         .qItemText(v-html="urlify(item.text)")
-        .qItemLikesWr.mb-2.flex.left.vCenter(v-if="event.isQlikes || event.isQDisLikes")
+        .qItemLikesWr.mt-2.flex.left.vCenter(v-if="event.isQlikes || event.isQDisLikes")
             .qItemLikeBox.flex.left.vCenter
                 .qItemLikeIco
                     include ../like.svg
