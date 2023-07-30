@@ -661,4 +661,10 @@ h3{
     color:var(--errorColor);
     font-size:14px;
 }
+.qBtnGroupItem .btn{
+    margin-left: 12px;
+}
+.qBtnGroupItem .btn:first-child{
+    margin-left: 0px;
+}
 
