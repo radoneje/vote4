@@ -73,6 +73,7 @@ let app = new Vue({
                                 item[key] = value[key];
                         }
                 })
+                this.q=this.q.filter(qq=>!qq.isDeleted)
             }
         },
         changeEvent: async function (event, sect) {
