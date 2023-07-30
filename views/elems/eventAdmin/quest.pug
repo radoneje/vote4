@@ -79,12 +79,12 @@
                     .qBtnGroupItem
                         .btn(v-if="item.isMod" v-on:click="item.isMod=!item.isMod;changeQ(item, 'isMod')") Принят
                         .btn.white(v-else v-on:click="item.isMod=!item.isMod;changeQ(item, 'isMod')") Скрыт
-                    .qBtnGroupItem
+                    .qBtnGroupItem.flex.right.vCenter
                         .btn(v-if="item.isMod" v-on:click="item.isSpk=!item.isSpk;changeQ(item, 'isSpk')") Спикеру
                         .btn.white(v-else v-on:click="item.isSpk=!item.isSpk;changeQ(item, 'isSpk')") Спикеру
                         .btn(v-if="item.isScreen" v-on:click="item.isScreen=!item.isScreen;changeQ(item, 'isScreen')") Спикеру
                         .btn.white(v-else v-on:click="item.isScreen=!item.isScreen;changeQ(item, 'isScreen')") Спикеру
-                        .btn.white(v-if="item.isDeleted" v-on:click="item.isDeleted=!item.isDeleted;changeQ(item, 'isDeleted')") Удалить
+                        .btn.white( v-on:click="item.isDeleted=!item.isDeleted;changeQ(item, 'isDeleted')") Удалить
 
 
 
