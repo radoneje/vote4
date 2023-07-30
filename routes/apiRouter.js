@@ -121,7 +121,7 @@ router.post('/changeQ',  async function (req, res, next) {
     }
 });
 
-outer.post('/changeAllQ',  async function (req, res, next) {
+router.post('/changeAllQ',  async function (req, res, next) {
 
     try {
         if(!req.session.user)
