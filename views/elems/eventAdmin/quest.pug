@@ -72,7 +72,7 @@
             h3 Всего вопросов: {{q.length}}
         .qBtnGroup.flex.center.between.mt-2
             .qBtnGroupItem
-                .btn( v-on:click="changeAllQ({key:isMod, value:true})") Принять все
+                .btn( v-on:click="changeAllQ({key:'isMod', value:true})") Принять все
             .qBtnGroupItem.flex.right.vCenter
                 .btn.white( v-on:click="changeAllQ({key:'isDeleted', value:true})") Удалить Все
         .qBox.scroll.mt-3
