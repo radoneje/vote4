@@ -70,6 +70,11 @@
     .rowBody(v-else)
         .rowHeader
             h3 Всего вопросов: {{q.length}}
+        .qBtnGroup.flex.center.between.mb-2
+            .qBtnGroupItem
+                .btn(v-if="item.isMod" v-on:click="item.isMod=!item.isMod;changeAllQ({key:isMod, value:true})") Принять все
+                .qBtnGroupItem.flex.right.vCenter
+                    .btn.white( v-on:click="changeAllQ({key:'isDeleted', value:true})") Удалить
         .qBox.scroll
             .qItem.mb-3(v-for="item in q" :id="'q'+item.id")
                 .qItemUser.mb-2 {{item.i}} {{item.f}}

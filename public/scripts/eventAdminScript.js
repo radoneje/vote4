@@ -98,6 +98,11 @@ let app = new Vue({
                 this.changeQ(item, 'isDeleted')
             }
         },
+        changeAllQ:async function(dt){
+            if(confirm("Вы уверены?")) {
+                await postJson("/api/changeAllQ/", {eventshort:this.event.short, dt});
+            }
+        }
     },
     mounted: async function () {
         this.update()
