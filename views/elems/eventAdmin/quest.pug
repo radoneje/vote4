@@ -70,7 +70,7 @@
     .rowBody(v-else)
         .rowHeader
             h3 Всего вопросов: {{q.length}}
-        .qBtnGroup.flex.center.between.mb-2
+        .qBtnGroup.flex.center.between.mt-2
             .qBtnGroupItem
                 .btn( v-on:click="item.isMod=!item.isMod;changeAllQ({key:isMod, value:true})") Принять все
             .qBtnGroupItem.flex.right.vCenter
