@@ -673,6 +673,13 @@ h3{
 }
 .qItemLikeBox{
     margin-right: 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 8px;
+
+}
+.qItemLikeBox:hover{
+    background-color: var(--primaryHoverColor);
 }
 .qItemLikeCount{
     margin-left: 4px;
