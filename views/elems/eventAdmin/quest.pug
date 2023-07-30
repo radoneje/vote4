@@ -84,7 +84,7 @@
                         .btn.white(v-else v-on:click="item.isSpk=!item.isSpk;changeQ(item, 'isSpk')") Спикеру
                         .btn(v-if="item.isScreen" v-on:click="item.isScreen=!item.isScreen;changeQ(item, 'isScreen')") На экран
                         .btn.white(v-else v-on:click="item.isScreen=!item.isScreen;changeQ(item, 'isScreen')") На экран
-                        .btn.white( v-on:click="item.isDeleted=!item.isDeleted;changeQ(item, 'isDeleted')") Удалить
+                        .btn.white( v-on:click="deleteQ(item)") Удалить
 
 
 
