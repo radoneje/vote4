@@ -667,4 +667,8 @@ h3{
 .qBtnGroupItem .btn:first-child{
     margin-left: 0px;
 }
+.qItemLikeIco svg{
+    width: 20px;
+    height: auto;
+}
 
