@@ -124,6 +124,21 @@ let app=new Vue({
             this.event=await getJson("/api/event/"+event.short)
             this.q=this.filterQ( await getJson("/api/q/"+this.event.short))
 
+        },
+        qLike:async function (item){
+            if(localStorage.getItem("qLike"+item.id)){
+                localStorage.removeItem("qLike"+item.id)
+            }
+            else{
+                localStorage.setItem("qLike"+item.id, new Date())
+            }
+
+        },
+        qIsLike:function(item){
+            return (localStorage.getItem("qLike"+item.id))
+        },
+        qIsDisLike:function(item){
+            return (localStorage.getItem("qDisLike"+item.id))
         }
 
     },

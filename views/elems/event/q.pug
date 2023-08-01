@@ -26,11 +26,11 @@ h3.mb-3 Вопросы спикеру
         .qItemUser.mb-2 {{item.i}} {{item.f}}
         .qItemText(v-html="urlify(item.text)")
         .qItemLikesWr.mt-2.flex.left.vCenter(v-if="event.isQlikes || event.isQDisLikes")
-            .qItemLikeBox.flex.left.vCenter(@click="qLike(item)")
+            .qItemLikeBox.flex.left.vCenter(@click="qLike(item)" v-bind:class="{active:qIsLike(item)}")
                 .qItemLikeIco
                     include ../like.svg
                 .qItemLikeCount {{item.likes}}
-            .qItemLikeBox.flex.left.vCenter(@click="qDisLike(item)")
+            .qItemLikeBox.flex.left.vCenter(@click="qDisLike(item)" v-bind:class="{active:qIsDisLike(item)}")
                 .qItemLikeIco
                     include ../dislike.svg
                 .qItemLikeCount  {{item.unlikes}}
