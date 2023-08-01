@@ -145,7 +145,7 @@ let app=new Vue({
                     await postLike()
                 })
             } else {
-                await postLike(text)
+                await postLike()
             }
 
         },
