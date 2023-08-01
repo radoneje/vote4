@@ -126,15 +126,27 @@ let app=new Vue({
 
         },
         qLike:async function (item){
-            if(localStorage.getItem("qLike"+item.id)){
-                console.log("remove")
+            const postLike=async ()=>{
+                let like=await postJson("/api/qLike/", {id:item.id, like:true, eventshort:this.event.short});
+            }
+            if (!this.user) {
+                await this.ReqUser(async () => {
+                    await postLike()
+                })
+            } else {
+                await postLike(text)
+            }
+
+
+            /*if(localStorage.getItem("qLike"+item.id)){
                 localStorage.removeItem("qLike"+item.id)
+                await postJson("/api/qLike/",{id:item.id, like:false})
             }
             else{
-                console.log("set")
                 localStorage.setItem("qLike"+item.id, new Date())
+                await postJson("/api/qLike/",{id:item.id, like:true})
             }
-            this.$forceUpdate();
+            this.$forceUpdate();*/
 
         },
         qIsLike:function(item){

@@ -140,6 +140,27 @@ router.post('/changeAllQ',  async function (req, res, next) {
     }
 });
 
+router.post('/qLike/',  async function (req, res, next) {
+
+    try {
+        let user=req.session[req.body.eventshort]
+        if(!user)
+            return res.sendStatus(401);
+
+        let dt={qid:req.body.id}
+        dt.value=req.body.like?1:-1
+        dt.eventuserid=user.id;
+        let like=await req.knex("t_qLikes").insert(dt, "*");
+        let ret=await req.knex("t_q").where({id:req.body.id})
+        let r={id:ret[0].id, likes:ret[0].likes}
+
+        req.notify(null, events[0].short, "changeQ", r) // изменяем только одно поле
+        return res.json(like[0].id);
+    } catch (e) {
+        console.warn(e);
+        res.json(null)
+    }
+});
 
 
 module.exports = router;
