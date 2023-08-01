@@ -128,7 +128,7 @@ let app=new Vue({
         qLike:async function (item, method){
             const postLike=async ()=>{
                 try {
-                    let value = localStorage.getItem(method + item.id) ? true : false;
+                    let value = localStorage.getItem(method + item.id) ? false : true;
                     console.log(value);
                     let like = await postJson("/api/qLike/", {id: item.id, method, like: value, eventshort: this.event.short});
                     if (value)
