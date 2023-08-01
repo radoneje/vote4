@@ -678,6 +678,13 @@ h3{
     padding: 8px;
 
 }
+.qItemLikeBox.active{
+    background-color: var(--bgColor);
+    color: var(--whiteColor-100);
+}
+.qItemLikeBox.active svg path{
+    fill: var(--whiteColor-100);
+}
 .qItemLikeBox:hover{
     background-color: var(--primaryHoverColor);
 }
