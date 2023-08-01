@@ -127,14 +127,17 @@ let app=new Vue({
         },
         qLike:async function (item){
             if(localStorage.getItem("qLike"+item.id)){
+                console.log("remove")
                 localStorage.removeItem("qLike"+item.id)
             }
             else{
+                console.log("set")
                 localStorage.setItem("qLike"+item.id, new Date())
             }
 
         },
         qIsLike:function(item){
+            console.log("qIsLike")
             return (localStorage.getItem("qLike"+item.id))
         },
         qIsDisLike:function(item){
