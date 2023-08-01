@@ -683,7 +683,7 @@ h3{
     color: var(--whiteColor-100);
 }
 .qItemLikeBox.active svg path{
-    fill: var(--whiteColor-100)
+    stroke: var(--whiteColor-100)
 }
 .qItemLikeBox:hover{
     background-color: var(--primaryHoverColor);
