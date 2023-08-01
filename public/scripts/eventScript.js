@@ -134,6 +134,7 @@ let app=new Vue({
                         localStorage.removeItem(method + item.id)
                     else
                         localStorage.setItem(method + item.id, new Date())
+                    this.$forceUpdate();
                 }
                 catch (e) {
                     console.warn(e)
