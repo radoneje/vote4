@@ -137,7 +137,7 @@ let app=new Vue({
                     else{
                         localStorage.setItem(method + item.id, new Date())
                         let anitiMethod=method=="qLike"?"qLike":"qDisLike"
-                        console.log(anitiMethod)
+                        console.log("anitiMethod=>",anitiMethod)
                         /*if(localStorage.getItem(anitiSect + item.id)){
                             await postJson("/api/qLike/", {id: item.id, anitiMethod, like: true, eventshort: this.event.short});
                             localStorage.removeItem(anitiMethod + item.id)
