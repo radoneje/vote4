@@ -79,6 +79,15 @@
             .qItem.mb-3(v-for="item in q" :id="'q'+item.id")
                 .qItemUser.mb-2 {{item.i}} {{item.f}}
                 .qItemText.mb-2(v-html="urlify(item.text)")
+                .qItemLikesWr.mt-2.flex.left.vCenter(v-if="event.isQlikes || event.isQDisLikes")
+                    .qItemLikeBox.flex.left.vCenter( )
+                        .qItemLikeIco
+                            include ../like.svg
+                        .qItemLikeCount {{item.likes}}
+                    .qItemLikeBox.flex.left.vCenter()
+                        .qItemLikeIco
+                            include ../dislike.svg
+                        .qItemLikeCount  {{item.unlikes}}
                 textarea.mainInput.w100.mb-2(placeholder="Ведите текст ответа" v-model="item.answer" v-on:change="changeQ(item, 'answer')")
                 .qBtnGroup.flex.center.between
                     .qBtnGroupItem
