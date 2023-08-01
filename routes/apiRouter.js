@@ -151,7 +151,7 @@ router.post('/qLike/',  async function (req, res, next) {
              table="t_qDisLikes";
 
         let dt={qid:req.body.id}
-        dt.value=req.body.like?-1:1
+        dt.value=req.body.like?1:-1
         dt.eventuserid=user.id;
         let like=await req.knex(table).insert(dt, "*");
         let ret=await req.knex("t_q").where({id:req.body.id})
