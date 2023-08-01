@@ -146,13 +146,16 @@ router.post('/qLike/',  async function (req, res, next) {
         let user=req.session[req.body.eventshort]
         if(!user)
             return res.sendStatus(401);
+        let table="t_qLikes";
+        if(req.body.method=="qDisLike")
+             table="t_qDisLikes";
 
         let dt={qid:req.body.id}
         dt.value=req.body.like?1:-1
         dt.eventuserid=user.id;
-        let like=await req.knex("t_qLikes").insert(dt, "*");
+        let like=await req.knex(table).insert(dt, "*");
         let ret=await req.knex("t_q").where({id:req.body.id})
-        let r={id:ret[0].id, likes:ret[0].likes}
+        let r={id:ret[0].id, likes:ret[0].likes, unlikes:ret[0].unlikes}
 
         req.notify(null, req.body.eventshort, "changeQ", r) // изменяем только одно поле
         return res.json(like[0].id);
