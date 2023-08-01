@@ -679,11 +679,11 @@ h3{
 
 }
 .qItemLikeBox.active{
-    background-color: var(--bgColor);
+    background-color: var(--primaryColor);;
     color: var(--whiteColor-100);
 }
 .qItemLikeBox.active svg path{
-    fill: var(--primaryColor);
+    fill: var(--whiteColor-100)
 }
 .qItemLikeBox:hover{
     background-color: var(--primaryHoverColor);
