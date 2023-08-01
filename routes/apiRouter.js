@@ -154,7 +154,7 @@ router.post('/qLike/',  async function (req, res, next) {
         let ret=await req.knex("t_q").where({id:req.body.id})
         let r={id:ret[0].id, likes:ret[0].likes}
 
-        req.notify(null, events[0].short, "changeQ", r) // изменяем только одно поле
+        req.notify(null, req.body.eventshort, "changeQ", r) // изменяем только одно поле
         return res.json(like[0].id);
     } catch (e) {
         console.warn(e);
