@@ -134,6 +134,7 @@ let app=new Vue({
                 console.log("set")
                 localStorage.setItem("qLike"+item.id, new Date())
             }
+            this.$forceUpdate();
 
         },
         qIsLike:function(item){
