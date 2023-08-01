@@ -129,18 +129,24 @@ let app=new Vue({
             const postLike=async ()=>{
                 try {
                     let value = localStorage.getItem(method + item.id) ? true : false;
-                    console.log(value);
                     let like = await postJson("/api/qLike/", {id: item.id, method, like: value, eventshort: this.event.short});
-                    if (value)
+                    if (value){
                         localStorage.removeItem(method + item.id)
-                    else
+
+                    }
+                    else{
                         localStorage.setItem(method + item.id, new Date())
+                        let anitiMethod=method=="qLike"?"qLike":"qDisLike"
+                        if(localStorage.getItem(anitiSect + item.id)){
+                            await postJson("/api/qLike/", {id: item.id, anitiMethod, like: true, eventshort: this.event.short});
+                            localStorage.removeItem(anitiMethod + item.id)
+                        }
+                    }
                     this.$forceUpdate();
                 }
                 catch (e) {
                     console.warn(e)
                 }
-
             }
             if (!this.user) {
                 await this.ReqUser(async () => {
