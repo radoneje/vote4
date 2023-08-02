@@ -166,7 +166,6 @@ router.post('/qLike/',  async function (req, res, next) {
 });
 
 router.post('/vote/',  async function (req, res, next) {
-
     try {
         let user=req.session[req.body.eventshort]
         if(!user)
@@ -177,10 +176,28 @@ router.post('/vote/',  async function (req, res, next) {
 
         req.body.eventshort=events[0].short;
 
-        let r=await req.knex("t_votes").insert(req.body, "*")
+        let r=[];
+        if(!req.body.id)
+            r=await req.knex("t_votes").insert(req.body, "*")
+        else{
+            let id=req.body.id;
+            delete req.body.id;
+            r=await req.knex("t_votes").update(req.body).where({id});
+        }
         let q=await req.knex("v_votes").where({ id:r[0].id})
         req.notify(null, events[0].short, "addVote", q[0]) // изменяем только одно поле
         return res.json(q[0]);
+    } catch (e) {
+        console.warn(e);
+        res.json(null)
+    }
+});
+router.get('/votes/:eventshort',  async function (req, res, next) {
+    try {
+
+        let votes=await req.knex("v_votes").where({ eventshort:req.params.eventshort})
+
+        return res.json(votes);
     } catch (e) {
         console.warn(e);
         res.json(null)
