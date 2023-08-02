@@ -8,7 +8,7 @@
         .qBtnGroup.flex.center.between.mt-2.mb-3(v-if="q.length>0")
             .qBtnGroupItem
                 .btn( v-on:click="addVote({key:'isMod', value:true})") Создать
-            .qBtnGroupItem.flex.right.vCenter
+            .qBtnGroupItem.flex.right.vCenter(v-if="votes.length>0")
                 .btn.white( v-on:click="changeAllVote({key:'isActive', value:false})") Остановить Все
         .rowBody(v-if="votes.length==0")
             .emptyPlaceholder.flex.center.vCenter.mt-3
