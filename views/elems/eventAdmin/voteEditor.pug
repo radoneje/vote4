@@ -10,7 +10,33 @@
                 .btn( v-on:click="addVote({key:'isMod', value:true})") Создать
             .qBtnGroupItem.flex.right.vCenter
                 .btn.white( v-on:click="changeAllVote({key:'isActive', value:false})") Остановить Все
-
+        .rowBody(v-if="q.length==0")
+            .emptyPlaceholder.flex.center.vCenter.mt-3
+                .mt-3(style="text-align: center;")
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect opacity="0.7" x="13.877" y="9" width="65.3481" height="45.9857" rx="8" fill="url(#paint0_linear_107_2432)"/>
+                    <rect x="23.5566" y="34.1309" width="36.3045" height="6.05075" rx="3.02537" fill="white"/>
+                    <g filter="url(#filter0_b_107_2432)">
+                    <circle cx="18.4343" cy="54.0578" r="16.9421" fill="#AA69EB" fill-opacity="0.4"/>
+                    <circle cx="18.4343" cy="54.0578" r="16.4421" stroke="#AA69EB" stroke-opacity="0.1"/>
+                    </g>
+                    <path d="M15.35 58.1257L26.236 47.3014C26.5742 46.965 27.0047 46.7969 27.5275 46.7969C28.0503 46.7969 28.4808 46.965 28.8191 47.3014C29.1573 47.6377 29.3265 48.0658 29.3265 48.5856C29.3265 49.1054 29.1573 49.5335 28.8191 49.8699L16.6416 61.9784C16.2726 62.3454 15.8421 62.5288 15.35 62.5288C14.858 62.5288 14.4275 62.3454 14.0585 61.9784L9.2613 57.2084C8.92304 56.872 8.75391 56.444 8.75391 55.9242C8.75391 55.4043 8.92304 54.9763 9.2613 54.6399C9.59956 54.3036 10.0301 54.1354 10.5529 54.1354C11.0756 54.1354 11.5061 54.3036 11.8444 54.6399L15.35 58.1257Z" fill="white"/>
+                    <rect x="23.5566" y="19.6089" width="45.9857" height="6.05075" rx="3.02537" fill="white"/>
+                    <defs>
+                    <filter id="filter0_b_107_2432" x="-18.5078" y="17.1157" width="73.8848" height="73.8843" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feGaussianBlur in="BackgroundImageFix" stdDeviation="10"/>
+                    <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_107_2432"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_107_2432" result="shape"/>
+                    </filter>
+                    <linearGradient id="paint0_linear_107_2432" x1="19.3684" y1="11.705" x2="66.1107" y2="53.6493" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E7D5FF"/>
+                    <stop offset="1" stop-color="#C294FD"/>
+                    </linearGradient>
+                    </defs>
+                    </svg>
+                    .text.mt-3 Голосования еще не добавлены
+        .rowBody.mt-3(v-else)
 
 
 
