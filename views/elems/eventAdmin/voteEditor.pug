@@ -56,8 +56,26 @@
                                         </svg>
                                 .aeSubRow
                                     .swith(@click="item.isMultiSelect=!item.isMultiSelect;changeVote(item, 'isMultiSelect')" v-bind:class="{active:item.isMultiSelect}")
-                                        .mainSectionSwithText.On Несколько вариатов включено
-                                        .mainSectionSwithText.Off Несколько вариатов выключено
+                                        .mainSectionSwithText.On Можно выбрать несколько вариантов ответов
+                                        .mainSectionSwithText.Off Нельзя выбрать несколько вариантов ответов
+                                        .swithElem
+                                            .swithElemDot
+                                                .swithElemDotCenter
+                                    .swith(@click="item.isScreenResBefore=!item.isScreenResBefore;changeVote(item, 'isScreenResBefore')" v-bind:class="{active:item.isMultiSelect}")
+                                        .mainSectionSwithText.On Результаты на экране в процессе голосования
+                                        .mainSectionSwithText.Off Результаты на экране после голосования
+                                        .swithElem
+                                            .swithElemDot
+                                                .swithElemDotCenter
+                                    .swith(@click="item.isPercent=!item.isPercent;changeVote(item, 'isPercent')" v-bind:class="{active:item.isMultiSelect}")
+                                        .mainSectionSwithText.On Результаты на экране в процессе голосования
+                                        .mainSectionSwithText.Off Результаты на экране после голосования
+                                        .swithElem
+                                            .swithElemDot
+                                                .swithElemDotCenter
+                                    .swith(@click="item.isCount=!item.isCount;changeVote(item, 'isCount')" v-bind:class="{active:item.isMultiSelect}")
+                                        .mainSectionSwithText.On Результаты на экране в процессе голосования
+                                        .mainSectionSwithText.Off Результаты на экране после голосования
                                         .swithElem
                                             .swithElemDot
                                                 .swithElemDotCenter
