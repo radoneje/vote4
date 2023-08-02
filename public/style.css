@@ -648,7 +648,9 @@ h3{
     padding: 24px;
     word-break: break-word;
     border-radius: 12px;
-    border:1px solid var(--borderColor)
+    border:1px solid var(--borderColor);
+    position:relative;
+
 }
 .scroll .qItem{
     margin-right: 16px;
