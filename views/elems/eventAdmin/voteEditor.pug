@@ -4,7 +4,7 @@
                 div
                     .mainSectionTitle.flex.left.vCenter
                         div Голосования
-                        .small(style='margin-top: 8px;') ,  всего: {{votes.length}}
+                        .small(style='margin-top: 8px;') ,  всего: {{votes.length}}, активных:{{votes.filter(v=>v.isActive).length}}
 
 
 
