@@ -61,19 +61,23 @@
                                         .swithElem
                                             .swithElemDot
                                                 .swithElemDotCenter
-                                    .swith(@click="item.isScreenResBefore=!item.isScreenResBefore;changeVote(item, 'isScreenResBefore')" v-bind:class="{active:item.isMultiSelect}")
+                                
+                                .aeSubRow                
+                                    .swith(@click="item.isPercent=!item.isPercent;changeVote(item, 'isPercent')" v-bind:class="{active:item.isPercent}")
                                         .mainSectionSwithText.On Результаты на экране в процессе голосования
                                         .mainSectionSwithText.Off Результаты на экране после голосования
                                         .swithElem
                                             .swithElemDot
                                                 .swithElemDotCenter
-                                    .swith(@click="item.isPercent=!item.isPercent;changeVote(item, 'isPercent')" v-bind:class="{active:item.isMultiSelect}")
+                                .aeSubRow
+                                    .swith(@click="item.isCount=!item.isCount;changeVote(item, 'isCount')" v-bind:class="{active:item.isCount}")
                                         .mainSectionSwithText.On Результаты на экране в процессе голосования
                                         .mainSectionSwithText.Off Результаты на экране после голосования
                                         .swithElem
                                             .swithElemDot
                                                 .swithElemDotCenter
-                                    .swith(@click="item.isCount=!item.isCount;changeVote(item, 'isCount')" v-bind:class="{active:item.isMultiSelect}")
+                                .aeSubRow
+                                    .swith(@click="item.isScreenResBefore=!item.isScreenResBefore;changeVote(item, 'isScreenResBefore')" v-bind:class="{active:item.isScreenResBefore}")
                                         .mainSectionSwithText.On Результаты на экране в процессе голосования
                                         .mainSectionSwithText.Off Результаты на экране после голосования
                                         .swithElem
