@@ -658,8 +658,11 @@ h3{
     font-size:16px
 }
 .qBox{
-    max-height: calc(100vh - 312px);
+
     overflow-y: scroll;
+}
+.qBox.scroll{
+    max-height: calc(100vh - 312px);
 }
 .qItemError{
     color:var(--errorColor);
