@@ -127,6 +127,9 @@ let app = new Vue({
             let dt = {id: item.id};
             dt[sect] = item[sect];
             await postJson("/api/vote/"+this.event.short, dt);
+        },
+        addVoteAnswer:async function(item){
+            await postJson("/api/voteAnswer/"+this.event.short, {voteid:item.id});
         }
 
     },

@@ -180,13 +180,13 @@ router.post('/vote/:eventshort',  async function (req, res, next) {
         if(!req.body.id){
             r=await req.knex("t_votes").insert(req.body, "*")
             let q=await req.knex("v_votes").where({ id:r[0].id})
-            req.notify(null, events[0].short, "addVote", q[0]) // изменяем только одно поле
+            req.notify(null, events[0].short, "addVote", q[0]) 
         }
         else{
             let id=req.body.id;
             delete req.body.id;
             r=await req.knex("t_votes").update(req.body,"*").where({id});
-            let q=await req.knex("v_votes").where({ id:r[0].id})
+            //let q=await req.knex("v_votes").where({ id:r[0].id})
             req.body.id=id;
             req.notify(null, events[0].short, "changeVote", req.body) // изменяем только одно поле
         }
@@ -204,6 +204,39 @@ router.get('/votes/:eventshort',  async function (req, res, next) {
         let votes=await req.knex("v_votes").where({ eventshort:req.params.eventshort})
 
         return res.json(votes);
+    } catch (e) {
+        console.warn(e);
+        res.json(null)
+    }
+});
+router.post('/voteAnswer/:eventshort',  async function (req, res, next) {
+    try {
+        let user=req.session[req.params.eventshort]
+        if(!user)
+           return res.sendStatus(401);
+        let events = await req.knex("t_events").where({isDeleted:false, short:req.params.eventshort})
+        if(events.length==0)
+            return res.sendStatus(404)
+
+        req.body.eventshort=events[0].short;
+
+        let r=[];
+        if(!req.body.id){
+            r=await req.knex("t_voteAnswers").insert(req.body, "*")
+            //let q=await req.knex("v_votes").where({ id:r[0].id})
+            req.notify(null, events[0].short, "addVoteAnswer", r[0]) 
+        }
+        else{
+            let id=req.body.id;
+            delete req.body.id;
+            r=await req.knex("t_voteAnswers").update(req.body,"*").where({id});
+            //let q=await req.knex("t_voteAnswers").where({ id:r[0].id})
+            req.body.id=id;
+            req.notify(null, events[0].short, "changeVoteAnswer", req.body) // изменяем только одно поле
+        }
+       
+    
+        return res.json(q[0]);
     } catch (e) {
         console.warn(e);
         res.json(null)

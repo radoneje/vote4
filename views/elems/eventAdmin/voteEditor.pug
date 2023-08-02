@@ -83,5 +83,8 @@
                                         .swithElem
                                             .swithElemDot
                                                 .swithElemDotCenter
-                    .btn.btnSecondary Добавить ответ
+                    .btn.btnSecondary.mt-3(@click="addVoteAnswer(item)") Добавить ответ
+                    .voteAnswersBox.mt-3 
+                        .voteAnswer.flex.left.vCenter(v-for="answer in item.answers" v-if="item.answers")
+                            input.mainInput.w100(v-model="answer.title")
 
