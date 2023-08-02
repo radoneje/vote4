@@ -167,7 +167,7 @@ router.post('/qLike/',  async function (req, res, next) {
 
 router.post('/vote/:eventshort',  async function (req, res, next) {
     try {
-        let user=req.session[req.body.eventshort]
+        let user=req.session[req.params.eventshort]
         if(!user)
            return res.sendStatus(401);
         let events = await req.knex("t_events").where({isDeleted:false, short:req.body.eventshort})
