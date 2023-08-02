@@ -7,9 +7,9 @@
                         .small(style='margin-top: 8px;') ,  всего: {{votes.length}}, активных:{{votes.filter(v=>v.isActive).length}}
         .qBtnGroup.flex.center.between.mt-2.mb-3(v-if="q.length>0")
             .qBtnGroupItem
-                .btn( v-on:click="changeAllQ({key:'isMod', value:true})") Принять все
+                .btn( v-on:click="addVote({key:'isMod', value:true})") Создать
             .qBtnGroupItem.flex.right.vCenter
-                .btn.white( v-on:click="changeAllQ({key:'isDeleted', value:true})") Удалить Все
+                .btn.white( v-on:click="changeAllVote({key:'isActive', value:false})") Остановить Все
 
 
 
