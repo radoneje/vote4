@@ -4,7 +4,7 @@
                 div
                     .mainSectionTitle.flex.left.vCenter
                         div Голосования
-                        .small(style='margin-top: 8px;') ,  всего: {{votes.length}}, активных:{{votes.filter(v=>v.isActive).length}}
+                        .small(style='margin-top: 8px;') ,  всего: {{votes.length}}, активных: {{votes.filter(v=>v.isActive).length}}
         .qBtnGroup.flex.center.between.mt-2.mb-3(v-if="q.length>0")
             .qBtnGroupItem
                 .btn( v-on:click="addVote({key:'isMod', value:true})") Создать
