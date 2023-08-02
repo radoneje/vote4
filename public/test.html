@@ -5,40 +5,31 @@
 
     </div>
 <script>
-    let text="eee((В КАДРЕ))\n part 0.1";
-    text+="((ЗА КАДРОМ))\n part 1.1";
+    let text="eee((В КАДРЕ))\npart 0.1";
+    text+="((ЗА КАДРОМ))\npart 1.1";
     text+="((В КАДРЕ))\n part 0.2";
     text+="((ЗА КАДРОМ))\n part 1.2";
     text+="((В КАДРЕ))\n part 0.3";
     text+="((ЗА КАДРОМ))\n part 1.3";
     text+="((В КАДРЕ))\n part 0.4";
     text+="((ЗА КАДРОМ))\n part 1.4";
+    console.log(getInStage(text))
+    function getInStage(text) {
+        text = text.replace(/(\(\(В КАДРЕ\)\)|\(\(ЗА КАДРОМ\)\))/gm, 'U+00F7$1')
+        let arr = text.split("U+00F7");
+        text = arr.reduce((summ, t) => {
+            if (!summ)
+                summ = ''
+            t = t.replace("U+00F7", '');
+            if (t.indexOf("((ЗА КАДРОМ))") >= 0) {
+                return summ += "\n\n==ЗА КАДРОМ==";
+            }
+            t = t.replace("((В КАДРЕ))", '\n');
+            return summ += t;
 
-
-    text=text.replace(/(\(\(В КАДРЕ\)\)|\(\(ЗА КАДРОМ\)\))/gm, 'U+00F7$1')
-    let arr=text.split("U+00F7");
-    /*arr.forEach(t=>{
-        if(t.indexOf("((ЗА КАДРОМ))")>=0){
-            t=null;
-        }
-        else;
-        t=t.replace("U+00F7", '').replace("((В КАДРЕ))",'');
-    })
-    arr.filter(t=>t!=null);*/
-
-     text=arr.reduce((summ, t)=>{
-        if(!summ)
-            summ=''
-        t=t.replace("U+00F7", '');
-        if(t.indexOf("((ЗА КАДРОМ))")>=0)
-        {
-            return summ+="\n\n==ЗА КАДРОМ==";
-        }
-        t=t.replace("((В КАДРЕ))",'\n');
-        return summ+=t;
-
-    })
-    console.log(text,);
+        })
+        return text;
+    }
 
 
 </script>
