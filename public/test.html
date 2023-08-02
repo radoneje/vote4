@@ -18,8 +18,9 @@
     getElem(text);
     function getElem(text){
        // let start=text.indexOf(/\(\(В КАДРЕ\)\)|\(\(ЗА КАДРОМ\)\)/,5)
-         text=text.replace(/(\(\(В КАДРЕ\)\)|\(\(ЗА КАДРОМ\)\))/gm, '!$1')
-        console.log(text)
+         text=text.replace(/(\(\(В КАДРЕ\)\)|\(\(ЗА КАДРОМ\)\))/gm, 'U+00F7$1')
+        arr=text.split("U+00F7");
+        console.log(text, arr);
         /*if(start>=0)
         {
             let st=text.substring(0, start);
