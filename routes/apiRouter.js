@@ -182,7 +182,7 @@ router.post('/vote/:eventshort',  async function (req, res, next) {
         else{
             let id=req.body.id;
             delete req.body.id;
-            r=await req.knex("t_votes").update(req.body).where({id});
+            r=await req.knex("t_votes").update(req.body,"*").where({id});
         }
         let q=await req.knex("v_votes").where({ id:r[0].id})
         req.notify(null, events[0].short, "addVote", q[0]) // изменяем только одно поле
