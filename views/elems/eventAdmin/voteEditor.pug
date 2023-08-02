@@ -10,7 +10,7 @@
                 .btn( v-on:click="addVote({key:'isMod', value:true})") Создать
             .qBtnGroupItem.flex.right.vCenter
                 .btn.white( v-on:click="changeAllVote({key:'isActive', value:false})") Остановить Все
-        .rowBody(v-if="q.length==0")
+        .rowBody(v-if="votes.length==0")
             .emptyPlaceholder.flex.center.vCenter.mt-3
                 .mt-3(style="text-align: center;")
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
