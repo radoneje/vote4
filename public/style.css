@@ -698,4 +698,8 @@ h3{
 .qItemLikeCount{
     margin-left: 4px;
 }
+.small{
+    font-size: 14px;
+    font-weight: 300;
+}
 
