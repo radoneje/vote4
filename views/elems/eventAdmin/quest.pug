@@ -4,7 +4,7 @@
                 div
                     .mainSectionTitle.flex.left.vCenter
                         div Вопросы
-                        .small &nbsp;Всего вопросов {{q.length}}
+                        .small(style='margin-top: 8px;') ,  всего: {{q.length}}
                 .flex.right.vCenter
                     .swith(@click="event.isQ=!event.isQ;changeEvent(event, 'isQ')" v-bind:class="{active:event.isQ}")
                         .mainSectionSwithText.On Включено, пользователи могут задавать вопросы
