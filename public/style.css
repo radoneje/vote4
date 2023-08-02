@@ -647,7 +647,11 @@ h3{
     background: var(--whiteColor-100);
     padding: 24px;
     word-break: break-word;
-
+    border-radius: 12px;
+    border:1px solid var(--borderColor)
+}
+.scroll .qItem{
+    margin-right: 16px;
 }
 .qItemUser{
     color:var(--primaryColor);
