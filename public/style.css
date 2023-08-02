@@ -110,7 +110,7 @@ textarea::placeholder{
     background-color: var(--primaryDisableColor);
 }
 .btnSecondary{
-    color: var(--secondaryColor);
+    background-color: var(--secondaryColor);
 }
 .btn.btnSecondary.disabled{
     background-color: var(--secondaryDisableColor);
