@@ -5,7 +5,7 @@
 
     </div>
 <script>
-    let text="((В КАДРЕ))\n part 0.1";
+    let text="eee((В КАДРЕ))\n part 0.1";
     text+="((ЗА КАДРОМ))\n part 1.1";
     text+="((В КАДРЕ))\n part 0.2";
     text+="((ЗА КАДРОМ))\n part 1.2";
@@ -32,7 +32,7 @@
         t=t.replace("U+00F7", '');
         if(t.indexOf("((ЗА КАДРОМ))")>=0)
         {
-            return summ+="\n==ЗА КАДРОМ==";
+            return summ+="\n\n==ЗА КАДРОМ==";
         }
         t=t.replace("((В КАДРЕ))",'\n');
         return summ+=t;
