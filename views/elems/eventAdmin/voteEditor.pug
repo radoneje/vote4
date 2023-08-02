@@ -39,7 +39,7 @@
         .rowBody.mt-3(v-else)
             .qBox.mt-3
                 .qItem.mb-3(v-for="item in votes" :id="'vote'+item.id")
-                    .flex.left.vCenter.mt-3
+                    .flex.left.vCenter
                         input.mainInput.w100(placeholder="Введите текст вопроса для голосования" v-model="item.title")
                         .mainSectionSettingsWr
                             .mainSectionSettingsBtn.iconBtn(onclick="this.parentNode.classList.add('active')")
