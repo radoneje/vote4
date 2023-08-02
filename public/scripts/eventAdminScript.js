@@ -112,7 +112,7 @@ let app = new Vue({
         changeVote:async function(item, sect) {
             let dt = {id: item.id};
             dt[sect] = item[sect];
-            await postJson("/api/changeVote/", dt);
+            await postJson("/api/vote/", dt);
         }
 
     },
