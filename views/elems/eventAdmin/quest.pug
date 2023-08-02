@@ -82,7 +82,7 @@
                 .btn( v-on:click="changeAllQ({key:'isMod', value:true})") Принять все
             .qBtnGroupItem.flex.right.vCenter
                 .btn.white( v-on:click="changeAllQ({key:'isDeleted', value:true})") Удалить Все
-        .qBox.scroll.mt-3
+        .qBox.mt-3
             .qItem.mb-3(v-for="item in q" :id="'q'+item.id")
                 .qItemUser.mb-2 {{item.i}} {{item.f}}
                 .qItemText.mb-2(v-html="urlify(item.text)")
