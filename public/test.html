@@ -17,14 +17,14 @@
 
     text=text.replace(/(\(\(В КАДРЕ\)\)|\(\(ЗА КАДРОМ\)\))/gm, 'U+00F7$1')
     let arr=text.split("U+00F7");
-    arr.forEach(t=>{
+    /*arr.forEach(t=>{
         if(t.indexOf("((ЗА КАДРОМ))")>=0){
             t=null;
         }
         else;
         t=t.replace("U+00F7", '').replace("((В КАДРЕ))",'');
     })
-    arr.filter(t=>t!=null);
+    arr.filter(t=>t!=null);*/
 
      text=arr.reduce((summ, t)=>{
         if(!summ)
