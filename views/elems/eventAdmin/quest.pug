@@ -53,7 +53,7 @@
                                     .swithElem
                                         .swithElemDot
                                             .swithElemDotCenter
-        .qBtnGroup.flex.center.between.mt-2(v-if="q.length>0")
+        .qBtnGroup.flex.center.between.mt-2.mb-3(v-if="q.length>0")
             .qBtnGroupItem
                 .btn( v-on:click="changeAllQ({key:'isMod', value:true})") Принять все
             .qBtnGroupItem.flex.right.vCenter
