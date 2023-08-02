@@ -53,6 +53,11 @@
                                     .swithElem
                                         .swithElemDot
                                             .swithElemDotCenter
+        .qBtnGroup.flex.center.between.mt-2(v-if="q.length>0")
+            .qBtnGroupItem
+                .btn( v-on:click="changeAllQ({key:'isMod', value:true})") Принять все
+            .qBtnGroupItem.flex.right.vCenter
+                .btn.white( v-on:click="changeAllQ({key:'isDeleted', value:true})") Удалить Все
 .eaRow
     .rowBody(v-if="q.length==0")
         .emptyPlaceholder.flex.center.vCenter.mt-3
@@ -78,13 +83,8 @@
                </svg>
                 .text.mt-3 Пока вопросов не задано
     .rowBody(v-else)
-        .rowHeader
-            h3 Всего вопросов: {{q.length}}
-        .qBtnGroup.flex.center.between.mt-2
-            .qBtnGroupItem
-                .btn( v-on:click="changeAllQ({key:'isMod', value:true})") Принять все
-            .qBtnGroupItem.flex.right.vCenter
-                .btn.white( v-on:click="changeAllQ({key:'isDeleted', value:true})") Удалить Все
+
+
         .qBox.mt-3
             .qItem.mb-3(v-for="item in q" :id="'q'+item.id")
                 .qItemUser.mb-2 {{item.i}} {{item.f}}
