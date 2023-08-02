@@ -170,7 +170,7 @@ router.post('/vote/:eventshort',  async function (req, res, next) {
         let user=req.session[req.params.eventshort]
         if(!user)
            return res.sendStatus(401);
-        let events = await req.knex("t_events").where({isDeleted:false, short:req.body.eventshort})
+        let events = await req.knex("t_events").where({isDeleted:false, short:req.params.eventshort})
         if(events.length==0)
             return res.sendStatus(404)
 
