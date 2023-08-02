@@ -165,5 +165,27 @@ router.post('/qLike/',  async function (req, res, next) {
     }
 });
 
+router.post('/vote/',  async function (req, res, next) {
+
+    try {
+        let user=req.session[req.body.eventshort]
+        if(!user)
+            return res.sendStatus(401);
+        let events = await req.knex("t_events").where({isDeleted:false, short:req.body.eventshort})
+        if(events.length==0)
+            return res.sendStatus(404)
+
+        req.body.eventshort=events[0].short;
+
+        let r=await req.knex("t_votes").insert(req.body, "*")
+        let q=await req.knex("v_votes").where({ id:r[0].id})
+        req.notify(null, events[0].short, "addVote", q[0]) // изменяем только одно поле
+        return res.json(q[0]);
+    } catch (e) {
+        console.warn(e);
+        res.json(null)
+    }
+});
+
 
 module.exports = router;

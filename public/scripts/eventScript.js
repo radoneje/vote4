@@ -65,11 +65,7 @@ let app=new Vue({
                 evnt.target.classList.remove("sending");
 
             }
-
-
-
         },
-        postQ:async function(text){},
         onMessage: async function (cmd, value) {
             console.log("onMessage", cmd)
             if (cmd == "changeEvent" && this.event.id == value.id) {

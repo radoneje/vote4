@@ -103,6 +103,9 @@ let app = new Vue({
             if(confirm("Вы уверены?")) {
                 await postJson("/api/changeAllQ/", {eventshort:this.event.short, dt});
             }
+        },
+        addVote:async function(){
+            await postJson("/api/vote/", {eventshort:this.event.short});
         }
     },
     mounted: async function () {
