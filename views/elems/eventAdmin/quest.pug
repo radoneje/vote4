@@ -1,9 +1,10 @@
 .eaRow
         .flex.beetwen.vCenter
             .eaTitleGroup.flex.between.vCenter
-                .mainSectionTitle.flex.left.vCenter
-                    div Вопросы
-                    .small &nbsp;Всего вопросов {{q.length}}
+                div
+                    .mainSectionTitle.flex.left.vCenter
+                        div Вопросы
+                        .small &nbsp;Всего вопросов {{q.length}}
                 .flex.right.vCenter
                     .swith(@click="event.isQ=!event.isQ;changeEvent(event, 'isQ')" v-bind:class="{active:event.isQ}")
                         .mainSectionSwithText.On Включено, пользователи могут задавать вопросы
