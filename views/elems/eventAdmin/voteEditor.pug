@@ -38,7 +38,7 @@
                     .text.mt-3 Голосования еще не добавлены
         .rowBody.mt-3(v-else)
             .qBox.mt-3
-                .qItem.mb-3(v-for="item in vote" :id="'vote'+item.id")
+                .qItem.mb-3(v-for="item in votes" :id="'vote'+item.id")
                     .flex.left.vCenter.mt-3
                         input.mainInput.w100(placeholder="Введите текст вопроса для голосования" v-model="item.title")
 
