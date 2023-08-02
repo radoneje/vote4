@@ -92,6 +92,7 @@ let app = new Vue({
         },
         update:async function(){
             this.q=await getJson("/api/q/"+this.event.short)
+            this.votes=await getJson("/api/votes/"+this.event.short)
         },
         deleteQ:async function(item){
             if(confirm("Удалить вопрос?")) {
