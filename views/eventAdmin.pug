@@ -54,7 +54,9 @@ block content
                 .eaSection(v-if="section=='design'")
                     include elems/eventAdmin/design
                 .eaSection(v-if="section=='quest'")
-                    include elems/eventAdmin/quest
+                    include elems/eventAdmin/questEditor
+                .eaSection(v-if="section=='votes'")
+                    include elems/eventAdmin/voteEditor
 
         .eaFooter
             .mainTower

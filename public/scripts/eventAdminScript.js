@@ -7,9 +7,10 @@ let socket = null;
 let app = new Vue({
     el: "#app",
     data: {
-        section: "quest",
+        section: "votes",
         event,
-         q:[]
+         q:[],
+        votes:[]
     },
     methods: {
         urlify,
