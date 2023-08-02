@@ -18,8 +18,8 @@
     getElem(text);
     function getElem(text){
        // let start=text.indexOf(/\(\(В КАДРЕ\)\)|\(\(ЗА КАДРОМ\)\)/,5)
-        let start=text.search(/\(\(В КАДРЕ\)\)/gm)
-        if(start>0)
+        let start=text.search(/\(\(В КАДРЕ\)\)/gm, 5)
+        if(start>=0)
         {
             let st=text.substring(0, start);
             arr.push(text);
