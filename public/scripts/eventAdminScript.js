@@ -76,6 +76,20 @@ let app = new Vue({
                 })
                 this.q=this.q.filter(qq=>!qq.isDeleted)
             }
+            if (cmd == "addVote" && this.event.short == value.eventshort) {
+                this.votes.push(value);
+            }
+            if (cmd == "changeVote" ) {
+                this.votes.forEach(item=>{
+                    if(item.id==value.id)
+                        for (let key of Object.keys(value)) {
+                            if (key != "id")
+                                item[key] = value[key];
+                        }
+                })
+                this.votes=this.votes.filter(qq=>!qq.isDeleted)
+            }
+            
         },
         changeEvent: async function (event, sect) {
             let dt = {id: event.id};

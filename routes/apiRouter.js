@@ -177,15 +177,21 @@ router.post('/vote/:eventshort',  async function (req, res, next) {
         req.body.eventshort=events[0].short;
 
         let r=[];
-        if(!req.body.id)
+        if(!req.body.id){
             r=await req.knex("t_votes").insert(req.body, "*")
+            let q=await req.knex("v_votes").where({ id:r[0].id})
+            req.notify(null, events[0].short, "addVote", q[0]) // изменяем только одно поле
+        }
         else{
             let id=req.body.id;
             delete req.body.id;
             r=await req.knex("t_votes").update(req.body,"*").where({id});
+            let q=await req.knex("v_votes").where({ id:r[0].id})
+            req.body.id=id;
+            req.notify(null, events[0].short, "changeVote", req.body) // изменяем только одно поле
         }
-        let q=await req.knex("v_votes").where({ id:r[0].id})
-        req.notify(null, events[0].short, "addVote", q[0]) // изменяем только одно поле
+       
+    
         return res.json(q[0]);
     } catch (e) {
         console.warn(e);
