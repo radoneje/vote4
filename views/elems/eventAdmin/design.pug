@@ -187,7 +187,7 @@
             .mainSectionTitle Отображение на экране
             
     .aeSubRow
-        .swith.(@click="event.isScreenQr=!event.isScreenQr;changeEvent(event, 'isScreenQr')" v-bind:class="{active:event.isScreenQr}")
+        .swith(@click="event.isScreenQr=!event.isScreenQr;changeEvent(event, 'isScreenQr')" v-bind:class="{active:event.isScreenQr}")
             .mainSectionSwithText.On QR показан
             .mainSectionSwithText.Off QR Скрыт
             .swithElem
