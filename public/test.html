@@ -14,22 +14,32 @@
     text+="((В КАДРЕ))\n part 0.4";
     text+="((ЗА КАДРОМ))\n part 1.4";
 
-    let arr=[];
-    getElem(text);
-    function getElem(text){
-       // let start=text.indexOf(/\(\(В КАДРЕ\)\)|\(\(ЗА КАДРОМ\)\)/,5)
-         text=text.replace(/(\(\(В КАДРЕ\)\)|\(\(ЗА КАДРОМ\)\))/gm, 'U+00F7$1')
-        arr=text.split("U+00F7");
-        console.log(text, arr);
-        /*if(start>=0)
+
+    text=text.replace(/(\(\(В КАДРЕ\)\)|\(\(ЗА КАДРОМ\)\))/gm, 'U+00F7$1')
+    let arr=text.split("U+00F7");
+    arr.forEach(t=>{
+        if(t.indexOf("((ЗА КАДРОМ))")>=0){
+            t=null;
+        }
+        else;
+        t=t.replace("U+00F7", '').replace("((В КАДРЕ))",'');
+    })
+    arr.filter(t=>t!=null);
+
+    let text=arr.reduce((summ, t)=>{
+        if(!summ)
+            summ=''
+        t=t.replace("U+00F7", '');
+        if(t.indexOf("((ЗА КАДРОМ))")>=0)
         {
-            let st=text.substring(0, start);
-            arr.push(text);
-            text=text.substring(start);
-            getElem(text)
-        }*/
-    }
-    console.log(arr);
+            return summ+="==ЗА КАДРОМ==\n";
+        }
+        t=t.replace("((В КАДРЕ))",'\n');
+        return summ+=t;
+
+    })
+    console.log(text,);
+
 
 </script>
 
