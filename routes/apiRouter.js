@@ -165,11 +165,11 @@ router.post('/qLike/',  async function (req, res, next) {
     }
 });
 
-router.post('/vote/',  async function (req, res, next) {
+router.post('/vote/:eventshort',  async function (req, res, next) {
     try {
         let user=req.session[req.body.eventshort]
         if(!user)
-            return res.sendStatus(401);
+           return res.sendStatus(401);
         let events = await req.knex("t_events").where({isDeleted:false, short:req.body.eventshort})
         if(events.length==0)
             return res.sendStatus(404)

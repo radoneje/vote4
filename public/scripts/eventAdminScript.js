@@ -106,13 +106,13 @@ let app = new Vue({
             }
         },
         addVote:async function(){
-            await postJson("/api/vote/", {eventshort:this.event.short});
+            await postJson("/api/vote/"+this.event.short, {eventshort:this.event.short});
             
         },
         changeVote:async function(item, sect) {
             let dt = {id: item.id};
             dt[sect] = item[sect];
-            await postJson("/api/vote/", dt);
+            await postJson("/api/vote/"+this.event.short, dt);
         }
 
     },
